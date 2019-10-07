@@ -1,0 +1,80 @@
+focus_tree = {
+	id = Federal State of Mexico
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SMC
+		}
+	}
+	#Focus for Acquiescence
+	focus = {
+		id = SMC_acquiescence
+		icon = GFX_goal_anschluss
+		x = 16
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = SMC_violence }
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	#Focus for Violence
+	focus = {
+		id = SMC_violence
+		icon = GFX_focus_mex_jefe_maximo
+		x = 19
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = SMC_acquiescence }
+	}
+
+	#Focus for Maintain Federalist Relations
+	focus = {
+		id = SMC_maintainfederalistrelations
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 15
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SMC_acquiescence }
+		mutually_exclusive = { focus = SMC_secondimpersions }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Second Impersions
+	focus = {
+		id = SMC_secondimpersions
+		icon = GFX_focus_mex_soldaderas
+		x = 17
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SMC_acquiescence }
+		mutually_exclusive = { focus = SMC_maintainfederalistrelations }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Nuevo Revanchismo
+	focus = {
+		id = SMC_nuevorevanchismo
+		icon = GFX_goal_generic_political_pressure
+		x = 20
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SMC_violence }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }

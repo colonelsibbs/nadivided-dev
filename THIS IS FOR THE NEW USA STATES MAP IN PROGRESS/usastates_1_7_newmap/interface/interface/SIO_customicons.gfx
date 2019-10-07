@@ -1,0 +1,15 @@
+spriteTypes = { 
+##Icon For: 1207237
+ SpriteType = { 
+ name = "GFX_rallythereds" 
+ texturefile = "gfx/interface/goals/GFX_rallythereds.tga" 
+ }##Icon For: 1209868
+ SpriteType = { 
+ name = "GFX_goodolbluewhiteandred" 
+ texturefile = "gfx/interface/goals/GFX_goodolbluewhiteandred.tga" 
+ }##Icon For: 1396214
+ SpriteType = { 
+ name = "GFX_burndowntheflag" 
+ texturefile = "gfx/interface/goals/GFX_burndowntheflag.tga" 
+ } 
+ }

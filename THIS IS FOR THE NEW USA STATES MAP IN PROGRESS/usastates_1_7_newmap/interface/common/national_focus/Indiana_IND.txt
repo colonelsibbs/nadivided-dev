@@ -1,0 +1,483 @@
+focus_tree = {
+	id = IND
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = Indiana
+		}
+	}
+	#Focus for New Administration
+	focus = {
+		id = Indiana_newadministration
+		icon = GFX_goal_support_democracy
+		x = 12
+		y = 1
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_1936elections }
+		mutually_exclusive = { 
+			focus = Indiana_thehoosierworkersparty 
+		}
+		mutually_exclusive = { 
+			focus = Indiana_fourmoreyears 
+		}
+		mutually_exclusive = { 
+			focus = Indiana_nationalistvictory 
+		}
+		mutually_exclusive = { 
+			focus = Indiana_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_politics= {
+ ruling_party = democratic
+elections_allowed = yes 
+}
+		}
+	}
+
+	#Focus for The Hoosier Workers Party
+	focus = {
+		id = Indiana_thehoosierworkersparty
+		icon = GFX_goal_support_communism
+		x = 1
+		y = 1
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_1936elections }
+		mutually_exclusive = { 
+			focus = Indiana_fourmoreyears 
+		}
+		mutually_exclusive = { 
+			focus = Indiana_newadministration 
+		}
+		mutually_exclusive = { 
+			focus = Indiana_nationalistvictory 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_politics= {
+ ruling_party = communism 
+elections_allowed = no 
+}
+		}
+	}
+
+	#Focus for Four More Years!
+	focus = {
+		id = Indiana_fourmoreyears
+		icon = GFX_goal_generic_national_unity
+		x = 6
+		y = 1
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_1936elections }
+		mutually_exclusive = { 
+			focus = Indiana_thehoosierworkersparty 
+		}
+		mutually_exclusive = { 
+			focus = Indiana_newadministration 
+		}
+		mutually_exclusive = { 
+			focus = Indiana_nationalistvictory 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = neutrality 
+popularity = .20 
+}
+		}
+	}
+
+	#Focus for 1936 Elections
+	focus = {
+		id = Indiana_1936elections
+		icon = GFX_focus_usa_voter_registration_act
+		x = 9
+		y = 0
+		cost = 1
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			date >, date <> 1936.11.6
+		}
+		completion_reward = {
+			add_political_power= 250
+		}
+	}
+
+	#Focus for Indianapolis Department of Defense
+	focus = {
+		id = Indiana_indianapolisdepartmentofdefense
+		icon = GFX_focus_usa_build_the_pentagon
+		x = 21
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience= 25
+		}
+	}
+
+	#Focus for Nationalist Victory
+	focus = {
+		id = Indiana_nationalistvictory
+		icon = GFX_goal_support_fascism
+		x = 17
+		y = 1
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_1936elections }
+		mutually_exclusive = { 
+			focus = Indiana_newadministration 
+		}
+		mutually_exclusive = { 
+			focus = Indiana_thehoosierworkersparty 
+		}
+		mutually_exclusive = { 
+			focus = Indiana_fourmoreyears 
+		}
+		mutually_exclusive = { 
+			focus = Indiana_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_politics= {
+ ruling_party = fascism 
+elections_allowed = no 
+}
+		}
+	}
+
+	#Focus for German War Traditions
+	focus = {
+		id = Indiana_germanwartraditions
+		icon = GFX_focus_ger_oppose_hitler
+		x = 19
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_indianapolisdepartmentofdefense }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Hoosier General Staff
+	focus = {
+		id = Indiana_hoosiergeneralstaff
+		icon = GFX_focus_generic_military_mission
+		x = 19
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_germanwartraditions }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Constitutional Compromise
+	focus = {
+		id = Indiana_constitutionalcompromise
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 6
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_fourmoreyears }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability= .10
+		}
+	}
+
+	#Focus for Rewrite the Constitution
+	focus = {
+		id = Indiana_rewritetheconstitution
+		icon = GFX_goal_generic_forceful_treaty
+		x = 17
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_nationalistvictory }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Workers Constitution
+	focus = {
+		id = Indiana_workersconstitution
+		icon = GFX_goal_generic_soviet_construction
+		x = 1
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_thehoosierworkersparty }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Agriculture Reform
+	focus = {
+		id = Indiana_agriculturereform
+		icon = GFX_focus_generic_concessions
+		x = 6
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_constitutionalcompromise }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Revise Draft Laws
+	focus = {
+		id = Indiana_revisedraftlaws
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 23
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_indianapolisdepartmentofdefense }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Agricultural Revolution
+	focus = {
+		id = Indiana_agriculturalrevolution
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 1
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_workersconstitution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Crossroads of America
+	focus = {
+		id = Indiana_crossroadsofamerica
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 31
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Indiana University Bloomington
+	focus = {
+		id = Indiana_indianauniversitybloomington
+		icon = GFX_goal_generic_scientific_exchange
+		x = 27
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_crossroadsofamerica }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Purdue University
+	focus = {
+		id = Indiana_purdueuniversity
+		icon = GFX_goal_generic_radar
+		x = 27
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_indianauniversitybloomington }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for South Bend Construction Effort
+	focus = {
+		id = Indiana_southbendconstructioneffort
+		icon = GFX_focus_generic_industry_1
+		x = 31
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_crossroadsofamerica }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Muncie Construction Effort
+	focus = {
+		id = Indiana_muncieconstructioneffort
+		icon = GFX_focus_generic_industry_2
+		x = 31
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_southbendconstructioneffort }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Indianapolis Construction Effort
+	focus = {
+		id = Indiana_indianapolisconstructioneffort
+		icon = GFX_focus_generic_industry_3
+		x = 31
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_muncieconstructioneffort }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Hoosier Homestead Act
+	focus = {
+		id = Indiana_hoosierhomesteadact
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 35
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_crossroadsofamerica }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Indianapolis Gold Reserve Act
+	focus = {
+		id = Indiana_indianapolisgoldreserveact
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 35
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_hoosierhomesteadact }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Infantry Doctrine
+	focus = {
+		id = Indiana_infantrydoctrine
+		icon = GFX_goal_rhineland
+		x = 21
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_revisedraftlaws }
+		mutually_exclusive = { focus = Indiana_artillerydoctrine }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Evansville Foundry
+	focus = {
+		id = Indiana_evansvillefoundry
+		icon = GFX_goal_generic_army_artillery2
+		x = 25
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_artillerydoctrine }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for National Mobilization Act
+	focus = {
+		id = Indiana_nationalmobilizationact
+		icon = GFX_focus_prc_infiltration
+		x = 21
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_infantrydoctrine }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Fort Harrison Military Academy
+	focus = {
+		id = Indiana_fortharrisonmilitaryacademy
+		icon = GFX_focus_chi_army_reform
+		x = 23
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Indiana_evansvillefoundry 
+			focus = Indiana_nationalmobilizationact 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Artillery Doctrine
+	focus = {
+		id = Indiana_artillerydoctrine
+		icon = GFX_goal_generic_army_artillery2
+		x = 25
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_revisedraftlaws }
+		mutually_exclusive = { focus = Indiana_infantrydoctrine }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Support Tank Effort
+	focus = {
+		id = Indiana_supporttankeffort
+		icon = GFX_goal_continuous_armor_production
+		x = 21
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Indiana_fortharrisonmilitaryacademy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }

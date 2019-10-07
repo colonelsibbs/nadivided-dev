@@ -1,0 +1,43 @@
+spriteTypes = { 
+##Icon For: 1193290
+ SpriteType = { 
+ name = "GFX_policetheklan" 
+ texturefile = "gfx/interface/goals/GFX_policetheklan.tga" 
+ }##Icon For: 1212098
+ SpriteType = { 
+ name = "GFX_kingcotton" 
+ texturefile = "gfx/interface/goals/GFX_kingcotton.tga" 
+ }##Icon For: 1212059
+ SpriteType = { 
+ name = "GFX_theagrariansector" 
+ texturefile = "gfx/interface/goals/GFX_theagrariansector.tga" 
+ }##Icon For: 1192926
+ SpriteType = { 
+ name = "GFX_segregationnowsegregationtomorrow" 
+ texturefile = "gfx/interface/goals/GFX_segregationnowsegregationtomorrow.tga" 
+ }##Icon For: 1202099
+ SpriteType = { 
+ name = "GFX_equalintheeyesofthelord" 
+ texturefile = "gfx/interface/goals/GFX_equalintheeyesofthelord.tga" 
+ }##Icon For: 1212056
+ SpriteType = { 
+ name = "GFX_thedahlonegamint" 
+ texturefile = "gfx/interface/goals/GFX_thedahlonegamint.tga" 
+ }##Icon For: 1212057
+ SpriteType = { 
+ name = "GFX_mandatorycroprotation" 
+ texturefile = "gfx/interface/goals/GFX_mandatorycroprotation.tga" 
+ }##Icon For: 1212054
+ SpriteType = { 
+ name = "GFX_thegeorgianeconomy" 
+ texturefile = "gfx/interface/goals/GFX_thegeorgianeconomy.tga" 
+ }##Icon For: 1216498
+ SpriteType = { 
+ name = "GFX_textileboom" 
+ texturefile = "gfx/interface/goals/GFX_textileboom.tga" 
+ }##Icon For: 1216500
+ SpriteType = { 
+ name = "GFX_professionalfieldhands" 
+ texturefile = "gfx/interface/goals/GFX_professionalfieldhands.tga" 
+ } 
+ }

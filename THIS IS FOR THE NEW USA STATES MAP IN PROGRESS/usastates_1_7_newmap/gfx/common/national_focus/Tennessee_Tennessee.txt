@@ -1,0 +1,244 @@
+focus_tree = {
+	id = Tennessee
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = Tennessee
+		}
+	}
+	#Focus for We need an army
+	focus = {
+		id = Tennessee_weneedanarmy
+		icon = GFX_focus_usa_honor_the_confederacy
+		x = 18
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_manpower= 400000
+		}
+	}
+
+	#Focus for EH Crump's Victory
+	focus = {
+		id = Tennessee_ehcrumpsvictory
+		icon = GFX_goal_support_fascism
+		x = 0
+		y = 1
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = Tennessee_firstgeneralelections }
+		mutually_exclusive = { focus = Tennessee_howardbakersvictory }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for My Eyes Have Seen the Glory
+	focus = {
+		id = Tennessee_myeyeshaveseentheglory
+		icon = GFX_focus_ger_revive_kaiserreich
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government=facism
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = fascism 
+popularity = 10
+}
+		}
+	}
+
+	#Focus for Raise The Militia
+	focus = {
+		id = Tennessee_raisethemilitia
+		icon = GFX_goal_generic_military_sphere
+		x = 18
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Tennessee_weneedanarmy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience= 100
+		}
+	}
+
+	#Focus for Focus On Industrializing
+	focus = {
+		id = Tennessee_focusonindustrializing
+		icon = GFX_goal_generic_production2
+		x = 10
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Tennessee_tennesseesownnewdeal }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Prentice Cooper's Victory
+	focus = {
+		id = Tennessee_prenticecoopersvictory
+		icon = GFX_goal_support_democracy
+		x = 4
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Tennessee_firstgeneralelections }
+		mutually_exclusive = { focus = Tennessee_howardbakersvictory }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government= democratic
+		}
+	}
+
+	#Focus for First General Elections
+	focus = {
+		id = Tennessee_firstgeneralelections
+		icon = GFX_goal_generic_small_arms
+		x = 2
+		y = 0
+		cost = 1
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event= {
+days = 1 
+id = usastates.10
+}
+		}
+	}
+
+	#Focus for Tennessee's Own New Deal
+	focus = {
+		id = Tennessee_tennesseesownnewdeal
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 10
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= STN_New_Deal
+		}
+	}
+
+	#Focus for Howard Bakers Victory
+	focus = {
+		id = Tennessee_howardbakersvictory
+		icon = GFX_goal_tripartite_pact
+		x = 2
+		y = 1
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = Tennessee_firstgeneralelections }
+		mutually_exclusive = { 
+			focus = Tennessee_ehcrumpsvictory 
+		}
+		mutually_exclusive = { 
+			focus = Tennessee_prenticecoopersvictory 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government= democratic
+		}
+	}
+
+	#Focus for The Coup
+	focus = {
+		id = Tennessee_thecoup
+		icon = GFX_goal_generic_war_with_comintern
+		x = 25
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government= communism
+		}
+		completion_reward = {
+			add_stability= -50add_political_power= -100
+		}
+	}
+
+	#Focus for Form A Government
+	focus = {
+		id = Tennessee_formagovernment
+		icon = GFX_goal_generic_dangerous_deal
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Tennessee_myeyeshaveseentheglory }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_manpower= 8000random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+#End of focuses 
+ }

@@ -1,0 +1,38 @@
+focus_tree = {
+	id = kansas
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = Kansas
+		}
+	}
+	#Focus for Continue the New Deal Programs
+	focus = {
+		id = Kansas_continuethenewdealprograms
+		icon = GFX_goal_tripartite_pact
+		x = 10
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Kansas_actonthedustbowlcrisis }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Act on the Dust Bowl Crisis
+	focus = {
+		id = Kansas_actonthedustbowlcrisis
+		icon = GFX_goal_generic_demand_territory
+		x = 8
+		y = 0
+		cost = 8
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }

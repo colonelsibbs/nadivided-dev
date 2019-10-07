@@ -1,0 +1,7 @@
+spriteTypes = { 
+##Icon For: 965201
+ SpriteType = { 
+ name = "GFX_autahquestion" 
+ texturefile = "gfx/interface/goals/GFX_autahquestion.tga" 
+ } 
+ }

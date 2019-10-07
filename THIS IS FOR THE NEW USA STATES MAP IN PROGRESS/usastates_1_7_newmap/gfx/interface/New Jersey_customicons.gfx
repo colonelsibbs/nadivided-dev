@@ -1,0 +1,35 @@
+spriteTypes = { 
+##Icon For: 988390
+ SpriteType = { 
+ name = "GFX_13isgoodluck" 
+ texturefile = "gfx/interface/goals/GFX_13isgoodluck.tga" 
+ }##Icon For: 967295
+ SpriteType = { 
+ name = "GFX_blackjersey" 
+ texturefile = "gfx/interface/goals/GFX_blackjersey.tga" 
+ }##Icon For: 983743
+ SpriteType = { 
+ name = "GFX_thewashingtonparty" 
+ texturefile = "gfx/interface/goals/GFX_thewashingtonparty.tga" 
+ }##Icon For: 983745
+ SpriteType = { 
+ name = "GFX_thecultofjackson" 
+ texturefile = "gfx/interface/goals/GFX_thecultofjackson.tga" 
+ }##Icon For: 983748
+ SpriteType = { 
+ name = "GFX_bigstickdiplomacy" 
+ texturefile = "gfx/interface/goals/GFX_bigstickdiplomacy.tga" 
+ }##Icon For: 1004225
+ SpriteType = { 
+ name = "GFX_thefinches" 
+ texturefile = "gfx/interface/goals/GFX_thefinches.tga" 
+ }##Icon For: 988376
+ SpriteType = { 
+ name = "GFX_adeclarationofsovereignty" 
+ texturefile = "gfx/interface/goals/GFX_adeclarationofsovereignty.tga" 
+ }##Icon For: 988386
+ SpriteType = { 
+ name = "GFX_integrativeacts" 
+ texturefile = "gfx/interface/goals/GFX_integrativeacts.tga" 
+ } 
+ }

@@ -1,0 +1,73 @@
+focus_tree = {
+	id = 1
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = USA
+		}
+	}
+	#Focus for The Union, tried and true.
+	focus = {
+		id = USA_theuniontriedandtrue
+		icon = GFX_goal_unknown
+		x = 11
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = USA_marylandmymaryland }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 50set_political_party= { 
+ideology = democratic 
+popularity = 0.5 
+}
+add_popularity= { 
+ideology = democratic 
+popularity = 25
+}
+		}
+	}
+
+	#Focus for Maryland, my Maryland
+	focus = {
+		id = USA_marylandmymaryland
+		icon = GFX_goal_unknown
+		x = 9
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 200
+		}
+	}
+
+	#Focus for Down the Dixon Line
+	focus = {
+		id = USA_downthedixonline
+		icon = GFX_goal_unknown
+		x = 7
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_political_power= 100
+
+set_political_party= { 
+ideology = democratic 
+popularity = 0.5 
+}
+Submit
+		}
+	}
+
+#End of focuses 
+ }

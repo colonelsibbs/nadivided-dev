@@ -1,0 +1,562 @@
+add_namespace = usastates
+
+##Event: The Toledo Massacre (unfinnished)
+country_event = {
+	id = usastates.1
+	title = usastates.1.title
+	desc = usastates.1.desc
+	picture = GFX_report_event_nra_march
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		#aight so basically once you do the focus this #shittle appear ok
+{
+	}
+	option = {
+		name = usastates.1.a
+		ai_chance = { factor = 50}
+		set_capital = 261
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = communism
+				size = 0.5
+				capital = 261
+				states = { 261 }
+				
+			}
+		}
+	}
+	}
+	option = {
+		name = usastates.1.b
+		ai_chance = { factor = 50}
+		{
+			start_civil_war = {
+				ideology = fascism
+				size = 0.5
+				capital = 779
+				states = { 799 }
+			}
+	}
+}
+##Event: The New Mexican Sphere
+news_event = {
+	id = usastates.2
+	title = usastates.2.title
+	desc = usastates.2.desc
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	mean_time_to_happen = {
+		days = 5
+	}
+	option = {
+		name = usastates.2.a
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.2.b
+		ai_chance = { factor = 1}
+	}
+}
+##Event: Texan Chainsaw Massacre
+news_event = {
+	id = usastates.3
+	title = usastates.3.title
+	desc = usastates.3.desc
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		date > 1938.1.1
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = usastates.3.a
+		ai_chance = { factor = 1}
+	}
+}
+##Event: Presidential Elections
+country_event = {
+	id = usastates.4
+	title = usastates.4.title
+	desc = usastates.4.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usastates.4.a
+		ai_chance = { factor = 1}
+		kill_country_leader = yes
+create_country_leader = {
+ name = "Clyde Tingley"
+ picture = #SKORPION ADD PICTURE
+ expire = "1965.1.1"
+ ideology = conservatism
+ trait = { Popular Figurehead }
+}
+	}
+	option = {
+		name = usastates.4.b
+		ai_chance = { factor = 1}
+		kill_country_leader = yes
+create_country_leader = {
+ name = "Jaffa Miller"
+ picture = #SKORPION ADD PICTURE
+ expire = "1965.1.1"
+ ideology = liberalism
+ traits = { Great architect }
+}
+	}
+}
+##Event: New Jersey receives recognition by the United Nations
+country_event = {
+	id = usastates.5
+	title = usastates.5.title
+	desc = usastates.5.desc
+	picture = GFX_report_event_us_panay_demands
+	fire_only_once = yes
+	major = yes
+	option = {
+		name = usastates.5.a
+		ai_chance = { factor = 1}
+		diplomatic_relation= { 
+country = SNJ
+relation = -10
+}
+	}
+	option = {
+		name = usastates.5.b
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.5.c
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.5.d
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.5.e
+		ai_chance = { factor = 1}
+	}
+}
+##Event: What is New Jersey
+country_event = {
+	id = usastates.6
+	title = usastates.6.title
+	desc = usastates.6.desc
+	picture = GFX_/media/get//hoi4/event_gfx/report_event_yugoslavian_split
+	option = {
+		name = usastates.6.a
+		ai_chance = { factor = 1}
+	}
+}
+##Event: New Jersey Revives National Baseball Leagues
+news_event = {
+	id = usastates.7
+	title = usastates.7.title
+	desc = usastates.7.desc
+	picture = GFX_/media/get//hoi4/event_gfx/report_event_yugoslavian_split
+	option = {
+		name = usastates.7.a
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.7.b
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.7.c
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.7.d
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.7.e
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.7.f
+		ai_chance = { factor = 1}
+	}
+}
+##Event: The New Jersey Yankees win the 1938 World Series!
+news_event = {
+	id = usastates.8
+	title = usastates.8.title
+	desc = usastates.8.desc
+	picture = GFX_/media/get//hoi4/event_gfx/report_event_yugoslavian_split
+	option = {
+		name = usastates.8.a
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.8.b
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.8.c
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.8.d
+		ai_chance = { factor = 1}
+	}
+}
+##Event: First General Elections Of Tennessee
+country_event = {
+	id = usastates.9
+	title = usastates.9.title
+	desc = usastates.9.desc
+	picture = GFX_report_event_usa_election_generic
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		complete_national_focus= First General Elections
+	}
+	option = {
+		name = usastates.9.a
+		ai_chance = { factor = 1}
+		set_politics= {
+ ruling_party = Democratic
+elections_allowed = no 
+}
+	}
+	option = {
+		name = usastates.9.b
+		ai_chance = { factor = 1}
+		set_politics= {
+ ruling_party = democratic 
+elections_allowed = no 
+}
+set_party_name= { 
+ideology = democratic 
+long_name = republican_party 
+name = republican_party 
+}
+	}
+	option = {
+		name = usastates.9.c
+		ai_chance = { factor = 1}
+		set_politics= {
+ ruling_party = fascism 
+elections_allowed = no 
+}
+	}
+	option = {
+		name = usastates.9.d
+		ai_chance = { factor = 1}
+		set_politics= {
+ ruling_party = communism 
+elections_allowed = no 
+}
+	}
+}
+##Event: Alvin York Launches a Counter Coup
+country_event = {
+	id = usastates.10
+	title = usastates.10.title
+	desc = usastates.10.desc
+	picture = GFX_report_event_nra_march
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		has_government= communism
+	}
+	mean_time_to_happen = {
+		days = 180
+	}
+	option = {
+		name = usastates.10.a
+		ai_chance = { factor = 1}
+		start_civil_war= {
+ ideology = communism 
+size = 0.3 
+}
+set_politics= {
+ ruling_party = non-aligned
+elections_allowed = no 
+}
+	}
+	option = {
+		name = usastates.10.b
+		ai_chance = { factor = 1}
+		start_civil_war= {
+ ideology = non-aligned 
+size = 0.5 
+}
+	}
+}
+##Event: Tennessee-Georgia Water Dispute Flares Tensions
+country_event = {
+	id = usastates.11
+	title = usastates.11.title
+	desc = usastates.11.desc
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 7
+	}
+	option = {
+		name = usastates.11.a
+		ai_chance = { factor = 50}
+		declare_war_on= { 
+target = TEN 
+type = annex_everything 
+}
+	}
+	option = {
+		name = usastates.11.b
+		ai_chance = { factor = 1}
+	}
+}
+##Event: 1936 Presidential Election
+country_event = {
+	id = usastates.12
+	title = usastates.12.title
+	desc = usastates.12.desc
+	picture = GFX_/media/get//hoi4/event_gfx/report_event_yugoslavian_split
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	trigger = {
+		date >, date <> 1936.11.1
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = usastates.12.a
+		ai_chance = { factor = 1}
+		create_country_leader= {
+ name = 'Eurith D. Rivers' 
+desc = 'POLITICS_EURITH_RIVERS_DESC' 
+picture = 'Portrait_Georgia_Eurith_Rivers.dds' 
+expire = '1965.1.1' 
+ideology = democracy 
+traits = {
+}
+
+ }
+	}
+	option = {
+		name = usastates.12.b
+		ai_chance = { factor = 1}
+		create_country_leader= {
+ name = 'Charles D. Redwine' 
+desc = 'POLITICS_CHARLES_REDWINE_DESC' 
+picture = 'Portrait_Georgia_Charles_Redwine.dds' 
+expire = '1965.1.1' 
+ideology = democracy 
+traits = {
+}
+
+ }
+	}
+}
+##Event: Fisrt Idaho National Election
+country_event = {
+	id = usastates.13
+	title = usastates.13.title
+	desc = usastates.13.desc
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		trigger = {
+	tag = SID
+	has_completed_focus = SID_open_political_discord
+		}
+	}
+	option = {
+		name = usastates.13.a
+		ai_chance = { factor = 50}
+		add_popularity = {
+   		ideology = democratic
+   		popularity = 0.25
+		}
+		set_politics = {
+		ruling_party = democratic
+		}
+	}
+	option = {
+		name = usastates.13.b
+		ai_chance = { factor = 30}
+		add_popularity = {
+   		ideology = communism
+   		popularity = 0.25
+		}
+		set_politics = {
+		ruling_party = communism
+		}
+	}
+	option = {
+		name = usastates.13.c
+		ai_chance = { factor = 20}
+		add_popularity = {
+   		ideology = fascism
+   		popularity = 0.25
+		}
+		set_politics = {
+		ruling_party = fascism
+		}
+	}
+}
+##Event: What to do with the Mormons
+country_event = {
+	id = usastates.14
+	title = usastates.14.title
+	desc = usastates.14.desc
+	picture = GFX_report_event_czech_soldiers_01
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		trigger = {
+		tag = SID
+		has_completed_focus = SID_deal_with_Mormons
+	}
+	}
+	option = {
+		name = usastates.14.a
+		ai_chance = { factor = 50}
+		unlock_national_focus = SID_purge_the_Mormons
+	}
+	option = {
+		name = usastates.14.b
+		ai_chance = { factor = 50}
+		unlock_national_focus = SID_honarary_Idahoians
+	}
+	option = {
+		name = usastates.14.c
+		ai_chance = { factor = 1}
+		unlock_national_focus = SID_new_religion
+		create_leader = {
+
+		}
+	}
+}
+##Event: Should we change our Capital?
+country_event = {
+	id = usastates.15
+	title = usastates.15.title
+	desc = usastates.15.desc
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		trigger = {
+			tag = SID
+			has_completed_focus = SID_create_the_mormon_republic
+	}
+	}
+	option = {
+		name = usastates.15.a
+		ai_chance = { factor = 70}
+		set_capital = 49
+	}
+	option = {
+		name = usastates.15.b
+		ai_chance = { factor = 30}
+	}
+}
+##Event: Jackrabbits Plague Western Farmers
+country_event = {
+	id = usastates.16
+	title = usastates.16.title
+	desc = usastates.16.desc
+	picture = GFX_/media/get//hoi4/event_gfx/report_event_yugoslavian_split
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		date >, date <> 1936.5.5
+	}
+	mean_time_to_happen = {
+		days = 8
+	}
+	option = {
+		name = usastates.16.a
+		ai_chance = { factor = 1}
+		add_stability= -5
+	}
+	option = {
+		name = usastates.16.b
+		ai_chance = { factor = 1}
+		add_political_power= -25add_stability=-1
+	}
+	option = {
+		name = usastates.16.c
+		ai_chance = { factor = 1}
+		add_political_power= -50
+	}
+}
+##Event: 1936 Elections in North Carolina!
+news_event = {
+	id = usastates.17
+	title = usastates.17.title
+	desc = usastates.17.desc
+	picture = GFX_report_event_asian_politicians
+	option = {
+		name = usastates.17.a
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = usastates.17.b
+		ai_chance = { factor = 1}
+		add_popularity= { 
+ideology = fascism 
+popularity = 10 
+}
+	}
+	option = {
+		name = usastates.17.c
+		ai_chance = { factor = 1}
+		complete_national_focus= 1231305
+	}
+}
+##Event: The Sunshine Revolt
+country_event = {
+	id = usastates.18
+	title = usastates.18.title
+	desc = usastates.18.desc
+	picture = GFX_/media/get//hoi4/event_gfx/report_event_ger_civil_war
+	fire_only_once = yes
+	trigger = {
+		has_completed_focus= SFL_the_light_of_revolution
+	}
+	option = {
+		name = usastates.18.a
+		ai_chance = { factor = 100}
+	}
+}
+##Event: Floridian Pressure
+country_event = {
+	id = usastates.19
+	title = usastates.19.title
+	desc = usastates.19.desc
+	picture = GFX_/media/get//hoi4/event_gfx/report_event_molotov_ribentrop_handshake
+	option = {
+		name = usastates.19.a
+		ai_chance = { factor = 70}
+		create_wargoal= { 
+type = annex_everything 
+target = ROOT
+}
+	}
+	option = {
+		name = usastates.19.b
+		ai_chance = { factor = 30}
+		annex_country= {
+ target = ROOT 
+}
+	}
+}

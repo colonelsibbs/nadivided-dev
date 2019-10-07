@@ -1,0 +1,3203 @@
+focus_tree = {
+	id = WIS
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = Wisconsin
+		}
+	}
+	#Focus for Embrace French Heritage
+	focus = {
+		id = Wisconsin_embracefrenchheritage
+		icon = GFX_embracefrenchheritage
+		x = 50
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_longlivetheking }
+		mutually_exclusive = { focus = Wisconsin_forcedfrench }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Long Live the King
+	focus = {
+		id = Wisconsin_longlivetheking
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 52
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_invitepascalgastonclermonttothethrone }
+		mutually_exclusive = { focus = Wisconsin_invitepascalgastonclermonttothethrone }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Invite Pascal-Gaston Clermont to the Throne
+	focus = {
+		id = Wisconsin_invitepascalgastonclermonttothethrone
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 52
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_awisconsiniteking }
+		mutually_exclusive = { 
+			focus = Wisconsin_longlivetheking 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_thewisconsinitekaiser 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Socialism's Grace
+	focus = {
+		id = Wisconsin_socialismsgrace
+		icon = GFX_goal_generic_war_with_comintern
+		x = 42
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_ourdairyland }
+		mutually_exclusive = { focus = Wisconsin_communisminwisconsin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Leadership Vacancy
+	focus = {
+		id = Wisconsin_leadershipvacancy
+		icon = GFX_focus_generic_self_management
+		x = 45
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_anewera }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Among the Ruin
+	focus = {
+		id = Wisconsin_amongtheruin
+		icon = GFX_goal_anti_comintern_pact
+		x = 69
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 150
+		}
+	}
+
+	#Focus for Agricultural Focus
+	focus = {
+		id = Wisconsin_agriculturalfocus
+		icon = GFX_agriculturalfocus
+		x = 117
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_industrialeffort }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Tolerance, but Not Acceptance
+	focus = {
+		id = Wisconsin_tolerancebutnotacceptance
+		icon = GFX_goal_generic_dangerous_deal
+		x = 55
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_teachingsofnapoleon }
+		mutually_exclusive = { focus = Wisconsin_destructionofoldvalues }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Demand Cooperation Between French Peoples
+	focus = {
+		id = Wisconsin_demandcooperationbetweenfrenchpeoples
+		icon = GFX_goal_generic_dangerous_deal
+		x = 54
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_destructionofoldvalues 
+			focus = Wisconsin_tolerancebutnotacceptance 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Destruction of Old Values
+	focus = {
+		id = Wisconsin_destructionofoldvalues
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 53
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_teachingsofnapoleon }
+		mutually_exclusive = { focus = Wisconsin_tolerancebutnotacceptance }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Create the WIMC
+	focus = {
+		id = Wisconsin_createthewimc
+		icon = GFX_goal_generic_special_forces
+		x = 97
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_fundthenavy }
+		completion_reward = {
+			add_tech_bonus = {
+name = USA_expand_the_USMC
+bonus = 1.0
+uses = 1
+technology = marines2
+technology = marines3
+}
+		}
+	}
+
+	#Focus for Amphibious Operations
+	focus = {
+		id = Wisconsin_amphibiousoperations
+		icon = GFX_goal_generic_amphibious_assault
+		x = 97
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_createthewimc }
+		completion_reward = {
+			add_tech_bonus = {
+name = USA_amphibious_operations
+bonus = 1.0
+uses = 2
+category = tp_tech 
+}
+		}
+	}
+
+	#Focus for Fleet Submarines
+	focus = {
+		id = Wisconsin_fleetsubmarines
+		icon = GFX_goal_generic_navy_submarine
+		x = 95
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_bureauofships }
+		completion_reward = {
+			add_tech_bonus = {
+name = USA_fleet_submarines
+bonus = 1.0
+uses = 2
+category = ss_tech
+}
+if = {
+limit = {
+has_dlc = "Man the Guns"
+}
+set_technology = { cruiser_submarines = 1 }
+}
+		}
+	}
+
+	#Focus for Unrestricted Submarine Warfare
+	focus = {
+		id = Wisconsin_unrestrictedsubmarinewarfare
+		icon = GFX_goal_generic_wolf_pack
+		x = 95
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_fleetsubmarines }
+		completion_reward = {
+			add_ideas = USA_unrestricted_submarine_warfare
+		}
+	}
+
+	#Focus for Fund the Navy
+	focus = {
+		id = Wisconsin_fundthenavy
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 97
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_greatlakesnavyact }
+		completion_reward = {
+			add_tech_bonus = {
+name = USA_fund_the_navy
+uses = 3
+bonus = 1.0
+category = naval_doctrine
+}
+		}
+	}
+
+	#Focus for Convoy Tactics
+	focus = {
+		id = Wisconsin_convoytactics
+		icon = GFX_goal_generic_navy_cruiser
+		x = 93
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_escorteffort }
+		completion_reward = {
+			navy_experience = 25
+add_tech_bonus = {
+name = USA_convoy_tactics
+bonus = 1.0
+uses = 2
+category = convoy_defense_tree
+}
+		}
+	}
+
+	#Focus for Advanced Manhanian Doctrine
+	focus = {
+		id = Wisconsin_advancedmanhaniandoctrine
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 91
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_bqyVlvCE }
+		completion_reward = {
+			add_tech_bonus = {
+name = USA_advanced_mahanian_doctrine
+bonus = 1.0
+uses = 1
+category = cat_base_strike
+}
+		}
+	}
+
+	#Focus for Advanced Basing
+	focus = {
+		id = Wisconsin_advancedbasing
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 91
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_advancedmanhaniandoctrine }
+		completion_reward = {
+			638 = {
+add_building_construction = {
+type = naval_base
+province = 12140
+level = 2
+instant_build = yes
+}
+}
+if = {
+limit = {
+327 = {
+CONTROLLER = {
+is_subject_of = ROOT
+}
+}
+}
+327 = {
+add_building_construction = {
+type = naval_base
+province = 10265
+level = 2
+instant_build = yes
+}
+}
+}
+		}
+	}
+
+	#Focus for Naval Radar
+	focus = {
+		id = Wisconsin_navalradar
+		icon = GFX_goal_generic_radar
+		x = 95
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_unrestrictedsubmarinewarfare }
+		completion_reward = {
+			add_tech_bonus = {
+name = USA_naval_radar
+uses = 2
+bonus = 1.0
+category = radar_tech
+}
+		}
+	}
+
+	#Focus for Escort Effort
+	focus = {
+		id = Wisconsin_escorteffort
+		icon = GFX_goal_generic_navy_anti_submarine
+		x = 93
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_bureauofships }
+		completion_reward = {
+			add_ideas = escort_effort_focus
+		}
+	}
+
+	#Focus for Great Lakes Navy Act
+	focus = {
+		id = Wisconsin_greatlakesnavyact
+		icon = GFX_focus_generic_navy_battleship2
+		x = 93
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_wardepartment }
+		available = {
+			if = {
+limit = {
+threat < 0.5
+has_war = no
+}
+congress_high_support_trigger = yes
+}
+else = {
+congress_low_support_trigger = yes
+}
+controls_state = 378
+controls_state = 358
+		}
+		completion_reward = {
+			if = {
+limit = {
+ has_war_support < 0.4 
+}
+USA_congress_medium_opposition = yes
+}
+if = { 
+limit = { 
+378 = {
+free_building_slots = {
+building = dockyard
+size > 4
+include_locked = yes
+}
+}
+}
+378 = { 
+add_extra_state_shared_building_slots = 5
+add_building_construction = {
+type = dockyard
+level = 5
+instant_build = yes
+}
+}
+}
+if = { 
+limit = { 
+358 = {
+free_building_slots = {
+building = dockyard
+size > 4
+include_locked = yes
+}
+}
+}
+358 = { 
+add_extra_state_shared_building_slots = 5
+add_building_construction = {
+type = dockyard
+level = 5
+instant_build = yes
+}
+}
+}
+		}
+	}
+
+	#Focus for Bureau of Ships
+	focus = {
+		id = Wisconsin_bureauofships
+		icon = GFX_goal_generic_build_navy
+		x = 93
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_greatlakesnavyact }
+		completion_reward = {
+			navy_experience = 50
+add_ideas = bureau_of_ships_focus
+		}
+	}
+
+	#Focus for Battleship Effort
+	focus = {
+		id = Wisconsin_battleshipeffort
+		icon = GFX_goal_generic_navy_battleship
+		x = 91
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_bureauofships }
+		completion_reward = {
+			add_tech_bonus = {
+name = USA_battleship_primacy
+bonus = 1.0
+uses = 2
+category = bb_tech
+}
+		}
+	}
+
+	#Focus for Liberty Ships
+	focus = {
+		id = Wisconsin_libertyships
+		icon = GFX_goal_generic_amphibious_assault
+		x = 89
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_maritimecommission }
+		completion_reward = {
+			add_ideas = liberty_ships_focus
+		}
+	}
+
+	#Focus for Maritime Commission
+	focus = {
+		id = Wisconsin_maritimecommission
+		icon = GFX_goal_generic_production2
+		x = 89
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_greatlakesnavyact }
+		completion_reward = {
+			add_ideas = USA_maritime_commission
+		}
+	}
+
+	#Focus for Armored Infantry
+	focus = {
+		id = Wisconsin_armoredinfantry
+		icon = GFX_goal_generic_build_tank
+		x = 82
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_mainbattletanks 
+			focus = Wisconsin_tankdestroyerdoctrine 
+		}
+		completion_reward = {
+			add_tech_bonus = {
+name = USA_armored_infantry
+uses = 2
+bonus = 1.0
+category = motorized_equipment
+}
+		}
+	}
+
+	#Focus for Wisconsin Air Force
+	focus = {
+		id = Wisconsin_wisconsinairforce
+		icon = GFX_goal_generic_build_airforce
+		x = 87
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_combinedbomberoffensive }
+		completion_reward = {
+			add_ideas = USA_us_air_force
+		}
+	}
+
+	#Focus for Wisconsinite Army Airforce
+	focus = {
+		id = Wisconsin_wisconsinitearmyairforce
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 85
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_tacticalbombereffort }
+		completion_reward = {
+			add_tech_bonus = {
+name = USA_us_army_airforce
+uses = 2
+bonus = 1.0
+category = air_doctrine
+}
+		}
+	}
+
+	#Focus for Escort Fighters
+	focus = {
+		id = Wisconsin_escortfighters
+		icon = GFX_focus_usa_escort_fighters
+		x = 87
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_airsupport 
+			focus = Wisconsin_strategicbombing 
+		}
+		completion_reward = {
+			add_tech_bonus = {
+name = USA_escort_fighters
+bonus = 3.0
+uses = 1
+technology = heavy_fighter1
+technology = heavy_fighter2
+technology = heavy_fighter3
+}
+		}
+	}
+
+	#Focus for Combined Bomber Offensive
+	focus = {
+		id = Wisconsin_combinedbomberoffensive
+		icon = GFX_goal_generic_air_bomber
+		x = 87
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_strategicbombing }
+		available = {
+			has_war = yes
+OR = {
+is_in_faction_with = SMI
+is_in_faction_with = SMN
+is_in_faction_with = SIL
+is_in_faction_with = SIA
+is_in_faction_with = SIN
+is_in_faction_with = SOH
+is_in_faction_with = PON
+}
+		}
+		completion_reward = {
+			air_experience = 25
+add_tech_bonus = {
+name = USA_combined_bomber_offensive
+bonus = 1.0
+uses = 1
+category = heavy_air
+}
+add_ideas = combined_bomber_offensive
+		}
+	}
+
+	#Focus for CAS Effort
+	focus = {
+		id = Wisconsin_caseffort
+		icon = GFX_goal_generic_CAS
+		x = 85
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_airsupport }
+		completion_reward = {
+			add_tech_bonus = {
+name = CAS_effort
+uses = 1
+bonus = 1.0
+category = cas_bomber
+}
+		}
+	}
+
+	#Focus for Tactical Bomber Effort
+	focus = {
+		id = Wisconsin_tacticalbombereffort
+		icon = GFX_goal_generic_air_doctrine
+		x = 85
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_airsupport }
+		completion_reward = {
+			air_experience = 25
+add_tech_bonus = {
+name = USA_TAC
+uses = 1
+bonus = 1.0
+category = tactical_bomber
+}
+		}
+	}
+
+	#Focus for Air War Plans Division
+	focus = {
+		id = Wisconsin_airwarplansdivision
+		icon = GFX_focus_YUG_rogozarski
+		x = 86
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_wardepartment }
+		completion_reward = {
+			air_experience = 25
+add_tech_bonus = {
+name = USA_air_war_plans_division
+bonus = 1.0
+uses = 2
+category = air_doctrine
+} 
+add_ideas = air_war_plans_division_focus
+		}
+	}
+
+	#Focus for Air Support
+	focus = {
+		id = Wisconsin_airsupport
+		icon = GFX_goal_generic_air_fighter2
+		x = 85
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_airwarplansdivision }
+		mutually_exclusive = { focus = Wisconsin_strategicbombing }
+		completion_reward = {
+			air_experience = 25
+add_ideas = air_support_focus
+		}
+	}
+
+	#Focus for Strategic Bombing
+	focus = {
+		id = Wisconsin_strategicbombing
+		icon = GFX_goal_generic_occupy_start_war
+		x = 87
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_airwarplansdivision }
+		mutually_exclusive = { focus = Wisconsin_airsupport }
+		completion_reward = {
+			air_experience = 25
+add_ideas = strategic_bombing_focus
+		}
+	}
+
+	#Focus for Tank Experiments
+	focus = {
+		id = Wisconsin_tankexperiments
+		icon = GFX_goal_generic_army_tanks
+		x = 82
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_buildthebadgerarmyammunitionplant 
+		}
+		prerequisite = { 
+			focus = Wisconsin_armyofwisconsin 
+		}
+		completion_reward = {
+			add_tech_bonus = {
+name = USA_tank_experiments
+uses = 1
+bonus = 1.0
+category = armor
+}
+		}
+	}
+
+	#Focus for Tank Destroyer Doctrine
+	focus = {
+		id = Wisconsin_tankdestroyerdoctrine
+		icon = GFX_goal_generic_army_artillery2
+		x = 81
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_tankexperiments }
+		mutually_exclusive = { focus = Wisconsin_mainbattletanks }
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+show_ideas_tooltip = tank_destroyer_board
+		}
+	}
+
+	#Focus for Wisconsin Maneuvers
+	focus = {
+		id = Wisconsin_wisconsinmaneuvers
+		icon = GFX_goal_generic_cavalry
+		x = 80
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_selectivetrainingact }
+		completion_reward = {
+			army_experience = 20
+add_tech_bonus = {
+name = USA_louisiana_maneuvers
+bonus = 1.0
+uses = 1
+category = land_doctrine
+}
+		}
+	}
+
+	#Focus for Main Battle Tanks
+	focus = {
+		id = Wisconsin_mainbattletanks
+		icon = GFX_focus_generic_combined_arms
+		x = 83
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_tankexperiments }
+		mutually_exclusive = { focus = Wisconsin_tankdestroyerdoctrine }
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+show_ideas_tooltip = detroit_arsenal
+		}
+	}
+
+	#Focus for Women's Armed Service Integration Act
+	focus = {
+		id = Wisconsin_womensarmedserviceintegrationact
+		icon = GFX_focus_generic_treaty
+		x = 80
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_armyofwisconsin }
+		available = {
+			congress_medium_support_trigger = yes
+		}
+		completion_reward = {
+			add_ideas = USA_womens_armed_service_integration_act
+		}
+	}
+
+	#Focus for Airborne Divisions
+	focus = {
+		id = Wisconsin_airbornedivisions
+		icon = GFX_focus_generic_paratrooper
+		x = 79
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_wisconsinmaneuvers }
+		completion_reward = {
+			add_ideas = USA_airborne_divisions
+		}
+	}
+
+	#Focus for Army of Wisconsin
+	focus = {
+		id = Wisconsin_armyofwisconsin
+		icon = GFX_focus_generic_little_entente
+		x = 81
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_wisconsinmaneuvers }
+		completion_reward = {
+			add_ideas = USA_army_of_the_united_states
+		}
+	}
+
+	#Focus for War Department
+	focus = {
+		id = Wisconsin_wardepartment
+		icon = GFX_goal_generic_army_doctrines
+		x = 89
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_aNIKcfAX }
+	}
+
+	#Focus for Selective Training Act
+	focus = {
+		id = Wisconsin_selectivetrainingact
+		icon = GFX_focus_generic_military_mission
+		x = 79
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_wardepartment }
+		available = {
+			if = {
+limit = {
+threat < 0.5
+has_war = no
+}
+congress_high_support_trigger = yes
+}
+else = {
+congress_low_support_trigger = yes
+}
+		}
+		completion_reward = {
+			if = {
+limit = {
+OR = {
+has_idea = disarmed_nation
+has_idea = volunteer_only
+}
+}
+add_ideas = limited_conscription
+}
+else = {
+add_political_power = 150
+}
+if = {
+limit = {
+has_war_support < 0.1
+}
+set_war_support = 0.1
+}
+if = {
+limit = {
+has_war_support < 0.4 
+}
+USA_congress_medium_opposition = yes
+}
+		}
+	}
+
+	#Focus for First Special Service Force
+	focus = {
+		id = Wisconsin_firstspecialserviceforce
+		icon = GFX_goal_generic_special_forces
+		x = 78
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_selectivetrainingact }
+		completion_reward = {
+			army_experience = 5
+add_tech_bonus = {
+name = special_bonus
+bonus = 1.0
+uses = 1
+technology = paratroopers
+technology = paratroopers2
+technology = tech_mountaineers
+technology = tech_mountaineers2
+technology = tech_engineers
+technology = tech_engineers2
+technology = tech_engineers3
+technology = tech_recon
+technology = tech_recon2
+technology = tech_recon3
+}
+		}
+	}
+
+	#Focus for War Plan Alpha
+	focus = {
+		id = Wisconsin_warplanalpha
+		icon = GFX_warplanalpha
+		x = 107
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_overthehills }
+		mutually_exclusive = { focus = Wisconsin_warplanepsilon }
+		completion_reward = {
+			ENG = {
+add_opinion_modifier = { target = USA modifier = war_plan_red }
+}
+unlock_decision_tooltip = { decision = USA_execute_war_plan_red show_effect_tooltip = yes show_modifiers = yes }
+		}
+	}
+
+	#Focus for War Plan Gamma
+	focus = {
+		id = Wisconsin_warplangamma
+		icon = GFX_warplangamma
+		x = 103
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_overthehills }
+		completion_reward = {
+			unlock_decision_tooltip = { decision = USA_execute_war_plan_gold show_effect_tooltip = yes show_modifiers = yes }
+		}
+	}
+
+	#Focus for War Plan Delta
+	focus = {
+		id = Wisconsin_warplandelta
+		icon = GFX_warplandelta
+		x = 101
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_overthehills }
+		completion_reward = {
+			GER = {
+add_opinion_modifier = { target = USA modifier = war_plan_black }
+}
+unlock_decision_tooltip = { decision = USA_execute_war_plan_black show_effect_tooltip = yes show_modifiers = yes }
+		}
+	}
+
+	#Focus for War Plans Division
+	focus = {
+		id = Wisconsin_warplansdivision
+		icon = GFX_goal_generic_position_armies
+		x = 107
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_aNIKcfAX }
+		completion_reward = {
+			custom_effect_tooltip = available_chief_of_army
+show_ideas_tooltip = walter_krueger
+unlock_decision_category_tooltip = USA_war_plans
+		}
+	}
+
+	#Focus for War Plan Beta
+	focus = {
+		id = Wisconsin_warplanbeta
+		icon = GFX_warplanbeta
+		x = 105
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_overthehills }
+		completion_reward = {
+			unlock_decision_tooltip = { decision = USA_execute_war_plan_crimson show_effect_tooltip = yes show_modifiers = yes }
+		}
+	}
+
+	#Focus for And Far Away
+	focus = {
+		id = Wisconsin_andfaraway
+		icon = GFX_andfaraway
+		x = 110
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_warplansdivision }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Honor the Confederacy
+	focus = {
+		id = Wisconsin_honortheconfederacy
+		icon = GFX_focus_usa_honor_the_confederacy
+		x = 75
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_everymanaking }
+		mutually_exclusive = { focus = Wisconsin_dishonortheconfederacy }
+	}
+
+	#Focus for Trotskyism
+	focus = {
+		id = Wisconsin_trotskyism
+		icon = GFX_goal_generic_attack_allies
+		x = 35
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_communisminwisconsin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reestablish the Gold Standard
+	focus = {
+		id = Wisconsin_reestablishthegoldstandard
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 20
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = Wisconsin_fdrsnewdeal }
+		available = {
+			has_government = democratic
+		}
+		completion_reward = {
+			add_ideas = SWI_gold_standard
+USA_congress_small_opposition = yes
+		}
+	}
+
+	#Focus for I Am Become Death, Destroyer of Worlds
+	focus = {
+		id = Wisconsin_iambecomedeathdestroyerofworlds
+		icon = GFX_iambecomedeathdestroyerofworlds
+		x = 99
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_weaponizenucleartechnology }
+		completion_reward = {
+			add_tech_bonus = {
+name = USA_manhattan_project
+bonus = 1.0
+uses = 1
+category = nuclear
+}
+add_tech_bonus = {
+name = USA_manhattan_project
+bonus = 1.0
+uses = 1
+category = nuclear
+}
+		}
+	}
+
+	#Focus for Neutrality act
+	focus = {
+		id = Wisconsin_neutralityact
+		icon = GFX_goal_generic_neutrality_focus
+		x = 20
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_fdrsnewdeal 
+			focus = Wisconsin_reestablishthegoldstandard 
+		}
+		mutually_exclusive = { focus = Wisconsin_limitedintervention }
+		available = {
+			congress_low_support_trigger = yes
+democratic > 0.95
+NOT = { has_idea_with_trait = fascist_demagogue }
+NOT = { has_idea_with_trait = communist_revolutionary }
+		}
+		completion_reward = {
+			add_political_power = 200
+add_ideas = USA_neutrality_act 
+add_war_support = -0.05
+if = {
+limit = {
+has_war_support < 0.4
+}
+USA_congress_small_support = yes
+}
+custom_effect_tooltip = USA_lend_lease_act_neutrality_tt
+hidden_effect = {
+news_event = { id = mtg_news.3 days = 3 random = 5 }
+}
+		}
+	}
+
+	#Focus for Communism In Wisconsin
+	focus = {
+		id = Wisconsin_communisminwisconsin
+		icon = GFX_goal_generic_war_with_comintern
+		x = 29
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_ourdairyland }
+		mutually_exclusive = { focus = Wisconsin_socialismsgrace }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Limited intervention
+	focus = {
+		id = Wisconsin_limitedintervention
+		icon = GFX_goal_generic_territory_or_war
+		x = 18
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_fdrsnewdeal 
+			focus = Wisconsin_reestablishthegoldstandard 
+		}
+		mutually_exclusive = { focus = Wisconsin_neutralityact }
+		available = {
+			congress_high_support_trigger = yes 
+has_government = democratic
+NOT = { has_idea_with_trait = fascist_demagogue }
+NOT = { has_idea_with_trait = communist_revolutionary }
+		}
+		completion_reward = {
+			hidden_effect = {
+every_other_country = {
+limit = {
+is_major = yes
+has_government = ROOT
+}
+ROOT = {
+add_ai_strategy = {
+type = support
+id = PREV
+value = 200
+}
+add_ai_strategy = {
+type = alliance
+id = PREV
+value = 200
+}
+}
+}
+}
+add_ideas = USA_limited_intervention
+USA_congress_medium_opposition = yes
+if = {
+limit = {
+has_war_support < 0.4
+has_war_support > 0.2
+}
+add_stability = -0.1
+}
+else_if = {
+limit = {
+has_war_support < 0.2
+}
+add_stability = -0.2
+}
+custom_effect_tooltip = USA_limited_intervention_tt
+hidden_effect = {
+news_event = { id = mtg_news.4 days = 3 }
+}
+		}
+	}
+
+	#Focus for Fair Labor Standards Act
+	focus = {
+		id = Wisconsin_fairlaborstandardsact
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 46
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_rebuilding }
+	}
+
+	#Focus for WPA
+	focus = {
+		id = Wisconsin_wpa
+		icon = GFX_goal_generic_production
+		x = 42
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_rebuilding }
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	#Focus for Scientific Research & Development Office
+	focus = {
+		id = Wisconsin_scientificresearchdevelopmentoffice
+		icon = GFX_focus_research2
+		x = 38
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_rebuilding }
+	}
+
+	#Focus for The Mosinee Revolution
+	focus = {
+		id = Wisconsin_themosineerevolution
+		icon = GFX_focus_generic_support_the_left_right
+		x = 35
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_trotskyism }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reach Out to the Ware Group
+	focus = {
+		id = Wisconsin_reachouttothewaregroup
+		icon = GFX_goal_generic_propaganda
+		x = 40
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_rebuilding }
+		available = {
+			OR = {
+has_government = democratic
+has_government = communism
+}
+		}
+	}
+
+	#Focus for Stalinism
+	focus = {
+		id = Wisconsin_stalinism
+		icon = GFX_goal_generic_attack_allies
+		x = 26
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_communisminwisconsin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for FDR's New Deal
+	focus = {
+		id = Wisconsin_fdrsnewdeal
+		icon = GFX_focus_generic_self_management
+		x = 18
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = Wisconsin_reestablishthegoldstandard }
+		available = {
+			has_government = democratic
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	#Focus for Accumulated Weatlh Tax Act
+	focus = {
+		id = Wisconsin_accumulatedweatlhtaxact
+		icon = GFX_focus_rom_parties_end
+		x = 43
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_suspendthepersecution }
+		available = {
+			OR = {
+has_idea_with_trait = communist_revolutionary
+has_government = communism
+}
+congress_high_support_trigger = yes
+		}
+		completion_reward = {
+			add_ideas = USA_accumulated_wealth_tax_act
+if = {
+limit = {
+communism > 0.3
+not = { has_government = communism }
+}
+USA_congress_medium_opposition = yes
+}
+else_if = {
+limit = {
+communism < 0.3
+not = { has_government = communism }
+}
+USA_congress_large_opposition = yes
+add_popularity = {
+ideology = communism
+popularity = 0.05
+}
+}
+USA_great_depression_level_down = yes
+		}
+	}
+
+	#Focus for Suspend the Persecution
+	focus = {
+		id = Wisconsin_suspendthepersecution
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 42
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_scientificresearchdevelopmentoffice 
+		}
+		prerequisite = { 
+			focus = Wisconsin_reachouttothewaregroup 
+		}
+		prerequisite = { 
+			focus = Wisconsin_wpa 
+		}
+		prerequisite = { 
+			focus = Wisconsin_wisconsinitehousingact 
+		}
+		prerequisite = { 
+			focus = Wisconsin_fairlaborstandardsact 
+		}
+		completion_reward = {
+			add_stability = -0.05
+custom_effect_tooltip = available_political_advisor
+    show_ideas_tooltip = earl_browder
+    if = {
+    limit = {
+    is_ai = yes
+    OR = {
+has_country_flag = USA_AI_RANDOM_COMMUNIST
+has_game_rule = {
+rule = USA_ai_behavior
+option = COMMUNIST
+}
+}
+    }
+    add_ideas = earl_browder
+    }
+		}
+	}
+
+	#Focus for Old Age Pension Act
+	focus = {
+		id = Wisconsin_oldagepensionact
+		icon = GFX_goal_generic_consumer_goods
+		x = 39
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_suspendthepersecution }
+		available = {
+			congress_medium_support_trigger = yes
+		}
+		completion_reward = {
+			add_stability = 0.1
+USA_congress_small_opposition = yes
+		}
+	}
+
+	#Focus for Union Representation Act
+	focus = {
+		id = Wisconsin_unionrepresentationact
+		icon = GFX_focus_usa_union_representation_act
+		x = 41
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_suspendthepersecution }
+		available = {
+			congress_high_support_trigger = yes
+OR = {
+has_idea_with_trait = communist_revolutionary
+has_government = communism
+}
+not = { has_completed_focus = USA_limited_intervention }
+not = { has_completed_focus = USA_neutrality_act }
+		}
+		completion_reward = {
+			if = {
+limit = {
+not = { congress_high_support_trigger = yes }
+}
+add_stability = -0.1
+}
+USA_return_majority = yes
+if = {
+limit = {
+has_country_flag = mtg_usa_civil_war_fascists_1
+not = {
+has_country_flag = mtg_usa_civil_war_fascists_2
+}
+}
+country_event = mtg_usa_civil_war_fascists.2
+custom_effect_tooltip = mtg_usa_civil_war_warning_tt
+}
+else_if = {
+limit = { not = { has_country_flag = mtg_usa_civil_war_fascists_1 } }
+country_event = mtg_usa_civil_war_fascists.1
+custom_effect_tooltip = mtg_usa_civil_war_warning_tt
+}
+hidden_effect = {
+if = {
+limit = {
+has_country_flag = mtg_usa_civil_war_fascists_2
+has_war = no
+not = { has_country_flag = mucwf4 }
+}
+country_event = mtg_usa_civil_war_fascists.4
+}
+}
+		}
+	}
+
+	#Focus for A New Era
+	focus = {
+		id = Wisconsin_anewera
+		icon = GFX_goal_generic_forceful_treaty
+		x = 69
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_amongtheruin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The United Party?
+	focus = {
+		id = Wisconsin_theunitedparty
+		icon = GFX_theunitedparty
+		x = 69
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_openelections }
+		mutually_exclusive = { 
+			focus = Wisconsin_aprogressiveapproach 
+			focus = Wisconsin_democraticlean 
+			focus = Wisconsin_republicanfervor 
+			focus = Wisconsin_hueyslegacy 
+			focus = Wisconsin_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Democratic Lean
+	focus = {
+		id = Wisconsin_democraticlean
+		icon = GFX_democraticlean
+		x = 67
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_openelections }
+		mutually_exclusive = { 
+			focus = Wisconsin_aprogressiveapproach 
+			focus = Wisconsin_theunitedparty 
+			focus = Wisconsin_republicanfervor 
+			focus = Wisconsin_hueyslegacy 
+			focus = Wisconsin_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Republican Fervor
+	focus = {
+		id = Wisconsin_republicanfervor
+		icon = GFX_republicanfervor
+		x = 71
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_openelections }
+		mutually_exclusive = { 
+			focus = Wisconsin_aprogressiveapproach 
+			focus = Wisconsin_democraticlean 
+			focus = Wisconsin_theunitedparty 
+			focus = Wisconsin_hueyslegacy 
+			focus = Wisconsin_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Huey's Legacy
+	focus = {
+		id = Wisconsin_hueyslegacy
+		icon = GFX_hueyslegacy
+		x = 73
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_rigtheelectionsfortheunionists }
+		mutually_exclusive = { 
+			focus = Wisconsin_aprogressiveapproach 
+			focus = Wisconsin_democraticlean 
+			focus = Wisconsin_theunitedparty 
+			focus = Wisconsin_republicanfervor 
+			focus = Wisconsin_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Progressive Approach
+	focus = {
+		id = Wisconsin_aprogressiveapproach
+		icon = GFX_aprogressiveapproach
+		x = 65
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_rigtheelectionsfortheprogressives }
+		mutually_exclusive = { 
+			focus = Wisconsin_democraticlean 
+			focus = Wisconsin_theunitedparty 
+			focus = Wisconsin_republicanfervor 
+			focus = Wisconsin_hueyslegacy 
+			focus = Wisconsin_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Open Elections
+	focus = {
+		id = Wisconsin_openelections
+		icon = GFX_openelections
+		x = 69
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_keepingthetorchlit }
+		mutually_exclusive = { 
+			focus = Wisconsin_rigtheelectionsfortheprogressives 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_rigtheelectionsfortheunionists 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Keeping the Torch Lit
+	focus = {
+		id = Wisconsin_keepingthetorchlit
+		icon = GFX_goal_support_democracy
+		x = 69
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_leadershipvacancy }
+		mutually_exclusive = { 
+			focus = Wisconsin_awisconsiniteking 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_anewdawn 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_ourdairyland 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Business Support
+	focus = {
+		id = Wisconsin_businesssupport
+		icon = GFX_goal_tripartite_pact
+		x = 72
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_republicanfervor }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A New Constitution
+	focus = {
+		id = Wisconsin_anewconstitution
+		icon = GFX_anewconstitution
+		x = 64
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_aprogressiveapproach }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Social Security
+	focus = {
+		id = Wisconsin_socialsecurity
+		icon = GFX_focus_generic_concessions
+		x = 66
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_democraticlean }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Glorify the Founding Fathers
+	focus = {
+		id = Wisconsin_glorifythefoundingfathers
+		icon = GFX_glorifythefoundingfathers
+		x = 70
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_thewisconsinitedream }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Every Man A King
+	focus = {
+		id = Wisconsin_everymanaking
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 74
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_hueyslegacy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Dishonor the Confederacy
+	focus = {
+		id = Wisconsin_dishonortheconfederacy
+		icon = GFX_dishonortheconfederacy
+		x = 73
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_everymanaking 
+			focus = Wisconsin_businesssupport 
+		}
+		mutually_exclusive = { focus = Wisconsin_honortheconfederacy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Freer Constitution
+	focus = {
+		id = Wisconsin_afreerconstitution
+		icon = GFX_focus_generic_treaty
+		x = 68
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_theunitedparty }
+		mutually_exclusive = { focus = Wisconsin_followtheconstitutiontotheletter }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Follow the Constitution to the Letter
+	focus = {
+		id = Wisconsin_followtheconstitutiontotheletter
+		icon = GFX_goal_generic_demand_territory
+		x = 70
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_theunitedparty }
+		mutually_exclusive = { focus = Wisconsin_afreerconstitution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Dishonor Marx
+	focus = {
+		id = Wisconsin_dishonormarx
+		icon = GFX_dishonormarx
+		x = 65
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_anewconstitution 
+			focus = Wisconsin_socialsecurity 
+		}
+		mutually_exclusive = { focus = Wisconsin_GgyDYmOM }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Honor Marx
+	focus = {
+		id = Wisconsin_honormarx
+		icon = GFX_honormarx
+		x = 63
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_anewconstitution }
+		mutually_exclusive = { focus = Wisconsin_dishonormarx }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Of the People For the People By the People
+	focus = {
+		id = Wisconsin_ofthepeopleforthepeoplebythepeople
+		icon = GFX_goal_generic_national_unity
+		x = 69
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_afreerconstitution 
+			focus = Wisconsin_followtheconstitutiontotheletter 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Wisconsinite Dream
+	focus = {
+		id = Wisconsin_thewisconsinitedream
+		icon = GFX_thewisconsinitedream
+		x = 69
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_honormarx 
+			focus = Wisconsin_dishonormarx 
+			focus = Wisconsin_ofthepeopleforthepeoplebythepeople 
+			focus = Wisconsin_dishonortheconfederacy 
+			focus = Wisconsin_honortheconfederacy 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Wisconsinite Propaganda Campaigns
+	focus = {
+		id = Wisconsin_wisconsinitepropagandacampaigns
+		icon = GFX_wisconsinitepropagandacampaigns
+		x = 68
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_thewisconsinitedream }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Build the Badger Army Ammunition Plant
+	focus = {
+		id = Wisconsin_buildthebadgerarmyammunitionplant
+		icon = GFX_buildthebadgerarmyammunitionplant
+		x = 82
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_wardepartment }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for nothing, just something that'll help me see stuff to the furthest extent
+	focus = {
+		id = Wisconsin_nothingjustsomethingthatllhelpmeseestufftothefurthestextent
+		icon = GFX_focus_smiling_buddha
+		x = 150
+		y = 28
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Protectionist Tariffs
+	focus = {
+		id = Wisconsin_protectionisttariffs
+		icon = GFX_goal_generic_forceful_treaty
+		x = 71
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_businesssupport }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Education Funding
+	focus = {
+		id = Wisconsin_educationfunding
+		icon = GFX_focus_research2
+		x = 67
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_socialsecurity }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Forward
+	focus = {
+		id = Wisconsin_forward
+		icon = GFX_forward
+		x = 69
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_wisconsinitepropagandacampaigns 
+		}
+		prerequisite = { 
+			focus = Wisconsin_glorifythefoundingfathers 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Forced French
+	focus = {
+		id = Wisconsin_forcedfrench
+		icon = GFX_forcedfrench
+		x = 54
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_longlivetheking }
+		mutually_exclusive = { focus = Wisconsin_embracefrenchheritage }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Befriend Iowa
+	focus = {
+		id = Wisconsin_befriendiowa
+		icon = GFX_befriendiowa
+		x = 51
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_reachouttoqubec }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reach Out to Québec
+	focus = {
+		id = Wisconsin_reachouttoqubec
+		icon = GFX_goal_tfv_can_compromise_with_quebec
+		x = 51
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_embracefrenchheritage }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Teach French Language and Culture in Schools
+	focus = {
+		id = Wisconsin_teachfrenchlanguageandcultureinschools
+		icon = GFX_teachfrenchlanguageandcultureinschools
+		x = 49
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_embracefrenchheritage }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Wisconsinite King?
+	focus = {
+		id = Wisconsin_awisconsiniteking
+		icon = GFX_awisconsiniteking
+		x = 55
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_leadershipvacancy }
+		mutually_exclusive = { 
+			focus = Wisconsin_keepingthetorchlit 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_anewdawn 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_ourdairyland 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Adopt French as an Official Language
+	focus = {
+		id = Wisconsin_adoptfrenchasanofficiallanguage
+		icon = GFX_focus_generic_treaty
+		x = 49
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_teachfrenchlanguageandcultureinschools }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Le Pacte Français
+	focus = {
+		id = Wisconsin_lepactefranais
+		icon = GFX_goal_tfv_can_forced_quebec_conscription
+		x = 50
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_adoptfrenchasanofficiallanguage 
+		}
+		prerequisite = { 
+			focus = Wisconsin_befriendiowa 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Teachings of Napoleon
+	focus = {
+		id = Wisconsin_teachingsofnapoleon
+		icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
+		x = 54
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_forcedfrench }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Incentivised Breeding
+	focus = {
+		id = Wisconsin_incentivisedbreeding
+		icon = GFX_incentivisedbreeding
+		x = 17
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_germanheritage }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Remove Undesirables
+	focus = {
+		id = Wisconsin_removeundesirables
+		icon = GFX_goal_generic_secret_weapon
+		x = 16
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_eugenicsprogram 
+		}
+		prerequisite = { 
+			focus = Wisconsin_incentivisedbreeding 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Deregulate the Banking Sector
+	focus = {
+		id = Wisconsin_deregulatethebankingsector
+		icon = GFX_focus_generic_industry_2
+		x = 13
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_nationalprosperityprogram }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for National Employment Strategy
+	focus = {
+		id = Wisconsin_nationalemploymentstrategy
+		icon = GFX_focus_generic_industry_3
+		x = 12
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_privatizestateownedcompanies 
+		}
+		prerequisite = { 
+			focus = Wisconsin_deregulatethebankingsector 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Demand Northern Illinois
+	focus = {
+		id = Wisconsin_demandnorthernillinois
+		icon = GFX_goal_generic_alliance
+		x = 16
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_lebensraum }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Demand Minnesota's Eastern Half
+	focus = {
+		id = Wisconsin_demandminnesotaseasternhalf
+		icon = GFX_goal_generic_alliance
+		x = 12
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_lebensraum }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Großwisconsin
+	focus = {
+		id = Wisconsin_growisconsin
+		icon = GFX_growisconsin
+		x = 14
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_demandnorthernillinois 
+		}
+		prerequisite = { 
+			focus = Wisconsin_demandminnesotaseasternhalf 
+		}
+		prerequisite = { 
+			focus = Wisconsin_anschlussofupperpeninsula 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Lebensraum
+	focus = {
+		id = Wisconsin_lebensraum
+		icon = GFX_goal_demand_sudetenland
+		x = 14
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_wisconsinfirst }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Eugenics Program
+	focus = {
+		id = Wisconsin_eugenicsprogram
+		icon = GFX_goal_generic_CAS
+		x = 15
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_germanheritage }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Privatize State-Owned Companies
+	focus = {
+		id = Wisconsin_privatizestateownedcompanies
+		icon = GFX_focus_generic_industry_1
+		x = 11
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_nationalprosperityprogram }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Bund
+	focus = {
+		id = Wisconsin_thebund
+		icon = GFX_thebund
+		x = 19
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_coalescence }
+		mutually_exclusive = { focus = Wisconsin_thesilvershirts }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for German Heritage
+	focus = {
+		id = Wisconsin_germanheritage
+		icon = GFX_focus_ger_oppose_hitler
+		x = 16
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_wisconsinfirst }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for National Prosperity Program
+	focus = {
+		id = Wisconsin_nationalprosperityprogram
+		icon = GFX_goal_generic_consumer_goods
+		x = 12
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_wisconsinfirst }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Eliminate the Vote
+	focus = {
+		id = Wisconsin_eliminatethevote
+		icon = GFX_eliminatethevote
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_recreatethehuacinwisconsin }
+		mutually_exclusive = { focus = Wisconsin_voterregistrationact }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Rig the Elections for the Unionists
+	focus = {
+		id = Wisconsin_rigtheelectionsfortheunionists
+		icon = GFX_focus_usa_voter_registration_act
+		x = 73
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_keepingthetorchlit }
+		mutually_exclusive = { 
+			focus = Wisconsin_rigtheelectionsfortheprogressives 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_openelections 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Rig the Elections for the Progressives
+	focus = {
+		id = Wisconsin_rigtheelectionsfortheprogressives
+		icon = GFX_focus_usa_voter_registration_act
+		x = 65
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_keepingthetorchlit }
+		mutually_exclusive = { 
+			focus = Wisconsin_openelections 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_rigtheelectionsfortheunionists 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Long Live the King
+	focus = {
+		id = Wisconsin_longlivetheking
+		icon = GFX_longlivetheking
+		x = 52
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_lepactefranais 
+			focus = Wisconsin_demandcooperationbetweenfrenchpeoples 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Weaponize Nuclear Technology
+	focus = {
+		id = Wisconsin_weaponizenucleartechnology
+		icon = GFX_focus_wonderweapons
+		x = 99
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_nuclearproliferation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Nuclear Proliferation
+	focus = {
+		id = Wisconsin_nuclearproliferation
+		icon = GFX_nuclearproliferation
+		x = 99
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_rumorsofnuclearreactors }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Rumors of Nuclear Reactors
+	focus = {
+		id = Wisconsin_rumorsofnuclearreactors
+		icon = GFX_rumorsofnuclearreactors
+		x = 99
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_wardepartment }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Wisconsinite Kaiser
+	focus = {
+		id = Wisconsin_thewisconsinitekaiser
+		icon = GFX_focus_ger_return_of_the_kaiser
+		x = 58
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_awisconsiniteking }
+		mutually_exclusive = { focus = Wisconsin_invitepascalgastonclermonttothethrone }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Never Another Versailles
+	focus = {
+		id = Wisconsin_neveranotherversailles
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 60
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_thewisconsinitekaiser }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Denounce the Geneva Conventions
+	focus = {
+		id = Wisconsin_denouncethegenevaconventions
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 56
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_thewisconsinitekaiser }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Bismarkian Principles
+	focus = {
+		id = Wisconsin_bismarkianprinciples
+		icon = GFX_bismarkianprinciples
+		x = 58
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_thewisconsinitekaiser }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Anti-Fascist Bund
+	focus = {
+		id = Wisconsin_theantifascistbund
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 57
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_thewisconsinitekaiser }
+		mutually_exclusive = { focus = Wisconsin_doawaywiththebund }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Do Away With the Bund
+	focus = {
+		id = Wisconsin_doawaywiththebund
+		icon = GFX_doawaywiththebund
+		x = 59
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_thewisconsinitekaiser }
+		mutually_exclusive = { focus = Wisconsin_theantifascistbund }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Gott Mit Uns
+	focus = {
+		id = Wisconsin_gottmituns
+		icon = GFX_focus_ger_revive_kaiserreich
+		x = 58
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_doawaywiththebund }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Over the Hills
+	focus = {
+		id = Wisconsin_overthehills
+		icon = GFX_overthehills
+		x = 104
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_warplansdivision }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Silver Shirts
+	focus = {
+		id = Wisconsin_thesilvershirts
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 21
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_coalescence }
+		mutually_exclusive = { focus = Wisconsin_thebund }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Vorwärts
+	focus = {
+		id = Wisconsin_vorwrts
+		icon = GFX_vorwrts
+		x = 58
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_gottmituns }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for War Plan Epsilon
+	focus = {
+		id = Wisconsin_warplanepsilon
+		icon = GFX_warplanepsilon
+		x = 110
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_andfaraway }
+		mutually_exclusive = { focus = Wisconsin_warplanalpha }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for War Plan Zeta
+	focus = {
+		id = Wisconsin_warplanzeta
+		icon = GFX_warplanzeta
+		x = 113
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_andfaraway }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Voter Registration Act
+	focus = {
+		id = Wisconsin_voterregistrationact
+		icon = GFX_focus_usa_voter_registration_act
+		x = 9
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_recreatethehuacinwisconsin }
+		mutually_exclusive = { focus = Wisconsin_eliminatethevote }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Recreate the HUAC in Wisconsin
+	focus = {
+		id = Wisconsin_recreatethehuacinwisconsin
+		icon = GFX_goal_generic_dangerous_deal
+		x = 8
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_wisconsinfirst }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Our Dairyland
+	focus = {
+		id = Wisconsin_ourdairyland
+		icon = GFX_goal_support_communism
+		x = 35
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_leadershipvacancy }
+		mutually_exclusive = { 
+			focus = Wisconsin_keepingthetorchlit 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_awisconsiniteking 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_anewdawn 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Work Ethic
+	focus = {
+		id = Wisconsin_workethic
+		icon = GFX_workethic
+		x = 120
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_openthefloodgates 
+		}
+		prerequisite = { 
+			focus = Wisconsin_researchboosts 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Research Boosts
+	focus = {
+		id = Wisconsin_researchboosts
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 123
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_theforwardproject }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Civilian Factories II
+	focus = {
+		id = Wisconsin_civilianfactoriesii
+		icon = GFX_focus_generic_industry_2
+		x = 125
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_civilianfactories }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Military Factories III
+	focus = {
+		id = Wisconsin_militaryfactoriesiii
+		icon = GFX_focus_generic_industry_3
+		x = 121
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_militaryfactoriesii }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Refineries III
+	focus = {
+		id = Wisconsin_refineriesiii
+		icon = GFX_refineriesiii
+		x = 123
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_refineriesii }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Civilian Factories III
+	focus = {
+		id = Wisconsin_civilianfactoriesiii
+		icon = GFX_focus_generic_industry_3
+		x = 125
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_civilianfactoriesii }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Forward Project
+	focus = {
+		id = Wisconsin_theforwardproject
+		icon = GFX_goal_generic_scientific_exchange
+		x = 123
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_militaryfactoriesiii 
+		}
+		prerequisite = { 
+			focus = Wisconsin_refineriesiii 
+		}
+		prerequisite = { 
+			focus = Wisconsin_civilianfactoriesiii 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Military Factories II
+	focus = {
+		id = Wisconsin_militaryfactoriesii
+		icon = GFX_focus_generic_industry_2
+		x = 121
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_militaryfactories }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Refineries II
+	focus = {
+		id = Wisconsin_refineriesii
+		icon = GFX_refineriesii
+		x = 123
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_refineries }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Refineries
+	focus = {
+		id = Wisconsin_refineries
+		icon = GFX_refineries
+		x = 123
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_productionfocus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Civilian Factories
+	focus = {
+		id = Wisconsin_civilianfactories
+		icon = GFX_focus_generic_industry_1
+		x = 125
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_productionfocus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Open the Floodgates
+	focus = {
+		id = Wisconsin_openthefloodgates
+		icon = GFX_openthefloodgates
+		x = 117
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_ethanoltreatment 
+		}
+		prerequisite = { 
+			focus = Wisconsin_agriculturalcurriculum 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A New Dawn
+	focus = {
+		id = Wisconsin_anewdawn
+		icon = GFX_focus_ger_reichskommisariats
+		x = 14
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_leadershipvacancy }
+		mutually_exclusive = { 
+			focus = Wisconsin_keepingthetorchlit 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_awisconsiniteking 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_ 
+		}
+		mutually_exclusive = { 
+			focus = Wisconsin_ourdairyland 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Wisconsin First
+	focus = {
+		id = Wisconsin_wisconsinfirst
+		icon = GFX_goal_generic_political_pressure
+		x = 14
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_anewdawn }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Coalescence
+	focus = {
+		id = Wisconsin_coalescence
+		icon = GFX_goal_generic_national_unity
+		x = 20
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_wisconsinfirst }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Eliminate the Competition
+	focus = {
+		id = Wisconsin_eliminatethecompetition
+		icon = GFX_goal_generic_secret_weapon
+		x = 8
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_eliminatethevote }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Anschluss of Upper Peninsula
+	focus = {
+		id = Wisconsin_anschlussofupperpeninsula
+		icon = GFX_goal_generic_alliance
+		x = 14
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_lebensraum }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Twin Cities
+	focus = {
+		id = Wisconsin_twincities
+		icon = GFX_goal_generic_war_with_comintern
+		x = 30
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_spreadtherevolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Superior
+	focus = {
+		id = Wisconsin_superior
+		icon = GFX_goal_generic_war_with_comintern
+		x = 34
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_spreadtherevolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Democratic Socialism
+	focus = {
+		id = Wisconsin_democraticsocialism
+		icon = GFX_focus_generic_soviet_politics
+		x = 42
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_oldagepensionact 
+		}
+		prerequisite = { 
+			focus = Wisconsin_unionrepresentationact 
+		}
+		prerequisite = { 
+			focus = Wisconsin_accumulatedweatlhtaxact 
+		}
+		prerequisite = { 
+			focus = Wisconsin_FsZypndc 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Indianapolis
+	focus = {
+		id = Wisconsin_indianapolis
+		icon = GFX_goal_generic_war_with_comintern
+		x = 33
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_spreadtherevolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Des Moines
+	focus = {
+		id = Wisconsin_desmoines
+		icon = GFX_goal_generic_war_with_comintern
+		x = 31
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_spreadtherevolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Spread the Revolution
+	focus = {
+		id = Wisconsin_spreadtherevolution
+		icon = GFX_goal_generic_dangerous_deal
+		x = 35
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_themosineerevolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Combined Syndicates of the Midwest
+	focus = {
+		id = Wisconsin_thecombinedsyndicatesofthemidwest
+		icon = GFX_goal_support_fourth_int
+		x = 32
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_twincities 
+		}
+		prerequisite = { 
+			focus = Wisconsin_chicago 
+		}
+		prerequisite = { 
+			focus = Wisconsin_superior 
+		}
+		prerequisite = { 
+			focus = Wisconsin_desmoines 
+		}
+		prerequisite = { 
+			focus = Wisconsin_indianapolis 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Foreign Policy
+	focus = {
+		id = Wisconsin_foreignpolicy
+		icon = GFX_goal_generic_propaganda
+		x = 105
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_anewera }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Dairyland
+	focus = {
+		id = Wisconsin_dairyland
+		icon = GFX_dairyland
+		x = 115
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_agriculturalfocus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The USSW
+	focus = {
+		id = Wisconsin_theussw
+		icon = GFX_goal_generic_national_unity
+		x = 42
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_democraticsocialism }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Industrial Effort
+	focus = {
+		id = Wisconsin_industrialeffort
+		icon = GFX_goal_generic_production2
+		x = 120
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_foreignpolicy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Production Focus
+	focus = {
+		id = Wisconsin_productionfocus
+		icon = GFX_goal_generic_construct_civilian
+		x = 123
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_industrialeffort }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Rebuilding
+	focus = {
+		id = Wisconsin_rebuilding
+		icon = GFX_goal_generic_soviet_construction
+		x = 42
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_ourdairyland }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Wisconsinite Housing Act
+	focus = {
+		id = Wisconsin_wisconsinitehousingact
+		icon = GFX_goal_generic_construct_civilian
+		x = 44
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_rebuilding }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Better Methods
+	focus = {
+		id = Wisconsin_bettermethods
+		icon = GFX_bettermethods
+		x = 119
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_nooneunfed 
+			focus = Wisconsin_thebestornothing 
+		}
+		mutually_exclusive = { focus = Wisconsin_gmos }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Military Factories
+	focus = {
+		id = Wisconsin_militaryfactories
+		icon = GFX_focus_generic_industry_1
+		x = 121
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_productionfocus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Agricultural Curriculum
+	focus = {
+		id = Wisconsin_agriculturalcurriculum
+		icon = GFX_focus_generic_military_academy
+		x = 118
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_farmingsubsidies }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for GMO's
+	focus = {
+		id = Wisconsin_gmos
+		icon = GFX_gmos
+		x = 117
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_nooneunfed 
+			focus = Wisconsin_thebestornothing 
+		}
+		mutually_exclusive = { focus = Wisconsin_bettermethods }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Best or Nothing
+	focus = {
+		id = Wisconsin_thebestornothing
+		icon = GFX_thebestornothing
+		x = 119
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_agriculturalfocus }
+		mutually_exclusive = { focus = Wisconsin_nooneunfed }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for No One Unfed
+	focus = {
+		id = Wisconsin_nooneunfed
+		icon = GFX_nooneunfed
+		x = 117
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_agriculturalfocus }
+		mutually_exclusive = { focus = Wisconsin_thebestornothing }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Farming Subsidies
+	focus = {
+		id = Wisconsin_farmingsubsidies
+		icon = GFX_farmingsubsidies
+		x = 117
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Wisconsin_dairyland 
+			focus = Wisconsin_gmos 
+			focus = Wisconsin_bettermethods 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Ethanol Treatment
+	focus = {
+		id = Wisconsin_ethanoltreatment
+		icon = GFX_ethanoltreatment
+		x = 116
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_farmingsubsidies }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Desegregate the Armed Forces
+	focus = {
+		id = Wisconsin_desegregatethearmedforces
+		icon = GFX_desegregatethearmedforces
+		x = 45
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_suspendthepersecution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Chicago
+	focus = {
+		id = Wisconsin_chicago
+		icon = GFX_goal_generic_war_with_comintern
+		x = 35
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Wisconsin_spreadtherevolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }

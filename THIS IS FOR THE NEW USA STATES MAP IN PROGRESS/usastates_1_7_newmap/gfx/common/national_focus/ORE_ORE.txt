@@ -1,0 +1,244 @@
+focus_tree = {
+	id = ORE
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ORE
+		}
+	}
+	#Focus for Road Repairs
+	focus = {
+		id = ORE_roadrepairs
+		icon = GFX_goal_generic_construction2
+		x = 6
+		y = 2
+		cost = 4
+		available_if_capitulated = yes
+		prerequisite = { focus = ORE_issuesoftheday }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Issues of The Day
+	focus = {
+		id = ORE_issuesoftheday
+		icon = GFX_goal_anschluss
+		x = 6
+		y = 1
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = ORE_thestateoforegon }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 150
+		}
+	}
+
+	#Focus for Submit to Reed
+	focus = {
+		id = ORE_submittoreed
+		icon = GFX_focus_eng_crush_the_dream
+		x = 3
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ORE_unifyingoregon }
+		mutually_exclusive = { 
+			focus = ORE_submittobaker 
+		}
+		mutually_exclusive = { 
+			focus = ORE_staythecourse 
+		}
+		mutually_exclusive = { 
+			focus = ORE_liberalizetheregmie 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology =communism
+popularity = 020
+184 = { set_demilitarized_zone = no }
+53 = { set_demilitarized_zone = no }
+54 = { set_demilitarized_zone = no }
+181 = { set_demilitarized_zone = no }
+174 = { set_demilitarized_zone = no }
+}
+		}
+	}
+
+	#Focus for Drill the Troops
+	focus = {
+		id = ORE_drillthetroops
+		icon = GFX_goal_rhineland
+		x = 8
+		y = 2
+		cost = 4
+		available_if_capitulated = yes
+		prerequisite = { focus = ORE_issuesoftheday }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience= 15
+		}
+	}
+
+	#Focus for Industrialization
+	focus = {
+		id = ORE_industrialization
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 4
+		y = 2
+		cost = 4
+		available_if_capitulated = yes
+		prerequisite = { focus = ORE_issuesoftheday }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Submit to Baker
+	focus = {
+		id = ORE_submittobaker
+		icon = GFX_focus_CZE_german_puppet
+		x = 9
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ORE_unifyingoregon }
+		mutually_exclusive = { 
+			focus = ORE_submittoreed 
+		}
+		mutually_exclusive = { 
+			focus = ORE_staythecourse 
+		}
+		mutually_exclusive = { 
+			focus = ORE_liberalizetheregmie 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Unifying Oregon
+	focus = {
+		id = ORE_unifyingoregon
+		icon = GFX_goal_poland_goal
+		x = 6
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ORE_industrialization 
+		}
+		prerequisite = { 
+			focus = ORE_drillthetroops 
+		}
+		prerequisite = { 
+			focus = ORE_roadrepairs 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The State of Oregon
+	focus = {
+		id = ORE_thestateoforegon
+		icon = GFX_goal_generic_propaganda
+		x = 6
+		y = 0
+		cost = 1
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Liberalize the Regmie
+	focus = {
+		id = ORE_liberalizetheregmie
+		icon = GFX_goal_support_democracy
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ORE_unifyingoregon }
+		mutually_exclusive = { 
+			focus = ORE_staythecourse 
+		}
+		mutually_exclusive = { 
+			focus = ORE_submittoreed 
+		}
+		mutually_exclusive = { 
+			focus = ORE_submittobaker 
+		}
+		mutually_exclusive = { 
+			focus = ORE_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Stay the Course
+	focus = {
+		id = ORE_staythecourse
+		icon = GFX_goal_generic_small_arms
+		x = 7
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ORE_unifyingoregon }
+		mutually_exclusive = { 
+			focus = ORE_submittobaker 
+		}
+		mutually_exclusive = { 
+			focus = ORE_submittoreed 
+		}
+		mutually_exclusive = { 
+			focus = ORE_ 
+		}
+		mutually_exclusive = { 
+			focus = ORE_liberalizetheregmie 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Red Star over Oregon
+	focus = {
+		id = ORE_redstaroveroregon
+		icon = GFX_focus_YUG_pan_slavic_congress
+		x = 3
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Nationalize Key Industies
+	focus = {
+		id = ORE_nationalizekeyindusties
+		icon = GFX_goal_generic_production2
+		x = 1
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ORE_redstaroveroregon }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }

@@ -1,0 +1,11 @@
+focus_tree = {
+	id = QUE
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = Quebec
+		}
+	}
+#End of focuses 
+ }

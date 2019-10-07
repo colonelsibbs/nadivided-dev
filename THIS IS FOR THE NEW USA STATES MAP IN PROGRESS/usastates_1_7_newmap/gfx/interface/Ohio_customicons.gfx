@@ -1,0 +1,7 @@
+spriteTypes = { 
+##Icon For: 959439
+ SpriteType = { 
+ name = "GFX_theoctamancoup" 
+ texturefile = "gfx/interface/goals/GFX_theoctamancoup.tga" 
+ } 
+ }

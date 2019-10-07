@@ -1,0 +1,709 @@
+focus_tree = {
+	id = SNH
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = New Hampshire
+		}
+	}
+	#Focus for Construction Effort
+	focus = {
+		id = New Hampshire_constructioneffort
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 11
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_overhaulproduction }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = SNH
+ }
+		}
+	}
+
+	#Focus for Reform The Military
+	focus = {
+		id = New Hampshire_reformthemilitary
+		icon = GFX_goal_generic_small_arms
+		x = 5
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_newhampshirefirst }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience= 15navy_experience= 5air_experience= 5add_manpower= 1000
+		}
+	}
+
+	#Focus for New Hampshire First
+	focus = {
+		id = New Hampshire_newhampshirefirst
+		icon = GFX_newhampshirefirst
+		x = 10
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 150
+		}
+	}
+
+	#Focus for Embrace Democracy
+	focus = {
+		id = New Hampshire_embracedemocracy
+		icon = GFX_goal_support_democracy
+		x = 14
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_politicallyalign }
+		mutually_exclusive = { 
+			focus = New Hampshire_embracefascism 
+		}
+		mutually_exclusive = { 
+			focus = New Hampshire_embracecommunism 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_political_party= { 
+ideology = democratic 
+popularity = 0.8 
+}
+		}
+	}
+
+	#Focus for Release War Propaganda
+	focus = {
+		id = New Hampshire_releasewarpropaganda
+		icon = GFX_goal_generic_radar
+		x = 5
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_ensureleadercompetence }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_war_support= 15add_manpower= 2000
+		}
+	}
+
+	#Focus for Live Free Or Die
+	focus = {
+		id = New Hampshire_livefreeordie
+		icon = GFX_livefreeordie
+		x = 1
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_expandrecruitment }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			has_defensive_war= yesadd_manpower= 8000set_war_support= 100random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = SNH
+ }
+random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = SNH
+ }
+random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = dockyard
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = dockyard
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = SNH
+ }
+		}
+	}
+
+	#Focus for Politically Align
+	focus = {
+		id = New Hampshire_politicallyalign
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 16
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Hampshire_increasepublicrelations 
+		}
+		prerequisite = { 
+			focus = New Hampshire_rootoutcorruption 
+		}
+		mutually_exclusive = { focus = New Hampshire_stayneutral }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power= 50add_stability= -0.05
+		}
+	}
+
+	#Focus for Stay Neutral
+	focus = {
+		id = New Hampshire_stayneutral
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 14
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Hampshire_rootoutcorruption 
+		}
+		prerequisite = { 
+			focus = New Hampshire_increasepublicrelations 
+		}
+		mutually_exclusive = { focus = New Hampshire_politicallyalign }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability= 0.15set_political_party= { 
+ideology = neutral 
+popularity = 1.00 
+}
+		}
+	}
+
+	#Focus for Increase Public Relations
+	focus = {
+		id = New Hampshire_increasepublicrelations
+		icon = GFX_goal_generic_improve_relations
+		x = 16
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_investigatethegovernment }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability= 0.10
+		}
+	}
+
+	#Focus for Claim The Portsmouth Naval Shipyard
+	focus = {
+		id = New Hampshire_claimtheportsmouthnavalshipyard
+		icon = GFX_goal_generic_forceful_treaty
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_releasewarpropaganda }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_state_claim= 831
+		}
+	}
+
+	#Focus for Armament Effort
+	focus = {
+		id = New Hampshire_armamenteffort
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 9
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_ZiEXCfVU }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = SNH
+ }
+		}
+	}
+
+	#Focus for Construction Effort
+	focus = {
+		id = New Hampshire_constructioneffort
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 11
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_constructioneffort }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = SNH
+ }
+		}
+	}
+
+	#Focus for Infrastructure Effort
+	focus = {
+		id = New Hampshire_infrastructureeffort
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 10
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Hampshire_armamenteffort 
+			focus = New Hampshire_constructioneffort 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state= {
+add_building_construction = {type = infrastructurelevel = 5
+instant_build = yes}
+
+}
+random_owned_controlled_state= {
+add_building_construction = {type = infrastructurelevel = 5
+instant_build = yes}
+
+}
+		}
+	}
+
+	#Focus for Root Out Corruption
+	focus = {
+		id = New Hampshire_rootoutcorruption
+		icon = GFX_goal_generic_neutrality_focus
+		x = 14
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_investigatethegovernment }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability= 0.05add_political_power= 50
+		}
+	}
+
+	#Focus for Armament Effort
+	focus = {
+		id = New Hampshire_armamenteffort
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 9
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_overhaulproduction }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = SNH
+ }
+		}
+	}
+
+	#Focus for Investigate The Government
+	focus = {
+		id = New Hampshire_investigatethegovernment
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 15
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_newhampshirefirst }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability= 0.05
+		}
+	}
+
+	#Focus for Expand Recruitment
+	focus = {
+		id = New Hampshire_expandrecruitment
+		icon = GFX_focus_generic_little_entente
+		x = 1
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_releasewarpropaganda }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_manpower= 4000
+		}
+	}
+
+	#Focus for First Strike
+	focus = {
+		id = New Hampshire_firststrike
+		icon = GFX_goal_generic_major_war
+		x = 4
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Hampshire_warofopposites 
+		}
+		prerequisite = { 
+			focus = New Hampshire_claimtheportsmouthnavalshipyard 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = SMA
+}
+		}
+	}
+
+	#Focus for Ensure Leader Competence
+	focus = {
+		id = New Hampshire_ensureleadercompetence
+		icon = GFX_focus_generic_military_mission
+		x = 5
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_reformthemilitary }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_army_leader = {add_attack= 1add_defense= 1add_skill_level= 3}
+		}
+	}
+
+	#Focus for Overhaul Production
+	focus = {
+		id = New Hampshire_overhaulproduction
+		icon = GFX_goal_generic_construction2
+		x = 10
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_newhampshirefirst }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = dockyard
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = dockyard
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Embrace Fascism
+	focus = {
+		id = New Hampshire_embracefascism
+		icon = GFX_goal_support_fascism
+		x = 18
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_politicallyalign }
+		mutually_exclusive = { 
+			focus = New Hampshire_embracedemocracy 
+		}
+		mutually_exclusive = { 
+			focus = New Hampshire_embracecommunism 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_political_party= { 
+ideology = fascist 
+popularity = 0.8 
+}
+		}
+	}
+
+	#Focus for War Of Opposites
+	focus = {
+		id = New Hampshire_warofopposites
+		icon = GFX_goal_generic_forceful_treaty
+		x = 3
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = SVT
+}
+		}
+	}
+
+	#Focus for Embrace Communism
+	focus = {
+		id = New Hampshire_embracecommunism
+		icon = GFX_goal_support_communism
+		x = 16
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_politicallyalign }
+		mutually_exclusive = { 
+			focus = New Hampshire_embracedemocracy 
+		}
+		mutually_exclusive = { 
+			focus = New Hampshire_embracefascism 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_political_party= { 
+ideology = communist 
+popularity = .80 
+}
+		}
+	}
+
+	#Focus for Research Focus
+	focus = {
+		id = New Hampshire_researchfocus
+		icon = GFX_focus_research2
+		x = 10
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_infrastructureeffort }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot= 1
+		}
+	}
+
+	#Focus for Finish Off New England
+	focus = {
+		id = New Hampshire_finishoffnewengland
+		icon = GFX_goal_generic_forceful_treaty
+		x = 4
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Hampshire_firststrike }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = SRI
+}
+create_wargoal= { 
+type = annex_everything 
+target = SCT
+}
+		}
+	}
+
+#End of focuses 
+ }

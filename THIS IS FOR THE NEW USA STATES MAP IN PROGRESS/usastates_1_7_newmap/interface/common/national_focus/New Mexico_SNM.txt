@@ -1,0 +1,1039 @@
+focus_tree = {
+	id = SNM
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = New Mexico
+		}
+	}
+	#Focus for Clean the Streets
+	focus = {
+		id = New Mexico_cleanthestreets
+		icon = GFX_goal_generic_attack_allies
+		x = 12
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_closetheborders }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = { ideology = communist popularity = 0.5 }
+add_popularity = { ideology = democratic popularity = -0.1 }
+add_popularity = { ideology = fascism popularity = -0.1 }
+		}
+	}
+
+	#Focus for Time To Pick A Side
+	focus = {
+		id = New Mexico_timetopickaside
+		icon = GFX_goal_generic_demand_territory
+		x = 17
+		y = 2
+		cost = 13
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_presidentialelectionsof1936 }
+		mutually_exclusive = { focus = New Mexico_changeisnotneeded }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 200
+add_stability = 10
+		}
+	}
+
+	#Focus for Sign The Housing Act
+	focus = {
+		id = New Mexico_signthehousingact
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_newmexicanrailway }
+		mutually_exclusive = { focus = New Mexico_equalhousing }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = { type = Infantry_Equipment_1 amount = 500 producer = SNM }
+add_political_power = 50
+		}
+	}
+
+	#Focus for Arsenal Of Democracy
+	focus = {
+		id = New Mexico_arsenalofdemocracy
+		icon = GFX_goal_generic_construct_civilian
+		x = 30
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_changeisnotneeded }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			threat > 0.3
+		}
+		completion_reward = {
+			random_owned_controlled_state = { limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = yes } }
+add_extra_state_shared_building_slots = 3 add_building_construction = { type = industrial_complex level = 3
+instant_build = yes } set_state_flag = SNM }
+random_owned_controlled_state = { limit = { free_building_slots = { building = arms_factory size > 0 include_locked = yes } add_extra_state_shared_building_slots = 3 add_ building_construction = { type = arms_factory level = 3 instant_build = yes } set_state_flag = SNM }
+		}
+	}
+
+	#Focus for League Of Nations
+	focus = {
+		id = New Mexico_leagueofnations
+		icon = GFX_goal_generic_national_unity
+		x = 29
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_changeisnotneeded }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			threat > 0.3
+		}
+		completion_reward = {
+			create_faction = 'League_Of_Nations'
+add_stability = 0.1
+remove_ideas = neutrality_idea
+		}
+	}
+
+	#Focus for Army Veterans
+	focus = {
+		id = New Mexico_armyveterans
+		icon = GFX_focus_secret_rearmament
+		x = 10
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_polishagreement }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience = 30
+add_logistics = 1
+
+create_corps_commander = {
+name = "Władysław Anders"
+gfx = "GFX_POL_wladislaw_anders"
+traits = {  armor_officer }
+skill = 4
+attack_skill = 4
+defense_skill = 3
+planning_skill = 3
+logistics_skill = 3
+}
+		}
+	}
+
+	#Focus for New Mexican Aviation
+	focus = {
+		id = New Mexico_newmexicanaviation
+		icon = GFX_goal_generic_air_fighter2
+		x = 6
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_arsenalofnewmexico }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			air_experience = 30
+add_equipment_to_stockpile = { type =  interwar_fighter amount = 50 producer = SNM }
+		}
+	}
+
+	#Focus for Albuquerque Aces
+	focus = {
+		id = New Mexico_albuquerqueaces
+		icon = GFX_goal_generic_build_airforce
+		x = 1
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_newroads }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ace = { name = 'Mark' surname = 'Huffman' callsign = 'Feather' type = fighter_genius is_female = no }
+		}
+	}
+
+	#Focus for Socialist Science
+	focus = {
+		id = New Mexico_socialistscience
+		icon = GFX_goal_generic_scientific_exchange
+		x = 12
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_cleanthestreets }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for A Master Piece!
+	focus = {
+		id = New Mexico_amasterpiece
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 3
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_newroads }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = { type = convoy_1 amount = 50 producer = SNM }
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 producer = SNM }
+		}
+	}
+
+	#Focus for A Day To Remember (Unfinished)
+	focus = {
+		id = New Mexico_adaytorememberunfinished
+		icon = GFX_focus_mex_redeem_aztlan
+		x = 10
+		y = 12
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_adreamcometrue }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_owned_state = { add_core_of = SNM }
+		}
+	}
+
+	#Focus for Civilian Expansion
+	focus = {
+		id = New Mexico_civilianexpansion
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 4
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Mexico_yearservice 
+			focus = New Mexico_arsenalofnewmexico 
+			focus = New Mexico_newmexicanrailway 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = { limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = yes } }
+add_extra_state_shared_building_slots = 3 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } set_state_flag = SNM }
+		}
+	}
+
+	#Focus for Military Expansion
+	focus = {
+		id = New Mexico_militaryexpansion
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Mexico_arsenalofnewmexico 
+			focus = New Mexico_yearservice 
+			focus = New Mexico_newmexicanrailway 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = { limit = { free_building_slots = { building = arms_factory size > 0 include_locked = yes } add_extra_state_shared_building_slots = 3 add_ building_construction = { type = arms_factory level = 1 instant_build = yes } set_state_flag = SNM }
+		}
+	}
+
+	#Focus for A Dream Come True
+	focus = {
+		id = New Mexico_adreamcometrue
+		icon = GFX_goal_generic_national_unity
+		x = 10
+		y = 11
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Mexico_conquernevada 
+		}
+		prerequisite = { 
+			focus = New Mexico_conquercolorado 
+		}
+		prerequisite = { 
+			focus = New Mexico_conqueroklahoma 
+		}
+		prerequisite = { 
+			focus = New Mexico_amasterpiece 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.5
+		}
+	}
+
+	#Focus for Conquer Nevada
+	focus = {
+		id = New Mexico_conquernevada
+		icon = GFX_goal_generic_position_armies
+		x = 14
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Mexico_conquerutah 
+		}
+		prerequisite = { 
+			focus = New Mexico_pickafightwiththebear 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = SNV }
+		}
+	}
+
+	#Focus for Conquer Oklahoma
+	focus = {
+		id = New Mexico_conqueroklahoma
+		icon = GFX_goal_generic_major_war
+		x = 8
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_texanchainsawmassacre }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			STX = { exist = no }
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = SOK }
+		}
+	}
+
+	#Focus for Texan Chainsaw Massacre
+	focus = {
+		id = New Mexico_texanchainsawmassacre
+		icon = GFX_goal_generic_secret_weapon
+		x = 8
+		y = 7
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_newmexicaninfluence }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			date > 1937.2.1
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = STX }
+		}
+	}
+
+	#Focus for Arsenal of New Mexico
+	focus = {
+		id = New Mexico_arsenalofnewmexico
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_blackgold }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = { limit = { free_building_slots = { building = arms_factory size > 0 include_locked = yes } add_extra_state_shared_building_slots = 3 add_ building_construction = { type = arms_factory level = 3 instant_build = yes } set_state_flag = SNM }
+		}
+	}
+
+	#Focus for Polish Engineers
+	focus = {
+		id = New Mexico_polishengineers
+		icon = GFX_goal_generic_army_tanks
+		x = 8
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_polishagreement }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_technology = { basic_light_tank = 1 }
+set_technology = { gwtank = 1 }
+		}
+	}
+
+	#Focus for Polish Agreement
+	focus = {
+		id = New Mexico_polishagreement
+		icon = GFX_focus_generic_polish_deal
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_landofenchantment }
+		mutually_exclusive = { focus = New Mexico_closetheborders }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_manpower = 25000
+		}
+	}
+
+	#Focus for Black Gold
+	focus = {
+		id = New Mexico_blackgold
+		icon = GFX_goal_generic_oil_refinery
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_landofenchantment }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = add_resource = oil 10
+		}
+	}
+
+	#Focus for Indigenous peoples of Mexico
+	focus = {
+		id = New Mexico_indigenouspeoplesofmexico
+		icon = GFX_focus_mex_jefe_maximo
+		x = 16
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_sidewiththenatives }
+		mutually_exclusive = { focus = New Mexico_indigenousamericans }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_party_name = neutrality = Native Mexican Council
+add_stability = 5
+		}
+	}
+
+	#Focus for Indigenous Americans
+	focus = {
+		id = New Mexico_indigenousamericans
+		icon = GFX_goal_generic_improve_relations
+		x = 18
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_sidewiththenatives }
+		mutually_exclusive = { focus = New Mexico_indigenouspeoplesofmexico }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 150
+add_manpower = 5000
+		}
+	}
+
+	#Focus for Right-Wing Policy
+	focus = {
+		id = New Mexico_rightwingpolicy
+		icon = GFX_goal_support_fascism
+		x = 22
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_timetopickaside }
+		mutually_exclusive = { 
+			focus = New Mexico_sidewiththenatives 
+		}
+		mutually_exclusive = { 
+			focus = New Mexico_closetheborders 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = ideology = fascism popularity = 30
+		}
+	}
+
+	#Focus for New Mexican Influence
+	focus = {
+		id = New Mexico_newmexicaninfluence
+		icon = GFX_goal_generic_territory_or_war
+		x = 11
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Mexico_arsenalofnewmexico 
+		}
+		prerequisite = { 
+			focus = New Mexico_newmexicanrailway 
+		}
+		prerequisite = { 
+			focus = New Mexico_yearservice 
+		}
+		prerequisite = { 
+			focus = New Mexico_pickedaside 
+		}
+		prerequisite = { 
+			focus = New Mexico_signtheconscriptionact 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_war_support = 10
+create_faction = 'Mexican Sphere'
+news_event = usastates.2
+		}
+	}
+
+	#Focus for New Mexican Railway
+	focus = {
+		id = New Mexico_newmexicanrailway
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_blackgold }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+		}
+	}
+
+	#Focus for Year Service
+	focus = {
+		id = New Mexico_yearservice
+		icon = GFX_goal_generic_small_arms
+		x = 4
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_blackgold }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_manpower = 10000
+		}
+	}
+
+	#Focus for Conquer Arizona
+	focus = {
+		id = New Mexico_conquerarizona
+		icon = GFX_focus_mex_caudillo_private_armies
+		x = 14
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_newmexicaninfluence }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = SAZ }
+		}
+	}
+
+	#Focus for Side with the Natives
+	focus = {
+		id = New Mexico_sidewiththenatives
+		icon = GFX_focus_generic_support_the_left_right
+		x = 17
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_timetopickaside }
+		mutually_exclusive = { 
+			focus = New Mexico_closetheborders 
+		}
+		mutually_exclusive = { 
+			focus = New Mexico_rightwingpolicy 
+		}
+		mutually_exclusive = { 
+			focus = New Mexico_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = { ideology = neutrality popularity = 0.3 }
+add_stability = 0.1
+		}
+	}
+
+	#Focus for Picked A Side
+	focus = {
+		id = New Mexico_pickedaside
+		icon = GFX_goal_tripartite_pact
+		x = 17
+		y = 5
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Mexico_signtheconscriptionact 
+			focus = New Mexico_indigenousamericans 
+			focus = New Mexico_indigenouspeoplesofmexico 
+			focus = New Mexico_cleanthestreets 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 150
+add_stability = 0.1
+		}
+	}
+
+	#Focus for Change Is Not Needed
+	focus = {
+		id = New Mexico_changeisnotneeded
+		icon = GFX_goal_support_democracy
+		x = 28
+		y = 2
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_presidentialelectionsof1936 }
+		mutually_exclusive = { focus = New Mexico_timetopickaside }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = neutrality_idea
+add_stability = 0.5
+		}
+	}
+
+	#Focus for Sign The Conscription Act
+	focus = {
+		id = New Mexico_signtheconscriptionact
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 22
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_rightwingpolicy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = { ideology = facism popilarity = 0.3 }
+add_war_support = 10
+		}
+	}
+
+	#Focus for Conquer Colorado
+	focus = {
+		id = New Mexico_conquercolorado
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 10
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_newmexicaninfluence }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = SCL }
+		}
+	}
+
+	#Focus for Polish Architects
+	focus = {
+		id = New Mexico_polisharchitects
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 6
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_polishagreement }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = { limit = { free_building_slots = { building = industrial_complex size > 0 include_locked = yes } }
+add_extra_state_shared_building_slots = 3 add_building_construction = { type = industrial_complex level = 3 instant_build = yes } set_state_flag = SNM }
+		}
+	}
+
+	#Focus for Land of Enchantment
+	focus = {
+		id = New Mexico_landofenchantment
+		icon = GFX_goal_generic_demand_territory
+		x = 4
+		y = 2
+		cost = 1
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_war_support = 0.1
+add_stability = 0.1
+		}
+	}
+
+	#Focus for Close the Borders
+	focus = {
+		id = New Mexico_closetheborders
+		icon = GFX_goal_generic_war_with_comintern
+		x = 12
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_timetopickaside }
+		mutually_exclusive = { 
+			focus = New Mexico_rightwingpolicy 
+		}
+		mutually_exclusive = { 
+			focus = New Mexico_polishagreement 
+		}
+		mutually_exclusive = { 
+			focus = New Mexico_sidewiththenatives 
+		}
+		mutually_exclusive = { 
+			focus = New Mexico_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = { ideology = communist popularity = 0.3 }
+add_stability = -0.1
+		}
+	}
+
+	#Focus for Pick A Fight With The Bear
+	focus = {
+		id = New Mexico_pickafightwiththebear
+		icon = GFX_focus_eng_expose_the_belly_of_the_bear
+		x = 13
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_conquerarizona }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = SCA }
+		}
+	}
+
+	#Focus for The Taste Of The Waves
+	focus = {
+		id = New Mexico_thetasteofthewaves
+		icon = GFX_goal_generic_navy_battleship
+		x = 13
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_pickafightwiththebear }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			research_bonus = { naval_equipment = 0.50 }
+navy_experience = 10
+		}
+	}
+
+	#Focus for Conquer Utah
+	focus = {
+		id = New Mexico_conquerutah
+		icon = GFX_goal_generic_major_war
+		x = 15
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_conquerarizona }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = SUT }
+		}
+	}
+
+	#Focus for Blue Skies
+	focus = {
+		id = New Mexico_blueskies
+		icon = GFX_goal_generic_air_fighter2
+		x = 15
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_conquerutah }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_technology = { fighter1 = 1 }
+air_experience = 10
+		}
+	}
+
+	#Focus for Defence Of The Capital
+	focus = {
+		id = New Mexico_defenceofthecapital
+		icon = GFX_goal_generic_fortify_city
+		x = 0
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Mexico_newmexicanrailway 
+			focus = New Mexico_arsenalofnewmexico 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_building_construction = { province = 3679 type = bunker level = 3 instant_build = yes }
+		}
+	}
+
+	#Focus for New Roads
+	focus = {
+		id = New Mexico_newroads
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 3
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Mexico_militaryexpansion 
+		}
+		prerequisite = { 
+			focus = New Mexico_civilianexpansion 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = { add_building_construction = { type = infrastructure level = 5 instant_build  = yes } }
+		}
+	}
+
+	#Focus for Helping Hand
+	focus = {
+		id = New Mexico_helpinghand
+		icon = GFX_goal_tripartite_pact
+		x = 26
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_changeisnotneeded }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.10
+		}
+	}
+
+	#Focus for University Of New Mexico
+	focus = {
+		id = New Mexico_universityofnewmexico
+		icon = GFX_goal_generic_scientific_exchange
+		x = 4
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_civilianexpansion }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Equal Housing
+	focus = {
+		id = New Mexico_equalhousing
+		icon = GFX_focus_eng_crush_the_dream
+		x = 9
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Mexico_arsenalofnewmexico 
+		}
+		prerequisite = { 
+			focus = New Mexico_cleanthestreets 
+		}
+		mutually_exclusive = { focus = New Mexico_signthehousingact }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_manpower = 10000
+add_war_support = 10
+		}
+	}
+
+	#Focus for Los Alamos National Laboratory
+	focus = {
+		id = New Mexico_losalamosnationallaboratory
+		icon = GFX_focus_research2
+		x = 2
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_arsenalofnewmexico }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			research_speed_factor = +0.05
+		}
+	}
+
+	#Focus for Clear Skies Program
+	focus = {
+		id = New Mexico_clearskiesprogram
+		icon = GFX_goal_generic_air_production
+		x = 0
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_defenceofthecapital }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			149 = { add_building_construction = { type = anti_air level = 3 instant_build = yes } set_state_flag = SNM }
+		}
+	}
+
+	#Focus for New Mexican Radio
+	focus = {
+		id = New Mexico_newmexicanradio
+		icon = GFX_goal_generic_radar
+		x = 8
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_polishengineers }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_tech = radar
+		}
+		completion_reward = {
+			random_owned_controlled_state = { limit = { free_building_slots = { building = radar size > 0 include_locked = yes } }
+add_building_construction = { type = radar level = 2 instant_build = yes } set_state_flag = SNM }
+		}
+	}
+
+	#Focus for Presidential Elections Of 1936
+	focus = {
+		id = New Mexico_presidentialelectionsof1936
+		icon = GFX_goal_generic_improve_relations
+		x = 23
+		y = 1
+		cost = 1
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			date < 1936.3.11
+		}
+		available = {
+			date > 1936.3.11
+		}
+		completion_reward = {
+			state_event = usastates.4
+		}
+	}
+
+	#Focus for A National Figure
+	focus = {
+		id = New Mexico_anationalfigure
+		icon = GFX_focus_eng_the_kings_party
+		x = 27
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = New Mexico_changeisnotneeded }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			date > 1937.5.5
+		}
+		completion_reward = {
+			add_stability = 0.10
+		}
+	}
+
+	#Focus for A King!
+	focus = {
+		id = New Mexico_aking
+		icon = GFX_focus_eng_god_save_the_king
+		x = 28
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = New Mexico_leagueofnations 
+		}
+		prerequisite = { 
+			focus = New Mexico_anationalfigure 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_country_leader = { 
+ name = 'King William I'
+ desc =
+ picture = 
+'Portrait_Yugoslavia_Peter_I.dds'
+		}
+	}
+
+#End of focuses 
+ }

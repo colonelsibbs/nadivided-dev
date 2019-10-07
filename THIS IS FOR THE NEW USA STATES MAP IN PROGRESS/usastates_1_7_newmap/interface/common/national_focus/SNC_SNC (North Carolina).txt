@@ -1,0 +1,247 @@
+focus_tree = {
+	id = SNC (North Carolina)
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SNC
+		}
+	}
+	#Focus for March North
+	focus = {
+		id = SNC_marchnorth
+		icon = GFX_goal_unknown
+		x = 7
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SNC_unitethecarolinas }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = SVA
+}
+		}
+	}
+
+	#Focus for Invite South Carolina
+	focus = {
+		id = SNC_invitesouthcarolina
+		icon = GFX_goal_unknown
+		x = 2
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SNC_attemptdiplomacy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The 1936 Elections
+	focus = {
+		id = SNC_the1936elections
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 10
+		y = 0
+		cost = 1
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			news_event= usastates.18
+		}
+	}
+
+	#Focus for Side with Germany
+	focus = {
+		id = SNC_sidewithgermany
+		icon = GFX_goal_support_fascism
+		x = 7
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SNC_the1936elections }
+		mutually_exclusive = { 
+			focus = SNC_sidewiththesoviets 
+		}
+		mutually_exclusive = { 
+			focus = SNC_legacyoftheusa 
+		}
+		mutually_exclusive = { 
+			focus = SNC_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government= fascism
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = fascism 
+popularity = 100 
+}
+		}
+	}
+
+	#Focus for Side with the Soviets
+	focus = {
+		id = SNC_sidewiththesoviets
+		icon = GFX_goal_support_communism
+		x = 13
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SNC_the1936elections }
+		mutually_exclusive = { focus = SNC_sidewithgermany }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = communism 
+popularity = 100 
+}
+		}
+	}
+
+	#Focus for Honor the Confederacy
+	focus = {
+		id = SNC_honortheconfederacy
+		icon = GFX_focus_usa_honor_the_confederacy
+		x = 5
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SNC_sidewithgermany }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Attempt Diplomacy
+	focus = {
+		id = SNC_attemptdiplomacy
+		icon = GFX_goal_generic_dangerous_deal
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SNC_honortheconfederacy }
+		mutually_exclusive = { focus = SNC_reformthroughforce }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reform Through Force
+	focus = {
+		id = SNC_reformthroughforce
+		icon = GFX_focus_generic_military_mission
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SNC_honortheconfederacy }
+		mutually_exclusive = { focus = SNC_attemptdiplomacy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for America in our Image
+	focus = {
+		id = SNC_americainourimage
+		icon = GFX_focus_usa_recruit_the_free_corps
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Legacy of the USA
+	focus = {
+		id = SNC_legacyoftheusa
+		icon = GFX_goal_support_democracy
+		x = 10
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SNC_the1936elections }
+		mutually_exclusive = { focus = SNC_sidewithgermany }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Return of the Monarchy
+	focus = {
+		id = SNC_returnofthemonarchy
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 0
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SNC_sidewithgermany }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Unite the Carolinas
+	focus = {
+		id = SNC_unitethecarolinas
+		icon = GFX_goal_unknown
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SNC_reformthroughforce }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal= { 
+type = annex_everything 
+target = SSC
+}
+		}
+	}
+
+	#Focus for Military Policies
+	focus = {
+		id = SNC_militarypolicies
+		icon = GFX_goal_generic_small_arms
+		x = 17
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SNC_beginreforms }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Begin Reforms
+	focus = {
+		id = SNC_beginreforms
+		icon = GFX_goal_tripartite_pact
+		x = 17
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }

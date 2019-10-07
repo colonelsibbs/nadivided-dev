@@ -1,0 +1,7 @@
+spriteTypes = { 
+##Icon For: 1373085
+ SpriteType = { 
+ name = "GFX_politicalshift" 
+ texturefile = "gfx/interface/goals/GFX_politicalshift.tga" 
+ } 
+ }

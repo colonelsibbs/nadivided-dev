@@ -1,0 +1,597 @@
+focus_tree = {
+	id = SFL
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = Florida
+		}
+	}
+	#Focus for Flames of Revolution
+	focus = {
+		id = Florida_flamesofrevolution
+		icon = GFX_focus_ger_great_red_menace
+		x = 28
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_communistinfluence }
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government= communism
+		}
+	}
+
+	#Focus for Fascist Influence
+	focus = {
+		id = Florida_fascistinfluence
+		icon = GFX_goal_generic_major_war
+		x = 38
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_goright }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Steady Path
+	focus = {
+		id = Florida_steadypath
+		icon = GFX_goal_support_democracy
+		x = 49
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_ourdirection }
+		mutually_exclusive = { focus = Florida_politicalshift }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_popularity = {
+    ideology = democracy
+    popularity = 0.25
+}
+		}
+	}
+
+	#Focus for Communist Influence
+	focus = {
+		id = Florida_communistinfluence
+		icon = GFX_goal_generic_major_war
+		x = 28
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_goleft }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Go Right
+	focus = {
+		id = Florida_goright
+		icon = GFX_goal_support_fascism
+		x = 38
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_politicalshift }
+		mutually_exclusive = { 
+			focus = Florida_goleft 
+		}
+		mutually_exclusive = { 
+			focus = Florida_goback 
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			army_experience = 100
+		}
+	}
+
+	#Focus for Go Back
+	focus = {
+		id = Florida_goback
+		icon = GFX_goal_generic_neutrality_focus
+		x = 33
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_politicalshift }
+		mutually_exclusive = { 
+			focus = Florida_goright 
+		}
+		mutually_exclusive = { 
+			focus = Florida_goleft 
+		}
+		mutually_exclusive = { 
+			focus = Florida_ 
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_war_support = 0.15
+		}
+	}
+
+	#Focus for Go Left
+	focus = {
+		id = Florida_goleft
+		icon = GFX_goal_support_communism
+		x = 28
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_politicalshift }
+		mutually_exclusive = { 
+			focus = Florida_goright 
+		}
+		mutually_exclusive = { 
+			focus = Florida_goback 
+		}
+		mutually_exclusive = { 
+			focus = Florida_ 
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			add_manpower = 25000
+		}
+	}
+
+	#Focus for Political Shift
+	focus = {
+		id = Florida_politicalshift
+		icon = GFX_goal_generic_political_pressure
+		x = 33
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_ourdirection }
+		mutually_exclusive = { focus = Florida_steadypath }
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			set_stability = 0.4
+add_war_support = 0.1
+add_popularity = {
+    ideology = democracy
+    popularity = -0.5
+}
+		}
+	}
+
+	#Focus for Confederate Takeover
+	focus = {
+		id = Florida_confederatetakeover
+		icon = GFX_focus_usa_honor_the_confederacy
+		x = 38
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A New World
+	focus = {
+		id = Florida_anewworld
+		icon = GFX_focus_generic_strike_at_democracy3
+		x = 10
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 100
+set_stability = 0.5
+		}
+	}
+
+	#Focus for The Beacon of Sunshine
+	focus = {
+		id = Florida_thebeaconofsunshine
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 49
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_steadypath }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.3
+set_politics = {
+	ruling_party = democracy
+}
+		}
+	}
+
+	#Focus for place holder
+	focus = {
+		id = Florida_placeholder
+		icon = GFX_goal_unknown
+		x = 79
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Diplomatic Security
+	focus = {
+		id = Florida_diplomaticsecurity
+		icon = GFX_goal_tripartite_pact
+		x = 6
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_pathofthebeacon }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_opinion_modifier = 
+    modifier = offered_support
+}add_opinion_modifier = {
+    target = SNJ
+    modifier = offered_support
+}add_opinion_modifier = {
+    target = STX
+    modifier = offered_support
+}add_opinion_modifier = {
+    target = SNY
+    modifier = offered_support{
+    target = SCA
+}add_opinion_modifier = {
+    target = SOH
+    modifier = offered_support
+}
+		}
+	}
+
+	#Focus for place holder 2
+	focus = {
+		id = Florida_placeholder2
+		icon = GFX_goal_unknown
+		x = 0
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Divine Right
+	focus = {
+		id = Florida_divineright
+		icon = GFX_goal_generic_major_war
+		x = 33
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_goback }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Garden Alliance
+	focus = {
+		id = Florida_thegardenalliance
+		icon = GFX_goal_generic_alliance
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_pathofthebeacon }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_faction = The_Miami_Newark_Pact
+SFL = { add_to_faction = SNJ }
+		}
+	}
+
+	#Focus for The New Spanish Empire
+	focus = {
+		id = Florida_thenewspanishempire
+		icon = GFX_focus_mex_redeem_aztlan
+		x = 33
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_divineright }
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government= neutrality
+		}
+		completion_reward = {
+			set_politics= {
+ ruling_party = neutrality 
+elections_allowed = no 
+}
+		}
+	}
+
+	#Focus for Canal Control
+	focus = {
+		id = Florida_canalcontrol
+		icon = GFX_goal_generic_territory_or_war
+		x = 6
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Florida_thegardenalliance 
+			focus = Florida_diplomaticsecurity 
+		}
+		mutually_exclusive = { focus = Florida_canalconservation }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			= { 
+type = annex_everything 
+target = PAN
+}
+		}
+	}
+
+	#Focus for Canal Conservation
+	focus = {
+		id = Florida_canalconservation
+		icon = GFX_goal_generic_build_tank
+		x = 10
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Florida_diplomaticsecurity 
+		}
+		prerequisite = { 
+			focus = Florida_thegardenalliance 
+		}
+		mutually_exclusive = { focus = Florida_canalcontrol }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_to_faction= PAN
+		}
+	}
+
+	#Focus for A Launching Point
+	focus = {
+		id = Florida_alaunchingpoint
+		icon = GFX_goal_demand_sudetenland
+		x = 12
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Western Florida
+	focus = {
+		id = Florida_westernflorida
+		icon = GFX_goal_demand_sudetenland
+		x = 15
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal
+= { type = annex_everything target = SAL }
+create_wargoal
+= { type = annex_everything target = MIS }
+		}
+	}
+
+	#Focus for A United Florida
+	focus = {
+		id = Florida_aunitedflorida
+		icon = GFX_goal_generic_forceful_treaty
+		x = 14
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Florida_westernflorida 
+		}
+		prerequisite = { 
+			focus = Florida_alaunchingpoint 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal
+= { type = annex_everything target = LOU }
+		}
+	}
+
+	#Focus for Align With The Empire
+	focus = {
+		id = Florida_alignwiththeempire
+		icon = GFX_goal_unknown
+		x = 10
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Florida_allywiththelonestar 
+			focus = Florida_allywiththebear 
+		}
+		mutually_exclusive = { focus = Florida_alignwiththekeystone }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Align with the Keystone
+	focus = {
+		id = Florida_alignwiththekeystone
+		icon = GFX_goal_unknown
+		x = 6
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Florida_allywiththebear 
+			focus = Florida_allywiththelonestar 
+		}
+		mutually_exclusive = { 
+			focus = Florida_alignwiththeempire 
+			focus = Florida_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Ally With The Bear
+	focus = {
+		id = Florida_allywiththebear
+		icon = GFX_goal_unknown
+		x = 10
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Florida_canalcontrol 
+			focus = Florida_canalconservation 
+		}
+		mutually_exclusive = { focus = Florida_allywiththelonestar }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Ally With The Lone Star
+	focus = {
+		id = Florida_allywiththelonestar
+		icon = GFX_goal_unknown
+		x = 6
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = Florida_canalcontrol 
+			focus = Florida_canalconservation 
+		}
+		mutually_exclusive = { 
+			focus = Florida_allywiththebear 
+			focus = Florida_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Spreading Our Light
+	focus = {
+		id = Florida_spreadingourlight
+		icon = GFX_goal_unknown
+		x = 49
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_thebeaconofsunshine }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Outside World
+	focus = {
+		id = Florida_theoutsideworld
+		icon = GFX_goal_unknown
+		x = 59
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Our Direction
+	focus = {
+		id = Florida_ourdirection
+		icon = GFX_focus_generic_strike_at_democracy3
+		x = 41
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Path of The Dixie
+	focus = {
+		id = Florida_pathofthedixie
+		icon = GFX_goal_unknown
+		x = 22
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Path of The Monarch
+	focus = {
+		id = Florida_pathofthemonarch
+		icon = GFX_goal_unknown
+		x = 13
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Path of The Beacon
+	focus = {
+		id = Florida_pathofthebeacon
+		icon = GFX_goal_unknown
+		x = 8
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }

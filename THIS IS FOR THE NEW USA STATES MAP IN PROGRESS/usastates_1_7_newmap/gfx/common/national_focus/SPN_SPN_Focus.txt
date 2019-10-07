@@ -1,0 +1,464 @@
+focus_tree = {
+	id = SPN_Focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SPN
+		}
+	}
+	#Focus for Pennsylvanian Industy
+	focus = {
+		id = SPN_pennsylvanianindusty
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 2
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			free_building_slots={
+building = industrial_complex 
+ size > 0
+ include_locked = yes
+}
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 3
+ add_building_construction = {
+ type = industrial_complex
+ level = 3
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Revive The Pennsylvania Railroad Company
+	focus = {
+		id = SPN_revivethepennsylvaniarailroadcompany
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SPN_pennsylvanianindusty }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= SPN_PRR
+		}
+	}
+
+	#Focus for Railroad Investment
+	focus = {
+		id = SPN_railroadinvestment
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SPN_revivethepennsylvaniarailroadcompany }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state= {
+add_building_construction = {type = infrastructurelevel = 8
+instant_build = yes}
+
+}
+		}
+	}
+
+	#Focus for Pittsburgh Steel
+	focus = {
+		id = SPN_pittsburghsteel
+		icon = GFX_goal_generic_construction2
+		x = 3
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SPN_pennsylvanianindusty }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_resource= { 
+type = steel 
+amount = 32 
+state = 100
+}
+		}
+	}
+
+	#Focus for Coal Production
+	focus = {
+		id = SPN_coalproduction
+		icon = GFX_goal_generic_construction2
+		x = 3
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SPN_pittsburghsteel }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= SPN_Coal
+		}
+	}
+
+	#Focus for Trade School Investment
+	focus = {
+		id = SPN_tradeschoolinvestment
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 5
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SPN_coalproduction 
+		}
+		prerequisite = { 
+			focus = SPN_railroadinvestment 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot= 1
+		}
+	}
+
+	#Focus for The Pennsylvania State University
+	focus = {
+		id = SPN_thepennsylvaniastateuniversity
+		icon = GFX_goal_generic_scientific_exchange
+		x = 6
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The University of Pittsburgh
+	focus = {
+		id = SPN_theuniversityofpittsburgh
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 8
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Extra Research Slot
+	focus = {
+		id = SPN_extraresearchslot
+		icon = GFX_goal_continuous_research
+		x = 7
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SPN_thepennsylvaniastateuniversity 
+		}
+		prerequisite = { 
+			focus = SPN_theuniversityofpittsburgh 
+		}
+		prerequisite = { 
+			focus = SPN_tradeschoolinvestment 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot= 1
+		}
+	}
+
+	#Focus for Monarchist Keystone
+	focus = {
+		id = SPN_monarchistkeystone
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 20
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SPN_tothemonarchy }
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			SPN = { has_government = non_aligned }
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = non_aligned
+popularity = 0.4
+}
+set_politics= {
+ ruling_party = non_aligned
+elections_allowed = no 
+}
+		}
+	}
+
+	#Focus for To The Monarchy
+	focus = {
+		id = SPN_tothemonarchy
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 20
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SPN_changethepower }
+		mutually_exclusive = { focus = SPN_truedemocracy }
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			SPN = { has_government = non_aligned }
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = non_aligned
+popularity = 0.5 
+}
+		}
+	}
+
+	#Focus for Pennsylvanian Faction
+	focus = {
+		id = SPN_pennsylvanianfaction
+		icon = GFX_goal_generic_alliance
+		x = 17
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SPN_democratickeystone 
+			focus = SPN_fascistkeystone 
+			focus = SPN_communistkeystone 
+			focus = SPN_monarchistkeystone 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_faction= "Keystone Union"
+		}
+	}
+
+	#Focus for Change The Power
+	focus = {
+		id = SPN_changethepower
+		icon = GFX_goal_generic_major_alliance
+		x = 21
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = SPN_partiesofpennsylvania }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			political_power = 150
+		}
+	}
+
+	#Focus for Communist Keystone
+	focus = {
+		id = SPN_communistkeystone
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 12
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SPN_leftkeystone }
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			SPN = { has_government = communism }
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = communism 
+popularity = 0.4
+}
+set_politics= {
+ ruling_party = communism 
+elections_allowed = no 
+}
+		}
+	}
+
+	#Focus for Right Keystone
+	focus = {
+		id = SPN_rightkeystone
+		icon = GFX_goal_support_fascism
+		x = 14
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SPN_partiesofpennsylvania }
+		mutually_exclusive = { 
+			focus = SPN_leftkeystone 
+			focus = SPN_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			SPN = { has_government = fascism }
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = fascism 
+popularity = 0.5 
+}
+		}
+	}
+
+	#Focus for Left Keystone
+	focus = {
+		id = SPN_leftkeystone
+		icon = GFX_goal_support_communism
+		x = 12
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SPN_partiesofpennsylvania }
+		mutually_exclusive = { focus = SPN_rightkeystone }
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			SPN = { has_government = communism }
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = communism
+popularity = 0.5 
+}
+		}
+	}
+
+	#Focus for Parties of Pennsylvania
+	focus = {
+		id = SPN_partiesofpennsylvania
+		icon = GFX_goal_generic_national_unity
+		x = 13
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = SPN_changethepower }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	#Focus for Fascist Keystone
+	focus = {
+		id = SPN_fascistkeystone
+		icon = GFX_focus_ger_reichskommisariats
+		x = 14
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SPN_rightkeystone }
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			SPN = { has_government = fascism }
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = fascism
+popularity = 0.4
+}
+set_politics= {
+ ruling_party = fascism 
+elections_allowed = no 
+}
+		}
+	}
+
+	#Focus for True Democracy
+	focus = {
+		id = SPN_truedemocracy
+		icon = GFX_goal_support_democracy
+		x = 22
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SPN_changethepower }
+		mutually_exclusive = { focus = SPN_tothemonarchy }
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			SPN = { has_government = democratic }
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = democratic
+popularity = 0.5 
+}
+		}
+	}
+
+	#Focus for Democratic Keystone
+	focus = {
+		id = SPN_democratickeystone
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 22
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SPN_truedemocracy }
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			SPN = { has_government = democratic }
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = democratic
+popularity = 0.4
+}
+set_politics= {
+ ruling_party = democratic 
+elections_allowed = no 
+}
+		}
+	}
+
+#End of focuses 
+ }

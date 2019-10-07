@@ -1,0 +1,328 @@
+focus_tree = {
+	id = Iowa
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SIO
+		}
+	}
+	#Focus for Put Down The Flag
+	focus = {
+		id = SIO_putdowntheflag
+		icon = GFX_focus_eng_decolonization
+		x = 3
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_honormarx }
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 20.5 }
+		}
+	}
+
+	#Focus for Rally the Black Shirts
+	focus = {
+		id = SIO_rallytheblackshirts
+		icon = GFX_goal_tfv_saf_support_ossebrandwag
+		x = 5
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_neworder }
+		mutually_exclusive = { focus = SIO_rallythereds }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = { nationalism }
+		}
+	}
+
+	#Focus for Liberty for All
+	focus = {
+		id = SIO_libertyforall
+		icon = GFX_goal_support_democracy
+		x = 10
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_iowanpolitics }
+		mutually_exclusive = { focus = SIO_neworder }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for New Order
+	focus = {
+		id = SIO_neworder
+		icon = GFX_focus_generic_support_the_left_right
+		x = 4
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_iowanpolitics }
+		mutually_exclusive = { focus = SIO_libertyforall }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability= -10
+		}
+	}
+
+	#Focus for Rally the Reds
+	focus = {
+		id = SIO_rallythereds
+		icon = GFX_rallythereds
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_neworder }
+		mutually_exclusive = { focus = SIO_rallytheblackshirts }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = communism 
+popularity = 10.5 
+}
+		}
+	}
+
+	#Focus for Iowan Politics
+	focus = {
+		id = SIO_iowanpolitics
+		icon = GFX_goal_generic_improve_relations
+		x = 7
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Neautral Iowa
+	focus = {
+		id = SIO_neautraliowa
+		icon = GFX_goal_generic_defence
+		x = 11
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_libertyforall }
+		mutually_exclusive = { focus = SIO_oldways }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Good Ol' Blue White and Red
+	focus = {
+		id = SIO_goodolbluewhiteandred
+		icon = GFX_goodolbluewhiteandred
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_oldways }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = democracy 
+popularity = 20 
+}
+add_stability= 15
+		}
+	}
+
+	#Focus for Old Ways
+	focus = {
+		id = SIO_oldways
+		icon = GFX_focus_usa_recruit_the_free_corps
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_libertyforall }
+		mutually_exclusive = { focus = SIO_neautraliowa }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = democracy 
+popularity = 0.1 
+}
+		}
+	}
+
+	#Focus for We stand Together
+	focus = {
+		id = SIO_westandtogether
+		icon = GFX_goal_generic_military_deal
+		x = 4
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_ }
+		mutually_exclusive = { focus = SIO_ }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= { rule = { can_create_factions }
+}
+add_stability= 2
+		}
+	}
+
+	#Focus for Finish the Work
+	focus = {
+		id = SIO_finishthework
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 1
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SIO_communistrailways 
+			focus = SIO_continuingthecommieways 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Communist Railways
+	focus = {
+		id = SIO_communistrailways
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_thenewstate }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Continuing the Commie Ways
+	focus = {
+		id = SIO_continuingthecommieways
+		icon = GFX_goal_generic_soviet_construction
+		x = 0
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_thenewstate }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Honor Marx
+	focus = {
+		id = SIO_honormarx
+		icon = GFX_focus_eng_liberate_the_home_of_marx
+		x = 2
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_rallythereds }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Iowa Agriculture
+	focus = {
+		id = SIO_iowaagriculture
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 17
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Need for Infrastructure
+	focus = {
+		id = SIO_needforinfrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 16
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_iowaagriculture }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The New State
+	focus = {
+		id = SIO_thenewstate
+		icon = GFX_focus_eng_crush_the_dream
+		x = 1
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_honormarx }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Burn down the Flag
+	focus = {
+		id = SIO_burndowntheflag
+		icon = GFX_burndowntheflag
+		x = 5
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_dishonortheunion }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government= fascism
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = fascism 
+popularity = 20 
+}
+add_stability= -5
+		}
+	}
+
+	#Focus for Dishonor the Union
+	focus = {
+		id = SIO_dishonortheunion
+		icon = GFX_focus_usa_honor_the_confederacy
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIO_rallytheblackshirts }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }

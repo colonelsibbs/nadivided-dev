@@ -1,0 +1,11 @@
+spriteTypes = { 
+##Icon For: 1011728
+ SpriteType = { 
+ name = "GFX_newhampshirefirst" 
+ texturefile = "gfx/interface/goals/GFX_newhampshirefirst.tga" 
+ }##Icon For: 1016708
+ SpriteType = { 
+ name = "GFX_livefreeordie" 
+ texturefile = "gfx/interface/goals/GFX_livefreeordie.tga" 
+ } 
+ }

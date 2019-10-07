@@ -1,0 +1,79 @@
+﻿l_english: 
+Indiana_newadministration:0 "New Administration"
+Indiana_newadministration_desc:0 "The Social Democrats have won the election!"
+Indiana_thehoosierworkersparty:0 "The Hoosier Workers Party"
+Indiana_thehoosierworkersparty_desc:0 "The people are frustrated with years of stagnation the time has come for the Hoosier Workers Party to bring peaceful revolution to Indiana!"
+Indiana_fourmoreyears:0 "Four More Years!"
+Indiana_fourmoreyears_desc:0 "President McNutt has done and excellent job and should continue for another four years."
+Indiana_1936elections:0 "1936 Elections"
+Indiana_1936elections_desc:0 "The 1936"
+Indiana_indianapolisdepartmentofdefense:0 "Indianapolis Department of Defense"
+Indiana_indianapolisdepartmentofdefense_desc:0 "If Indiana is to assert itself as an important nation in the Midwest it must have a modern military.
+
+(will add Military factory, one doctrine boost and 25 army xp)"
+Indiana_nationalistvictory:0 "Nationalist Victory"
+Indiana_nationalistvictory_desc:0 "The Hoosier Nationalist Party has won"
+Indiana_germanwartraditions:0 "German War Traditions"
+Indiana_germanwartraditions_desc:0 "Indiana is populated by a large majority of ethnic Germans many who immigrated after the Great War and we must leverage these war veterans and form a closer bond with Germany.
+
+(Grants a doctrine boost and gives military xp)"
+Indiana_hoosiergeneralstaff:0 "Hoosier General Staff"
+Indiana_hoosiergeneralstaff_desc:0 "In order to increase the effectiveness of our army we must form a professional General staff.
+
+(will add national spirit similar to German General staff that will give slight bonuses to Organization Planning speed and increase the level of recruited generals)"
+Indiana_constitutionalcompromise:0 "Constitutional Compromise"
+Indiana_constitutionalcompromise_desc:0 "It is time to fulfill President McNutt's signature campaign promises of reforming the Indiana Constitution. To do this compromises will need to be made with democratic parties to ensure long term stability."
+Indiana_rewritetheconstitution:0 "Rewrite the Constitution"
+Indiana_rewritetheconstitution_desc:0 "The old Indiana Constitution is weak and ineffective. We must empower the executive branch in order to protect Hoosier sovereignty!
+
+(This will add War Support and a slight stability bonus)"
+Indiana_workersconstitution:0 "Workers Constitution"
+Indiana_workersconstitution_desc:0 "We must write a constitution that benefits the Hoosier worker instead of reinforcing the status quo!
+
+(This will give a slight production and construction bonus)"
+Indiana_agriculturereform:0 "Agriculture Reform"
+Indiana_agriculturereform_desc:0 "Due to poor business practices Indiana's agricultural sector is in shambles and we must reform it for the greater good.
+
+(removes bad national spirit and grants a bit of stability)"
+Indiana_revisedraftlaws:0 "Revise Draft Laws"
+Indiana_revisedraftlaws_desc:0 "Indiana suffers from an acute lack of manpower in comparison to its neighbors in order to correct this we must revise our recruitment laws 
+
+(will add extra recruitable manpower factor as well as change manpower law to extensive conscription)"
+Indiana_agriculturalrevolution:0 "Agricultural Revolution"
+Indiana_agriculturalrevolution_desc:0 "Indiana has always had a strong agriculture industry but for too long the land owners have hampered long term stability and prosperity in the name of short term profits.
+
+(will remove agricultural decline National Spirit and will grant a slight population boost)"
+Indiana_crossroadsofamerica:0 "Crossroads of America"
+Indiana_crossroadsofamerica_desc:0 "(adds infrastructure)"
+Indiana_indianauniversitybloomington:0 "Indiana University Bloomington"
+Indiana_indianauniversitybloomington_desc:0 "adds research bonus for Industry"
+Indiana_purdueuniversity:0 "Purdue University"
+Indiana_purdueuniversity_desc:0 "(adds electronics and radar research bonuses)"
+Indiana_southbendconstructioneffort:0 "South Bend Construction Effort"
+Indiana_southbendconstructioneffort_desc:0 "(adds some civilian factories)"
+Indiana_muncieconstructioneffort:0 "Muncie Construction Effort"
+Indiana_muncieconstructioneffort_desc:0 "adds civs"
+Indiana_indianapolisconstructioneffort:0 "Indianapolis Construction Effort"
+Indiana_indianapolisconstructioneffort_desc:0 "Adds civ factories"
+Indiana_hoosierhomesteadact:0 "Hoosier Homestead Act"
+Indiana_hoosierhomesteadact_desc:0 "adds build slots"
+Indiana_indianapolisgoldreserveact:0 "Indianapolis Gold Reserve Act"
+Indiana_indianapolisgoldreserveact_desc:0 "gives -5% consumer goods"
+Indiana_infantrydoctrine:0 "Infantry Doctrine"
+Indiana_infantrydoctrine_desc:0 "Indiana must embrace the Great War Doctrine and focus on improving the quality of its Infantry Forces
+
+(Grand battleplan doctrine and slight boost to infantry)"
+Indiana_evansvillefoundry:0 "Evansville Foundry"
+Indiana_evansvillefoundry_desc:0 "In order to produce Artillery on an Industrial Scale we must modernize the Evansville foundry.
+
+(will add 2 mil factories, 1 arty research bonus and 2 Superior firepower doctrine boosts)"
+Indiana_nationalmobilizationact:0 "National Mobilization Act"
+Indiana_nationalmobilizationact_desc:0 "(adds 2% recruit able pop)"
+Indiana_fortharrisonmilitaryacademy:0 "Fort Harrison Military Academy"
+Indiana_fortharrisonmilitaryacademy_desc:0 "(adds boost to soft attack of infantry, 2 generic doctrine boosts, .5% recruit able pop, reduce training time by 5% as well as mil factory)"
+Indiana_artillerydoctrine:0 "Artillery Doctrine"
+Indiana_artillerydoctrine_desc:0 "Indiana Struggles with manpower issues compared to its neighbors and to compensate we must focus on developing a doctrine of Superior Firepower and industrial production.
+
+(will add doctrine boosts for superior firepower and a reduction in the cost of Artillery)"
+Indiana_supporttankeffort:0 "Support Tank Effort"
+Indiana_supporttankeffort_desc:0 "(3 tank research bonuses)"
