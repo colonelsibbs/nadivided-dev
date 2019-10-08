@@ -1,10 +1,10 @@
 focus_tree = {
-	id = ORE
+	id = SOR
 	country = {
 		factor = 0
 		modifier = {
 			add = 10
-			tag = ORE
+			tag = SOR
 		}
 	}
 	#Focus for Road Repairs
