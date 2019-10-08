@@ -1,10 +1,10 @@
 focus_tree = {
-	id = WIS
+	id = wisconsin_focus_tree
 	country = {
 		factor = 0
 		modifier = {
 			add = 10
-			tag = Wisconsin
+			tag = SWI
 		}
 	}
 	#Focus for Embrace French Heritage
