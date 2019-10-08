@@ -110,9 +110,14 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = {
-			Set_politics={ruling_party=communism elections_allowed=no}
-
-Add_popularity={ideology=communism popularity=100}
+			Set_politics={
+				ruling_party=communism 
+				elections_allowed=no
+			}
+			Add_popularity={
+				ideology=communism 
+				popularity=100
+			}
 		}
 	}
 
@@ -199,7 +204,12 @@ Add_popularity={ideology=communism popularity=100}
 			factor = 1
 		}
 		completion_reward = {
-			unlock_national_focus= focus_id 1184582
+			unlock_national_focus= focus_id 1184582 #fix this
+			#fix this 
+			#fix this 
+			#fix this 
+			#fix this 
+			#fix this 
 		}
 	}
 
@@ -230,6 +240,11 @@ Add_popularity={ideology=communism popularity=100}
 		}
 		completion_reward = {
 			create_faction= 'American Comintern'
+			#make sure this name is in faction loc
+			#make sure this name is in faction loc
+			#make sure this name is in faction loc
+			#make sure this name is in faction loc
+			#make sure this name is in faction loc
 		}
 	}
 
@@ -537,7 +552,16 @@ Add_popularity={ideology=communism popularity=100}
 			factor = 1
 		}
 		completion_reward = {
-			Set_politics={ruling_party=Democracy elections_allowed=Yes}
+			Set_politics={
+				ruling_party=Democracy #dont think this is right 
+				#dont think this is right 
+				#dont think this is right 
+				#dont think this is right 
+				#dont think this is right 
+				#dont think this is right 
+
+				elections_allowed=Yes
+			}
 
 Add_popularity={ideology=democracy popularity=100}
 		}
@@ -732,6 +756,12 @@ Add_popularity={ideology=democracy popularity=100}
 		}
 		completion_reward = {
 			create_faction= 'Freedom league'
+			#FACTION LOC
+			#FACTION LOC
+			#FACTION LOC
+			#FACTION LOC
+			#FACTION LOC
+			#FACTION LOC
 		}
 	}
 
@@ -751,7 +781,13 @@ Add_popularity={ideology=democracy popularity=100}
 			factor = 1
 		}
 		completion_reward = {
-			unlock_national_focus= focus_id 1202613
+			unlock_national_focus= focus_id 1202613 #fix this
+			#fix this
+			#fix this
+			#fix this
+			#fix this
+			#fix this
+			#fix this
 		}
 	}
 
