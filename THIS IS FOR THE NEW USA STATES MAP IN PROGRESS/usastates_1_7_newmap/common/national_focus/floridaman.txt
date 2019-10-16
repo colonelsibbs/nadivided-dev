@@ -1,0 +1,11 @@
+focus_tree = {
+	id = SFL
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = Florida MAn
+		}
+	}
+#End of focuses 
+ }

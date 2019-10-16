@@ -1,0 +1,196 @@
+focus_tree = {
+	id = SFL (New Florida Tree)
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = Florida
+		}
+	}
+	#Focus for Go Left
+	focus = {
+		id = Florida_goleft
+		icon = GFX_goal_support_communism
+		x = 47
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_KoFTuzJR }
+		mutually_exclusive = { 
+			focus = Florida_PfAxtcpe 
+		}
+		mutually_exclusive = { 
+			focus = Florida_YUqQbnte 
+		}
+		mutually_exclusive = { 
+			focus = Florida_ 
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			add_political_power = 100
+add_war_support = 0.1
+add_stability = -0.1
+add_popularity = {
+    ideology = communism
+    popularity = 0.1
+}
+		}
+	}
+
+	#Focus for A Steady Path
+	focus = {
+		id = Florida_asteadypath
+		icon = GFX_goal_support_democracy
+		x = 64
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_stateoftheunionaddress }
+		mutually_exclusive = { focus = Florida_KoFTuzJR }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			set_popularities = {
+	democratic = 80
+	neutrality = 0
+	fascism = 10
+	communism = 10
+}
+
+add_stability = 0.1
+		}
+	}
+
+	#Focus for STAMP
+	focus = {
+		id = Florida_stamp
+		icon = GFX_goal_unknown
+		x = 65
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for State of the Union Address
+	focus = {
+		id = Florida_stateoftheunionaddress
+		icon = GFX_focus_generic_strike_at_democracy3
+		x = 58
+		y = 1
+		cost = 1
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			add_political_power= 100
+add_stability= 0.10
+		}
+	}
+
+	#Focus for Go Back
+	focus = {
+		id = Florida_goback
+		icon = GFX_goal_generic_neutrality_focus
+		x = 52
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_KoFTuzJR }
+		mutually_exclusive = { 
+			focus = Florida_PfAxtcpe 
+		}
+		mutually_exclusive = { 
+			focus = Florida_goleft 
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	#Focus for Go Right
+	focus = {
+		id = Florida_goright
+		icon = GFX_goal_support_fascism
+		x = 58
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_KoFTuzJR }
+		mutually_exclusive = { 
+			focus = Florida_goback 
+		}
+		mutually_exclusive = { 
+			focus = Florida_goleft 
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			add_political_power = 100
+add_war_support = 0.1
+add_stability = -0.1
+		}
+	}
+
+	#Focus for Political Shift
+	focus = {
+		id = Florida_politicalshift
+		icon = GFX_politicalshift
+		x = 52
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_stateoftheunionaddress }
+		mutually_exclusive = { focus = Florida_asteadypath }
+		ai_will_do = {
+			factor = 30
+		}
+		completion_reward = {
+			add_war_support = 0.1
+add_stability = -0.1
+add_popularity = {
+    ideology = democratic
+    popularity = -0.25
+}
+		}
+	}
+
+	#Focus for The Light of Revolution
+	focus = {
+		id = Florida_thelightofrevolution
+		icon = GFX_goal_generic_soviet_construction
+		x = 47
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = Florida_goleft }
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			add_popularity = {
+    ideology = communism
+    popularity = 0.1
+}
+add_war_support = 0.1
+add_building_construction = {
+    type = arms_factory
+    level = 5
+    instant_build = yes
+    province = 701
+}
+		}
+	}
+
+#End of focuses 
+ }
