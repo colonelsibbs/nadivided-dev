@@ -1,0 +1,21 @@
+add_namespace = Puerto_Rico
+
+country_event = {
+	id = Puerto_Rico.1
+	title = Puerto_Rico.1.t
+	desc = Puerto_Rico.1.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+
+	}
+
+	option = {
+
+	}
+	option = {
+		
+	}
+}

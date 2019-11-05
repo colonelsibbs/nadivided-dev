@@ -1,0 +1,23 @@
+ideas = {
+	country = {
+
+	}
+	political_advisor = {
+		
+	}
+	theorist = {
+
+	}
+	high_command = {
+
+	}
+	army_chief = {
+
+	}
+	navy_chief = {
+
+	}
+	air_chief = {
+
+	}
+}
