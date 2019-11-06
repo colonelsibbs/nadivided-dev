@@ -1,6 +1,6 @@
 add_namespace = Puerto_Rico
 
-country_event = {
+country_event = { #Event for Goku
 	id = Puerto_Rico.1
 	title = Puerto_Rico.1.t
 	desc = Puerto_Rico.1.d
@@ -9,13 +9,82 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-
+		has_completed_focus = PRR_a_rare_encounter
 	}
 
 	option = {
-
+		name = Puerto_Rico.1.a
+		ai_chance = { factor = 100}
 	}
+}
+country_event = { #Event for Satan's Donation
+	id = Puerto_Rico.2
+	title = Puerto_Rico.2.t
+	desc = Puerto_Rico.2.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_a_large_donation
+	}
+
 	option = {
-		
+		name = Puerto_Rico.2.a
+		ai_chance = { factor = 100}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+country_event = { #Event for Time Capsule
+	id = Puerto_Rico.3
+	title = Puerto_Rico.3.t
+	desc = Puerto_Rico.3.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_time_capsule
+	}
+
+	option = { #Despacito
+		name = Puerto_Rico.3.a
+		ai_chance = { factor = 25}
+	}
+}
+country_event = { #Event for Time Machine
+	id = Puerto_Rico.4
+	title = Puerto_Rico.4.t
+	desc = Puerto_Rico.4.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_instructions_for_a_time_machine
+	}
+
+	option = { #Old Ruler
+		name = Puerto_Rico.4.a
+		ai_chance = { factor = 50}
+	}
+	option = { #New Ruler
+		name = Puerto_Rico.4.b
+		ai_chance = { factor = 50}
 	}
 }

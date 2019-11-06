@@ -351,4 +351,186 @@ focus_tree = {
 			custom_effect_tooltip = reject_reality_tt
 		}
 	}
+#
+	focus = {
+		id = PRR_a_rare_encounter
+		icon = GFX_
+		prerequisite = { focus = PRR_reject_reality_and_subsitute_our_own}
+		x = 56
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = {
+				id = Puerto_Rico.1
+			}
+			create_field_marshal = {
+				name = "Goku"
+				picture = ""
+				traits = {
+					brilliant_strategist
+					aggressive_assaulter
+					war_hero
+					trait_reckless
+					offensive_doctrine
+					fast_planner
+					inspirational_leader
+					adaptable
+					commando
+				}
+				skill = 5
+				attack_skill = 5
+				defense_skill = 5
+				planning_skill = 0
+				logistics_skill = 5
+			}
+		}
+	}
+#
+	focus = {
+		id = PRR_a_large_donation
+		icon = GFX_
+		prerequisite = { focus = PRR_a_rare_encounter}
+		x = 56
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = {
+				id = Puerto_Rico.2
+			}
+		}
+	}
+#
+	focus = {
+		id = PRR_the_proposal
+		icon = GFX_
+		prerequisite = { focus = PRR_a_large_donation}
+		x = 56
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_country_leader = {
+				name = "Hercule Satan"
+				desc = "POLITICS_HERCULE_SATAN_DESC"
+				picture = ""
+				expire = "1965.1.1"
+				ideology = all
+				traits = {
+					inexperienced_imperialist
+					inexperienced_monarch
+					#dealbroker
+					indomitable_perseverance
+					#great_war_hero
+				}
+			}
+			custom_effect_tooltip = anime_focus_tree_tt
+			hidden_effect = {
+				load_focus_tree = Dragon_Ball_focus
+			}
+		}
+	}
+#
+	focus = {
+		id = PRR_time_capsule
+		icon = GFX_
+		prerequisite = { focus = PRR_reject_reality_and_subsitute_our_own}
+		x = 60
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = {
+				id = Puerto_Rico.3
+			}
+		}
+	}
+#
+	focus = {
+		id = PRR_instructions_for_a_time_machine
+		icon = GFX_
+		prerequisite = { focus = PRR_time_capsule}
+		x = 60
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = {
+				id = 
+			}
+		}
+	}
+#
+	focus = {
+		id = PRR_rejected_new_ruler
+		icon = GFX_
+		prerequisite = { focus = PRR_instructions_for_a_time_machine}
+		mutually_exclusive = { focus = PRR_new_ruler_for_puerto_rico}
+		x = 59
+		x = 3
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = despacito_ruler_tt
+			hidden_effect = {
+				load_focus_tree = Desacito_focus
+				set_country_flag = new_ruler_rejected
+			}
+		}
+	}
+#
+	focus = {
+		id = PRR_new_ruler_for_puerto_rico
+		icon = GFX_
+		prerequisite = { focus = PRR_instructions_for_a_time_machine}
+		mutually_exclusive = { focus = PRR_rejected_new_ruler}
+		x = 61
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = despacito_ruler_tt
+			hidden_effect = {
+				load_focus_tree = Desacito_focus
+				set_country_flag = new_ruler_accepted
+			}
+		}
+	}
+#
 }
