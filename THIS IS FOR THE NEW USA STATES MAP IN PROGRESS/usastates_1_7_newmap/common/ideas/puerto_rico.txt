@@ -1,6 +1,6 @@
 ideas = {
 	country = {
-
+		###great depression mutiple levels###
 	}
 	political_advisor = {
 		

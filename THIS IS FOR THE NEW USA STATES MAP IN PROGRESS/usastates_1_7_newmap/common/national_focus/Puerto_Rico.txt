@@ -9,4 +9,346 @@ focus_tree = {
 			tag = PRR
 		}
 	}
+#
+	focus = {
+		id = PRR_reality_is_often_dissapointing
+		icon = GFX_
+		mutually_exclusive = { focus = PRR_reject_reality_and_subsitute_our_own}
+		x = 30
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			custom_effect_tooltip = realistic_approach_tt
+		}
+	}
+#
+	focus = {
+		id = PRR_feed_the_people
+		icon = GFX_
+		prerequisite = { focus = PRR_reality_is_often_dissapointing}
+		x = 2
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			###great depression reduction###
+		}
+	}
+#
+	focus = {
+		id = PRR_help_the_poor
+		icon = GFX_
+		prerequisite = { focus = PRR_feed_the_people}
+		x = 1
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			###great depression reduction###
+		}
+	}
+#
+	focus = {
+		id = PRR_bread_subsidies
+		icon = GFX_
+		prerequisite = { focus = PRR_help_the_poor}
+		x = 0
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			###great depression reduction###
+		}
+	}
+#
+	focus = {
+		id = PRR_offer_workshop_jobs
+		icon = GFX_
+		prerequisite = { focus = PRR_bread_subsidies}
+		x = 0
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			###great depression reduction###
+		}
+	}
+#
+	focus = {
+		id = PRR_increase_international_trade
+		icon = GFX_
+		prerequisite = { focus = PRR_help_the_poor}
+		prerequisite = { focus = PRR_aid_the_capitalists}
+		x = 2
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+#
+	focus = {
+		id = PRR_bring_electricity_to_the_rural_regions
+		icon = GFX_
+		prerequisite = { focus = PRR_increase_international_trade}
+		x = 2
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+#
+	focus = {
+		id = PRR_aid_the_capitalists
+		icon = GFX_
+		prerequisite = { focus = PRR_feed_the_people}
+		x = 3
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+#
+	focus = {
+		id = PRR_educate_skilled_workers
+		icon = GFX_
+		prerequisite = { focus = PRR_aid_the_capitalists}
+		x = 4
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+#
+	focus = {
+		id = PRR_subsidize_universities
+		icon = GFX_
+		prerequisite = { focus = PRR_educate_skilled_workers}
+		x = 4
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+#
+	focus = {
+		id = PRR_rehabilitated_economy
+		icon = GFX_
+		prerequisite = { focus = PRR_subsidize_universities}
+		prerequisite = { focus = PRR_bring_electricity_to_the_rural_regions}
+		prerequisite = { focus = PRR_offer_workshop_jobs}
+		x = 2
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = ###rehabilitated economy###
+		}
+	}
+#
+	focus = {
+		id = PRR_create_the_united_states_of_the_carrabean
+		icon = GFX_
+		prerequisite = { focus = PRR_reality_is_often_dissapointing}
+		x = 40
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+		}
+	}
+#
+	focus = {
+		id = PRR_an_american_approach
+		icon = GFX_
+		prerequisite = { focus = PRR_create_the_united_states_of_the_carrabean}
+		mutually_exclusive = { focus = PRR_a_democratic_approach}
+		x = 35
+		y = 2
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ###american approach###
+		}
+	}
+#
+	focus = {
+		id = PRR_a_democratic_approach
+		icon = GFX_
+		prerequisite = { focus = PRR_create_the_united_states_of_the_carrabean}
+		mutually_exclusive = { focus = PRR_an_american_approach}
+		x = 45
+		y = 2
+		cost = 3
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ###democratic approach###
+		}
+	}
+#
+	focus = {
+		id = PRR_reject_reality_and_subsitute_our_own
+		icon = GFX_
+		mutually_exclusive = { focus = PRR_reality_is_often_dissapointing}
+		x = 60
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = reject_reality_tt
+		}
+	}
 }
