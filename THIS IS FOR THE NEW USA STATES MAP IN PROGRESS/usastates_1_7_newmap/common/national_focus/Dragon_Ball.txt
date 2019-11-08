@@ -4,7 +4,9 @@ focus_tree = {
     country = {
         factor = 0
     }
-#
+##########################################################################################
+#################################Roshi Training###########################################
+##########################################################################################
     focus = {
         id = PRR_a_turtle_in_distress
         icon = GFX_
@@ -24,7 +26,6 @@ focus_tree = {
             add_political_power = 25
         }
     }
-#
     focus = {
         id = PRR_a_run_in_with_roshi
         icon = GFX_
@@ -44,7 +45,6 @@ focus_tree = {
             }
         }
     }
-#
     focus = {
         id = PRR_begin_training_with_Roshi
         icon = GFX_
@@ -62,7 +62,6 @@ focus_tree = {
             add_ideas = ###training with Roshi1###
         }
     }
-#
     focus = {
         id = PRR_meetup_with_krillin
         icon = GFX_
@@ -77,6 +76,9 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
+            country_event = {
+                id = Puerto_Rico.7
+            }
             create_corps_commander = {
                 name = "Krillin"
                 picture = ""
@@ -93,7 +95,6 @@ focus_tree = {
             }
         }
     }
-#
     focus = {
         id = PRR_memories_of_yamcha
         icon = GFX_
@@ -108,6 +109,9 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
+            country_event = {
+                id = Puerto_Rico.8
+            }
             create_corps_commander = {
                 name = "Yamcha"
                 picture = ""
@@ -124,7 +128,6 @@ focus_tree = {
             }
         }
     }
-#
     focus = {
         id = PRR_the_new_milkmen_in_town
         icon = GFX_
@@ -136,7 +139,7 @@ focus_tree = {
             factor = 1
         }
 
-        available_if_capitulated = yes
+        available_if_capitulated = no
 
         completion_reward = {
             add_stability = 0.05
@@ -150,7 +153,6 @@ focus_tree = {
 	    	}
         }
     }
-#
     focus = {
         id = PRR_training_shells
         icon = GFX_
@@ -168,7 +170,6 @@ focus_tree = {
             add_ideas = ###weighted training clothes
         }
     }
-#
     focus = {
         id = PRR_complete_roshis_training
         icon = GFX_
@@ -190,5 +191,147 @@ focus_tree = {
             }
         }
     }
-#
+##########################################################################################
+####################################World Martial Arts Tournament#########################
+##########################################################################################
+    focus = {
+        id = PRR_the_first_world_martial_arts_tournament
+        icon = GFX_
+        available = {
+            has_completed_focus = PRR_complete_roshis_training
+        }
+        x = 3
+        y = 0
+        cost = 10
+        ai_will_do = {
+            factor = 10
+        }
+
+        available_if_capitulated = yes
+
+        completion_reward = {
+            country_event = {
+                id = Puerto_Rico.9
+            }
+        }
+    }
+    focus = {
+        id = PRR_the_second_world_martial_arts_tournament
+        icon = GFX_
+        prerequisite = { focus = PRR_the_first_world_martial_arts_tournament}
+        x = 3
+        y = 1
+        cost = 10
+        ai_will_do = {
+            factor = 10
+        }
+
+        available_if_capitulated = yes
+
+        completion_reward = {
+            country_event = {
+                id = Puerto_Rico.10
+            }
+        }
+    }
+    focus = {
+        id = PRR_the_third_world_martial_arts_tournament
+        icon = GFX_
+        prerequisite = { focus = PRR_the_second_world_martial_arts_tournament}
+        available = {
+            has_completed_focus = ###
+        }
+        x = 3
+        y = 2
+        cost = 10
+        ai_will_do = {
+            factor = 10
+        }
+
+        available_if_capitulated = yes
+
+        completion_reward = {
+            country_event = {
+                id = Puerto_Rico.11
+            }
+        }
+    }
+##########################################################################################
+################################Piccilo Saga##############################################
+##########################################################################################
+    focus = {
+        id = PRR_a_disaster_at_the_tournament
+        icon = GFX_
+        available = {
+            has_completed_focus = PRR_the_second_world_martial_arts_tournament
+        }
+        x = 20
+        y = 0
+        cost = 5
+        ai_will_do = {
+            factor = 1
+        }
+
+        available_if_capitulated = yes
+
+        completion_reward = {
+            country_event = {
+                id = Puerto_Rico.12
+            }
+        }
+    }
+    focus = {
+        id = PRR_go_after_tamberen
+        icon = GFX_
+        prerequisite = { focus = PRR_a_disaster_at_the_tournament}
+        x = 20
+        y = 1
+        cost = 5
+        ai_will_do = {
+            factor = 1
+        }
+
+        available_if_capitulated = yes
+
+        completion_reward = {
+            country_event = {
+                id = Puerto_Rico.13
+            }
+        }
+    }
+    focus = {
+        id = PRR_meetup_with_yajarobi
+        icon = GFX_
+        prerequisite = { focus = PRR_go_after_tamberen}
+        x = 17
+        y = 2
+        cost = 10
+        ai_will_do = {
+            factor = 1
+        }
+
+        available_if_capitulated = yes
+
+        completion_reward = {
+            create_corps_commander = {
+                name = "Yajirobe"
+                picture = ""
+                traits = {
+                    trait_cautious
+                    trickster
+                    ranger
+                    scavenger
+
+                }
+                skill = 3
+                attack_skill = 2
+                defense_skill = 2
+                planning_skill = 3
+                logistics_skill = 2
+            }
+            country_event = {
+                id = Puerto_Rico.14
+            }
+        }
+    }
 }

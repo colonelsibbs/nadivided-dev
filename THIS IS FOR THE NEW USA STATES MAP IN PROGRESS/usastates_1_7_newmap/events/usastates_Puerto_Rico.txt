@@ -88,3 +88,185 @@ country_event = { #Event for Time Machine
 		ai_chance = { factor = 50}
 	}
 }
+country_event = { #turtle even
+	id = Puerto_Rico.5
+	title = Puerto_Rico.5.t
+	desc = Puerto_Rico.5.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_a_turtle_in_distress
+	}
+
+	option = {
+		name = Puerto_Rico.5.a
+		ai_chance = { factor = 100}
+	}
+}
+country_event = { #encounter with roshi
+	id = Puerto_Rico.6
+	title = Puerto_Rico.6.t
+	desc = Puerto_Rico.6.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_a_run_in_with_roshi
+	}
+
+	option = {
+		name = Puerto_Rico.6.a
+		ai_chance = { factor = 100}
+	}
+}
+country_event = { #meeting krillin
+	id = Puerto_Rico.7
+	title = Puerto_Rico.7.t
+	desc = Puerto_Rico.7.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_meetup_with_krillin
+	}
+
+	option = {
+		name = Puerto_Rico.7.a
+		ai_chance = { factor = 100}
+	}
+}
+country_event = { #meeting yamcha
+	id = Puerto_Rico.8
+	title = Puerto_Rico.8.t
+	desc = Puerto_Rico.8.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_memories_of_yamcha
+	}
+
+	option = {
+		name = Puerto_Rico.8.a
+		ai_chance = { factor = 100}
+	}
+}
+country_event = { #1st martial arts tournament
+	id = Puerto_Rico.9
+	title = Puerto_Rico.9.t
+	desc = Puerto_Rico.9.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_the_first_world_martial_arts_tournament
+	}
+
+	option = {
+		name = Puerto_Rico.9.a
+		ai_chance = { factor = 50}
+	}
+	option = {
+		name = Puerto_Rico.9.b
+		ai_chance = { factor = 50}
+	}
+}
+country_event = { #2nd martial arts tournament
+	id = Puerto_Rico.10
+	title = Puerto_Rico.10.t
+	desc = Puerto_Rico.10.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_the_second_world_martial_arts_tournament
+	}
+
+	option = {
+		name = Puerto_Rico.10.a
+		ai_chance = { factor = 50}
+	}
+	option = {
+		name = Puerto_Rico.10.b
+		ai_chance = { factor = 50}
+	}
+}
+country_event = { #3rd martial arts tournament
+	id = Puerto_Rico.11
+	title = Puerto_Rico.11.t
+	desc = Puerto_Rico.11.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_the_third_world_martial_arts_tournament
+	}
+
+	option = {
+		name = Puerto_Rico.11.a
+		ai_chance = { factor = 50}
+	}
+	option = {
+		name = Puerto_Rico.11.b
+		ai_chance = { factor = 50}
+	}
+}
+country_event = { #death of krillin
+	id = Puerto_Rico.12
+	title = Puerto_Rico.12.t
+	desc = Puerto_Rico.12.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_a_disaster_at_the_tournament
+	}
+
+	option = {
+		name = Puerto_Rico.12.a
+		ai_chance = { factor = 100}
+	}
+}
+country_event = { #fight and loss with Tameren
+	id = Puerto_Rico.13
+	title = Puerto_Rico.13.t
+	desc = Puerto_Rico.13.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_go_after_tamberen
+	}
+
+	option = {
+		name = Puerto_Rico.13.a
+		ai_chance = { factor = 100}
+	}
+}
+country_event = { ###meetup with Yajarobi
+	id = Puerto_Rico.14
+	title = Puerto_Rico.14.t
+	desc = Puerto_Rico.14.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_meetup_with_yajarobi
+	}
+
+	option = {
+		name = Puerto_Rico.14.a
+		ai_chance = { factor = 100}
+	}
+}
