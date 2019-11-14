@@ -195,7 +195,7 @@ focus_tree = {
 ####################################World Martial Arts Tournament#########################
 ##########################################################################################
     focus = {
-        id = PRR_the_first_world_martial_arts_tournament
+        id = PRR_the_twenty_first_world_martial_arts_tournament
         icon = GFX_
         available = {
             has_completed_focus = PRR_complete_roshis_training
@@ -216,9 +216,9 @@ focus_tree = {
         }
     }
     focus = {
-        id = PRR_the_second_world_martial_arts_tournament
+        id = PRR_the_twenty_second_world_martial_arts_tournament
         icon = GFX_
-        prerequisite = { focus = PRR_the_first_world_martial_arts_tournament}
+        prerequisite = { focus = PRR_the_twenty_first_world_martial_arts_tournament}
         x = 3
         y = 1
         cost = 10
@@ -235,9 +235,9 @@ focus_tree = {
         }
     }
     focus = {
-        id = PRR_the_third_world_martial_arts_tournament
+        id = PRR_the_twentry_third_world_martial_arts_tournament
         icon = GFX_
-        prerequisite = { focus = PRR_the_second_world_martial_arts_tournament}
+        prerequisite = { focus = PRR_the_twenty_second_world_martial_arts_tournament}
         available = {
             has_completed_focus = ###
         }
@@ -263,7 +263,7 @@ focus_tree = {
         id = PRR_a_disaster_at_the_tournament
         icon = GFX_
         available = {
-            has_completed_focus = PRR_the_second_world_martial_arts_tournament
+            has_completed_focus = PRR_the_twenty_second_world_martial_arts_tournament
         }
         x = 20
         y = 0

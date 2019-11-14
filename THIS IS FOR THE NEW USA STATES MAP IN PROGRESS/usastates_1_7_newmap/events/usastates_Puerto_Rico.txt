@@ -165,7 +165,7 @@ country_event = { #1st martial arts tournament
 	is_triggered_only = yes
 
 	trigger = {
-		has_completed_focus = PRR_the_first_world_martial_arts_tournament
+		has_completed_focus = PRR_the_twenty_first_world_martial_arts_tournament
 	}
 
 	option = {
@@ -177,7 +177,7 @@ country_event = { #1st martial arts tournament
 		ai_chance = { factor = 50}
 	}
 }
-country_event = { #2nd martial arts tournament
+country_event = { #22nd martial arts tournament
 	id = Puerto_Rico.10
 	title = Puerto_Rico.10.t
 	desc = Puerto_Rico.10.d
@@ -186,7 +186,7 @@ country_event = { #2nd martial arts tournament
 	is_triggered_only = yes
 
 	trigger = {
-		has_completed_focus = PRR_the_second_world_martial_arts_tournament
+		has_completed_focus = PRR_the_twenty_second_world_martial_arts_tournament
 	}
 
 	option = {
@@ -207,7 +207,7 @@ country_event = { #3rd martial arts tournament
 	is_triggered_only = yes
 
 	trigger = {
-		has_completed_focus = PRR_the_third_world_martial_arts_tournament
+		has_completed_focus = PRR_the_twentry_third_world_martial_arts_tournament
 	}
 
 	option = {
