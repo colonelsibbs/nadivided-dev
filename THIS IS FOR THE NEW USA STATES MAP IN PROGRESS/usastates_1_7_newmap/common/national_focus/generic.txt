@@ -1650,7 +1650,7 @@ focus_tree = {
 		icon = GFX_goal_support_democracy
 		prerequisite = { focus = GEN_reopen_the_political_sphere}
 		mutually_exclusive = { focus = GEN_sieze_the_means_of_production}
-		mutually_exclusive = { focus = GEN_sieze_the_means_of_production}
+		mutually_exclusive = { focus = GEN_take_advantage_of_the_chaos}
 		x = 17
 		y = 1
 		cost = 10
@@ -2045,6 +2045,11 @@ focus_tree = {
 		id = GEN_take_out_fascists
 		icon = GFX_focus_generic_anti_fascist_diplomacy
 		prerequisite = { focus = GEN_strengthen_unions}
+		available = {
+			any_neighbor_country = {
+				has_government = fascism
+			}
+		}
 		x = 20
 		y = 5
 		cost = 10
@@ -2200,6 +2205,11 @@ focus_tree = {
 		id = GEN_purge_the_communists
 		icon = GFX_focus_contain_communism
 		prerequisite = { focus = GEN_nondiscriminate_recruitment}
+		available = {
+			any_neighbor_country = {
+				has_government = communism
+			}
+		}
 		x = 22
 		y = 6
 		cost = 10
