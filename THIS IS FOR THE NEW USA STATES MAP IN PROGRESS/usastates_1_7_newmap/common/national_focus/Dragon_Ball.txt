@@ -265,8 +265,8 @@ focus_tree = {
         available = {
             has_completed_focus = PRR_the_twenty_second_world_martial_arts_tournament
         }
-        x = 20
-        y = 0
+        x = 10
+        y = 6
         cost = 5
         ai_will_do = {
             factor = 1
@@ -284,8 +284,8 @@ focus_tree = {
         id = PRR_go_after_tamberen
         icon = GFX_
         prerequisite = { focus = PRR_a_disaster_at_the_tournament}
-        x = 20
-        y = 1
+        x = 10
+        y = 7
         cost = 5
         ai_will_do = {
             factor = 1
@@ -303,8 +303,8 @@ focus_tree = {
         id = PRR_meetup_with_yajarobi
         icon = GFX_
         prerequisite = { focus = PRR_go_after_tamberen}
-        x = 17
-        y = 2
+        x = 10
+        y = 8
         cost = 10
         ai_will_do = {
             factor = 1
@@ -331,6 +331,44 @@ focus_tree = {
             }
             country_event = {
                 id = Puerto_Rico.14
+            }
+        }
+    }
+    focus = {
+        id = PRR_rematch_with_tamberen
+        icon = GFX_
+        prerequisite = { focus = PRR_meetup_with_yajarobi}
+        x = 10
+        y = 9
+        cost = 5
+        ai_will_do = {
+            factor = 1
+        }
+
+        available_if_capitulated = yes
+
+        completion_reward = {
+            country_event = {
+                id = Puerto_Rico.15
+            }
+        }
+    }
+    focus = {
+        id = PRR_first_fight_with_king_piccilo
+        icon = GFX_
+        prerequisite = { focus = PRR_rematch_with_tamberen}
+        x = 10
+        y = 10
+        cost = 5
+        ai_will_do = {
+            factor = 1
+        }
+
+        available_if_capitulated = yes
+
+        completion_reward = {
+            country_event = {
+                id = Puerto_Rico.16
             }
         }
     }

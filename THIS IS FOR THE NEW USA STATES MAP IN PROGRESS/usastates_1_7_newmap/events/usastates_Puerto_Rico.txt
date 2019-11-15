@@ -198,7 +198,7 @@ country_event = { #22nd martial arts tournament
 		ai_chance = { factor = 50}
 	}
 }
-country_event = { #3rd martial arts tournament
+country_event = { #23rd martial arts tournament
 	id = Puerto_Rico.11
 	title = Puerto_Rico.11.t
 	desc = Puerto_Rico.11.d
@@ -236,7 +236,7 @@ country_event = { #death of krillin
 		ai_chance = { factor = 100}
 	}
 }
-country_event = { #fight and loss with Tameren
+country_event = { #fight and loss with Tamberen
 	id = Puerto_Rico.13
 	title = Puerto_Rico.13.t
 	desc = Puerto_Rico.13.d
@@ -253,7 +253,7 @@ country_event = { #fight and loss with Tameren
 		ai_chance = { factor = 100}
 	}
 }
-country_event = { ###meetup with Yajarobi
+country_event = { #meetup with Yajarobi
 	id = Puerto_Rico.14
 	title = Puerto_Rico.14.t
 	desc = Puerto_Rico.14.d
@@ -269,4 +269,24 @@ country_event = { ###meetup with Yajarobi
 		name = Puerto_Rico.14.a
 		ai_chance = { factor = 100}
 	}
+}
+country_event = { #rematch and victory with Tamberen
+	id = Puerto_Rico.15
+	title = Puerto_Rico.15.t
+	desc = Puerto_Rico.15.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_rematch_with_tamberen
+	}
+
+	option = {
+		name = Puerto_Rico.15.a
+		ai_chance = { factor = 100}
+	}
+}
+country_event = { #1st fight with King Piccolo
+	id = Puerto_Rico.16
 }
