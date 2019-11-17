@@ -1,0 +1,621 @@
+battle_royale_temp_target_closer_than_war_target_to_strongest_ready = {
+	OR = {
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 4000
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 4000
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 3200
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 3200
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 2560
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 2560
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 2048
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 2048
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 1638
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 1638
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 1311
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 1311
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 1049
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 1049
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 839
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 839
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 671
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 671
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 537
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 537
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 429
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 429
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 344
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 344
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 275
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 275
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 220
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 220
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 176
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 176
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 141
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 141
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 113
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 113
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_temp_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value < 90
+					}
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_capital
+						value > 90
+					}
+				}
+			}
+		}
+	}
+}
+
+battle_royale_strongest_ready_state_to_temp_target_is_shorter = {
+	OR = {
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 4000
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 4000
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 3200
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 3200
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 2560
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 2560
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 2048
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 2048
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 1638
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 1638
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 1311
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 1311
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 1049
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 1049
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 839
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 839
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 671
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 671
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 537
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 537
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 429
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 429
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 344
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 344
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 275
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 275
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 220
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 220
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 176
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 176
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 141
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 141
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 113
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 113
+					}
+				}
+			}
+		}
+		AND = {
+			event_target:battle_royale_strongest_ready_state = {
+				distance_to = {
+					target = event_target:battle_royale_temp_target_capital
+					value < 90
+				}
+			}
+			event_target:battle_royale_war_target = {
+				capital_scope = {
+					distance_to = {
+						target = event_target:battle_royale_strongest_ready_closest_state
+						value > 90
+					}
+				}
+			}
+		}
+	}
+}

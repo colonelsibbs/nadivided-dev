@@ -1,0 +1,184 @@
+battle_royale_peace = {
+	enable = {
+		has_global_flag = battle_royale_started
+	}
+
+	annex_randomness = 0
+	liberate_randomness = 0
+	puppet_randomness = 0
+	take_states_randomness = 0
+	force_government_randomness = 0
+	
+	# ROOT = Taker, FROM = Giver
+	annex = {
+		base = 5000
+		modifier = {
+			add = 5000
+			always = yes
+		}
+	}
+
+	# ROOT = Taker, FROM = Liberated
+	liberate = {
+		base = 0
+		modifier = {
+			factor = 0
+			always = yes
+		}
+	}
+
+	# ROOT = Taker, FROM = Giver
+	puppet = {
+		base = 0
+		modifier = {
+			factor = 0
+			always = yes
+		}
+	}
+
+	# ROOT = Taker, FROM = State
+	take_states = {
+		base = 50
+		modifier = {
+			add = 50
+			OR = {
+				any_owned_state = { is_coastal = yes }
+				NOT = {
+					FROM = { 
+						OR = {
+							is_island_state = yes
+							is_coastal = yes
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 450
+			OR = {
+				FROM = {
+					is_controlled_by = ROOT
+				}
+				FROM = {
+					OWNER = {
+						controls_state = FROM
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 500
+			FROM = {
+				is_controlled_by = ROOT
+			}
+		}
+		modifier = {
+			add = 500
+			FROM = {
+				NOT = {is_island_state = yes}
+				all_neighbor_state = {
+					OR = {
+						is_owned_by = ROOT
+						has_claimed_state_in_peace_conference = ROOT
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 500
+			FROM = {
+				OR = {
+					num_owned_neighbour_states = {
+						count > 0
+						owner = ROOT
+					}
+					num_claimed_peace_conference_neighbour_states = {
+						count > 0
+						owner = ROOT
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 200
+			capital_scope = {
+				distance_to = {
+					target = FROM
+					value < 100
+				}
+			}
+		}
+		modifier = {
+			add = 175
+			capital_scope = {
+				distance_to = {
+					target = FROM
+					value < 200
+				}
+			}
+		}
+		modifier = {
+			add = 150
+			capital_scope = {
+				distance_to = {
+					target = FROM
+					value < 400
+				}
+			}
+		}
+		modifier = {
+			add = 125
+			capital_scope = {
+				distance_to = {
+					target = FROM
+					value < 800
+				}
+			}
+		}
+		modifier = {
+			add = 100
+			capital_scope = {
+				distance_to = {
+					target = FROM
+					value < 1600
+				}
+			}
+		}
+		modifier = {
+			add = 75
+			capital_scope = {
+				distance_to = {
+					target = FROM
+					value < 3200
+				}
+			}
+		}
+		modifier = {
+			add = 50
+			capital_scope = {
+				distance_to = {
+					target = FROM
+					value < 6400
+				}
+			}
+		}
+		modifier = {
+			add = 25
+			capital_scope = {
+				distance_to = {
+					target = FROM
+					value < 12800
+				}
+			}
+		}
+	}
+
+	# ROOT = Taker, FROM = Giver
+	force_government = {
+		base = 0
+		modifier = {
+			factor = 0
+			always = yes
+		}
+	}
+}

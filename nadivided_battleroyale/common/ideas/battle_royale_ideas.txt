@@ -1,0 +1,156 @@
+ideas = {
+	country = {
+		battle_royale_time_selected_idea = { # shows time remaining, serves no practical function
+			picture = battle_royale_time_idea
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+		}
+		battle_royale_waiting_idea = { # shows time remaining, serves no practical function
+			picture = battle_royale_time_idea
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+		}
+		battle_royale_ai_idea = {
+			picture = battle_royale_ai_idea
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			rule = {
+				can_join_factions = no
+				can_send_volunteers = no
+				can_force_government = no
+				can_puppet = no
+			}
+			
+			modifier = {
+				ai_focus_aggressive_factor = 2.0
+				ai_focus_defense_factor = -0.5
+			}
+		}
+		battle_royale_human_idea = {
+			picture = battle_royale_human_idea
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			rule = {
+				can_create_factions = yes
+				can_join_factions = yes
+				can_join_opposite_factions = yes
+				can_force_government = no
+				can_puppet = no
+			}
+		}
+		american_protection_defence_democratic = {
+			allowed = { always = no	}
+
+			allowed_civil_war = {
+				allowed = { always = no	}
+			}
+
+			removal_cost = -1
+		}
+		american_protection_drift_democratic = {
+			allowed = { always = no	}
+
+			allowed_civil_war = {
+				allowed = { always = no	}
+			}
+
+			removal_cost = -1
+		}
+		american_protection_defence_communism = {
+			allowed = { always = no	}
+
+			allowed_civil_war = {
+				allowed = { always = no	}
+			}
+
+			removal_cost = -1
+		}
+		american_protection_drift_communism = {
+			allowed = { always = no	}
+
+			allowed_civil_war = {
+				allowed = { always = no	}
+			}
+
+			removal_cost = -1
+		}
+		american_protection_defence_fascism  = {
+			allowed = { always = no	}
+
+			allowed_civil_war = {
+				allowed = { always = no	}
+			}
+
+			removal_cost = -1
+		}
+		american_protection_drift_fascism  = {
+			allowed = { always = no	}
+
+			allowed_civil_war = {
+				allowed = { always = no	}
+			}
+
+			removal_cost = -1
+		}
+		american_protection_defence_fascism  = {
+			allowed = { always = no	}
+
+			allowed_civil_war = {
+				allowed = { always = no	}
+			}
+
+			removal_cost = -1
+		}
+		american_protection_drift_fascism  = {
+			allowed = { always = no	}
+
+			allowed_civil_war = {
+				allowed = { always = no	}
+			}
+
+			removal_cost = -1
+		}
+		anti_soviet_pact = {
+			
+			removal_cost = -1 # Or make removable, with high cost?
+			
+			allowed = { always = no	}
+			
+			allowed_civil_war = {
+				allowed = { always = no	}
+			}
+		}
+	}
+}

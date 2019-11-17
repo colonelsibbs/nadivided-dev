@@ -1,0 +1,766 @@
+battle_royale_remove_ai_diplomacy = {
+	every_country = {
+		every_country = {
+			limit = {
+				OR = {
+					is_ai = yes
+					PREV = {is_ai = yes}
+				}
+			}
+			diplomatic_relation = { country = PREV relation = guarantee active = no }
+			diplomatic_relation = { country = PREV relation = military_access active = no }
+		}
+	}
+}
+
+battle_royale_add_owned_cores = {
+	every_country = {
+		limit = {
+			any_owned_state = {
+				NOT = {is_core_of = PREV}
+			}
+		}
+		every_owned_state = {
+			limit = {
+				NOT = {is_core_of = PREV}
+			}
+			add_core_of = PREV
+		}
+	}
+}
+
+battle_royale_remove_puppets = {
+	every_country = {
+		limit = {
+			OR = {
+				is_puppet = yes
+				is_subject = yes
+			}
+		}
+		if = {
+			limit = {
+				num_divisions > 0
+			}
+			OVERLORD = {
+				end_puppet = PREV
+			}
+			set_autonomy = { #no puppets allowed, every country fights for world conquest
+				target = THIS
+				autonomous_state = autonomy_free
+			}
+		}
+		if = {
+			limit = {
+				num_divisions < 1
+			}
+			OVERLORD = {
+				end_puppet = PREV
+				annex_country = { target = PREV }
+			}
+		}
+	}
+}
+
+battle_royale_remove_ai_from_factions = {
+	every_country = {
+		limit = {
+			is_ai = yes
+			is_in_faction = yes
+		}
+		every_country = {
+			limit = {
+				is_faction_leader = yes
+				is_in_faction_with = PREV
+			}
+			remove_from_faction = PREV
+		}
+	}
+}
+
+battle_royale_give_player_rules = {
+	every_country = {
+		limit = {
+			NOT = {has_idea = battle_royale_ai_idea}
+			is_ai = yes
+		}
+		add_ideas = battle_royale_ai_idea
+	}
+	every_country = {
+		limit = {
+			has_idea = battle_royale_ai_idea
+			NOT = {is_ai = yes}
+		}
+		remove_ideas = battle_royale_ai_idea
+	}
+	every_country = {
+		limit = {
+			NOT = {has_idea = battle_royale_human_idea}
+			NOT = {is_ai = yes}
+		}
+		add_ideas = battle_royale_human_idea
+	}
+	every_country = {
+		limit = {
+			has_idea = battle_royale_human_idea
+			is_ai = yes
+		}
+		remove_ideas = battle_royale_human_idea
+	}
+}
+
+battle_royale_remove_war_intervention_ideas = {
+	every_country = {
+		limit = {
+			has_idea = american_protection_drift_democratic
+		}
+		remove_ideas = american_protection_drift_democratic
+	}
+	every_country = {
+		limit = {
+			has_idea = american_protection_drift_communism
+		}
+		remove_ideas = american_protection_drift_communism
+	}
+	every_country = {
+		limit = {
+			has_idea = american_protection_drift_fascism
+		}
+		remove_ideas = american_protection_drift_fascism
+	}
+	every_country = {
+		limit = {
+			has_idea = american_protection_defence_democratic
+		}
+		remove_ideas = american_protection_defence_democratic
+	}
+	every_country = {
+		limit = {
+			has_idea = american_protection_defence_communism
+		}
+		remove_ideas = american_protection_defence_communism
+	}
+	every_country = {
+		limit = {
+			has_idea = american_protection_defence_fascism
+		}
+		remove_ideas = american_protection_defence_fascism
+	}
+	every_country = {
+		limit = {
+			has_idea = anti_soviet_pact
+		}
+		remove_ideas = anti_soviet_pact
+	}
+}
+
+battle_royale_land_war_readiness_check = {
+	event_target:battle_royale_war_readiness_check_target = {
+		if = {
+			limit = {
+				num_divisions > 0
+				surrender_progress < 0.25
+				NOT = {any_neighbor_country = {has_war_with = event_target:battle_royale_war_readiness_check_target}}
+				any_neighbor_country = {
+					NOT = {has_war_with = event_target:battle_royale_war_readiness_check_target}
+					NOT = {is_in_faction_with = event_target:battle_royale_war_readiness_check_target}
+					OR = {
+						num_divisions < 1
+						strength_ratio = { tag = event_target:battle_royale_war_readiness_check_target ratio < 1.0 }
+						event_target:battle_royale_war_readiness_check_target = {strength_ratio = { tag = PREV ratio > 1.0 } }
+						AND = {
+							NOT = {strength_ratio = { tag = event_target:battle_royale_war_readiness_check_target ratio > 1.0 }}
+							NOT = {strength_ratio = { tag = event_target:battle_royale_war_readiness_check_target ratio < 1.0 }}
+						}
+					}
+				}
+			}
+			set_country_flag = battle_royale_ready_for_land_war
+		}
+	}
+}
+
+battle_royale_naval_war_readiness_check = {
+	event_target:battle_royale_war_readiness_check_target = {
+		if = {
+			limit = {
+				num_divisions > 0
+				surrender_progress < 0.25
+				NOT = {has_war = yes}
+				NOT = {any_neighbor_country = {has_war_with = event_target:battle_royale_war_readiness_check_target}}
+				has_navy_size = { size > 0 }
+				any_owned_state = {
+					naval_base > 0
+				}
+				any_other_country = {
+					NOT = {is_in_faction_with = event_target:battle_royale_war_readiness_check_target}
+					any_owned_state = {
+						is_controlled_by = PREV
+						naval_base > 0
+					}
+					OR = {
+						num_divisions < 1
+						strength_ratio = { tag = event_target:battle_royale_war_readiness_check_target ratio < 1.0 }
+						event_target:battle_royale_war_readiness_check_target = {strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					OR = {
+						has_navy_size = { size < 1 }
+						naval_strength_ratio = { tag = event_target:battle_royale_war_readiness_check_target ratio < 1.0 }
+						event_target:battle_royale_war_readiness_check_target = {naval_strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+				}
+			}
+			set_country_flag = battle_royale_ready_for_naval_war
+		}
+	}
+}
+
+battle_royale_strongest_ready_declare_war = {
+	event_target:battle_royale_strongest_ready = {
+		capital_scope = {
+			clear_global_event_target = battle_royale_strongest_ready_capital
+			save_global_event_target_as = battle_royale_strongest_ready_capital
+		}
+		clr_country_flag = battle_royale_declared_war
+		if = { # top choice is country that neighbors our home area
+			limit = {
+				has_country_flag = battle_royale_ready_for_land_war
+				any_home_area_neighbor_country = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					OR = {
+						strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {strength_ratio = { tag = PREV ratio > 1.0 } }
+						AND = {
+							NOT = {strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio > 1.0 }}
+							NOT = {strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }}
+						}
+					}
+				}
+			}
+			clear_global_event_target = battle_royale_war_target
+			save_global_event_target_as = battle_royale_war_target
+			every_neighbor_country = {
+				limit = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					OR = {
+						strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {strength_ratio = { tag = PREV ratio > 1.0 } }
+						AND = {
+							NOT = {strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio > 1.0 }}
+							NOT = {strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }}
+						}
+					}
+				}
+				clear_global_event_target = battle_royale_temp_target
+				save_global_event_target_as = battle_royale_temp_target
+				if = {
+					limit = {
+						event_target:battle_royale_strongest_ready = {any_home_area_neighbor_country = {tag = event_target:battle_royale_temp_target}}
+						OR = {
+							event_target:battle_royale_strongest_ready = {tag = event_target:battle_royale_war_target}
+							strength_ratio = { tag = event_target:battle_royale_war_target ratio < 1.0 }
+							event_target:battle_royale_war_target = {strength_ratio = { tag = PREV ratio > 1.0 } }
+							AND = {
+								num_divisions < 1
+								event_target:battle_royale_war_target = {num_divisions > 0}
+							}
+							AND = {
+								NOT = {strength_ratio = { tag = event_target:battle_royale_war_target ratio > 1.0 }}
+								NOT = {strength_ratio = { tag = event_target:battle_royale_war_target ratio < 1.0 }}
+								battle_royale_temp_target_closer_than_war_target_to_strongest_ready = yes
+							}
+						}
+					}
+					clear_global_event_target = battle_royale_war_target
+					save_global_event_target_as = battle_royale_war_target
+				}
+			}
+			if = {
+				limit = {
+					NOT = {tag = event_target:battle_royale_war_target}
+					country_exists = event_target:battle_royale_war_target
+					NOT = {has_war_with = event_target:battle_royale_war_target}
+					NOT = {is_in_faction_with = event_target:battle_royale_war_target}
+				}
+				event_target:battle_royale_war_target = {
+					clr_country_flag = battle_royale_ready_for_land_war
+					clr_country_flag = battle_royale_ready_for_naval_war
+				}
+				declare_war_on = { target = event_target:battle_royale_war_target type = annex_everything }
+				set_country_flag = battle_royale_declared_war
+			}
+		}
+		if = { # second choice is country that doesn't neighbor our home area
+			limit = {
+				has_country_flag = battle_royale_ready_for_land_war
+				NOT = {has_country_flag = battle_royale_declared_war}
+				any_neighbor_country = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					OR = {
+						strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {strength_ratio = { tag = PREV ratio > 1.0 } }
+						AND = {
+							NOT = {strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio > 1.0 }}
+							NOT = {strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }}
+						}
+					}
+				}
+			}
+			clear_global_event_target = battle_royale_war_target
+			save_global_event_target_as = battle_royale_war_target
+			every_neighbor_country = {
+				limit = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					OR = {
+						strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {strength_ratio = { tag = PREV ratio > 1.0 } }
+						AND = {
+							NOT = {strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio > 1.0 }}
+							NOT = {strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }}
+						}
+					}
+				}
+				clear_global_event_target = battle_royale_temp_target
+				save_global_event_target_as = battle_royale_temp_target
+				if = {
+					limit = {
+						OR = {
+							event_target:battle_royale_strongest_ready = {tag = event_target:battle_royale_war_target}
+							strength_ratio = { tag = event_target:battle_royale_war_target ratio < 1.0 }
+							event_target:battle_royale_war_target = {strength_ratio = { tag = PREV ratio > 1.0 } }
+							AND = {
+								num_divisions < 1
+								event_target:battle_royale_war_target = {num_divisions > 0}
+							}
+							AND = {
+								NOT = {strength_ratio = { tag = event_target:battle_royale_war_target ratio > 1.0 }}
+								NOT = {strength_ratio = { tag = event_target:battle_royale_war_target ratio < 1.0 }}
+								battle_royale_temp_target_closer_than_war_target_to_strongest_ready = yes
+							}
+						}
+					}
+					clear_global_event_target = battle_royale_war_target
+					save_global_event_target_as = battle_royale_war_target
+				}
+			}
+			if = {
+				limit = {
+					NOT = {tag = event_target:battle_royale_war_target}
+					country_exists = event_target:battle_royale_war_target
+					NOT = {has_war_with = event_target:battle_royale_war_target}
+					NOT = {is_in_faction_with = event_target:battle_royale_war_target}
+				}
+				event_target:battle_royale_war_target = {
+					clr_country_flag = battle_royale_ready_for_land_war
+					clr_country_flag = battle_royale_ready_for_naval_war
+				}
+				declare_war_on = { target = event_target:battle_royale_war_target type = annex_everything }
+				set_country_flag = battle_royale_declared_war
+			}
+		}
+		if = { # third choice is nearby island country without troops (and fewer ships)
+			limit = {
+				has_country_flag = battle_royale_ready_for_naval_war
+				NOT = {has_country_flag = battle_royale_declared_war}
+				any_other_country = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					NOT = {
+						any_country = {
+							is_neighbor_of = PREV
+						}
+					}
+					num_divisions < 1
+					OR = {
+						has_navy_size = { size < 1 }
+						naval_strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {naval_strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					any_owned_state = {
+						is_controlled_by = PREV
+						naval_base > 0
+					}
+				}
+			}
+			capital_scope = {
+				clear_global_event_target = battle_royale_strongest_ready_closest_state
+				save_global_event_target_as = battle_royale_strongest_ready_closest_state
+			}
+			random_other_country = {
+				limit = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					NOT = {
+						any_country = {
+							is_neighbor_of = PREV
+						}
+					}
+					num_divisions < 1
+					OR = {
+						has_navy_size = { size < 1 }
+						naval_strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {naval_strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					any_owned_state = {
+						is_controlled_by = PREV
+						naval_base > 0
+					}
+				}
+				clear_global_event_target = battle_royale_war_target
+				save_global_event_target_as = battle_royale_war_target
+			}
+			every_other_country = {
+				limit = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					NOT = {
+						any_country = {
+							is_neighbor_of = PREV
+						}
+					}
+					num_divisions < 1
+					OR = {
+						has_navy_size = { size < 1 }
+						naval_strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {naval_strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					any_owned_state = {
+						is_controlled_by = PREV
+						naval_base > 0
+					}
+				}
+				clear_global_event_target = battle_royale_temp_target
+				save_global_event_target_as = battle_royale_temp_target
+				capital_scope = {
+					clear_global_event_target = battle_royale_temp_target_capital
+					save_global_event_target_as = battle_royale_temp_target_capital
+				}
+				event_target:battle_royale_strongest_ready = {
+					every_owned_state = {
+						clear_global_event_target = battle_royale_strongest_ready_state
+						save_global_event_target_as = battle_royale_strongest_ready_state
+						if = {
+							limit = {
+								battle_royale_strongest_ready_state_to_temp_target_is_shorter = yes
+							}
+							clear_global_event_target = battle_royale_war_target
+							event_target:battle_royale_temp_target = {
+								save_global_event_target_as = battle_royale_war_target
+							}
+							clear_global_event_target = battle_royale_strongest_ready_closest_state
+							save_global_event_target_as = battle_royale_strongest_ready_closest_state
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					country_exists = event_target:battle_royale_war_target
+					event_target:battle_royale_war_target = {
+						capital_scope = {
+							distance_to = {
+								target = event_target:battle_royale_strongest_ready_closest_state
+								value < 4000
+							}
+						}
+					}
+					NOT = {has_war_with = event_target:battle_royale_war_target}
+					NOT = {is_in_faction_with = event_target:battle_royale_war_target}
+				}
+				event_target:battle_royale_war_target = {
+					clr_country_flag = battle_royale_ready_for_land_war
+					clr_country_flag = battle_royale_ready_for_naval_war
+				}
+				declare_war_on = { target = event_target:battle_royale_war_target type = annex_everything }
+				set_country_flag = battle_royale_declared_war
+			}
+		}
+		if = { # fourth choice is nearby country without troops (and fewer ships), only problem is neighboring countries will probably get to it first
+			limit = {
+				has_country_flag = battle_royale_ready_for_naval_war
+				NOT = {has_country_flag = battle_royale_declared_war}
+				any_other_country = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					num_divisions < 1
+					OR = {
+						has_navy_size = { size < 1 }
+						naval_strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {naval_strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					any_owned_state = {
+						is_controlled_by = PREV
+						naval_base > 0
+					}
+				}
+			}
+			capital_scope = {
+				clear_global_event_target = battle_royale_strongest_ready_closest_state
+				save_global_event_target_as = battle_royale_strongest_ready_closest_state
+			}
+			random_other_country = {
+				limit = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					num_divisions < 1
+					OR = {
+						has_navy_size = { size < 1 }
+						naval_strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {naval_strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					any_owned_state = {
+						is_controlled_by = PREV
+						naval_base > 0
+					}
+				}
+				clear_global_event_target = battle_royale_war_target
+				save_global_event_target_as = battle_royale_war_target
+			}
+			every_other_country = {
+				limit = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					num_divisions < 1
+					OR = {
+						has_navy_size = { size < 1 }
+						naval_strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {naval_strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					any_owned_state = {
+						is_controlled_by = PREV
+						naval_base > 0
+					}
+				}
+				clear_global_event_target = battle_royale_temp_target
+				save_global_event_target_as = battle_royale_temp_target
+				capital_scope = {
+					clear_global_event_target = battle_royale_temp_target_capital
+					save_global_event_target_as = battle_royale_temp_target_capital
+				}
+				event_target:battle_royale_strongest_ready = {
+					every_owned_state = {
+						clear_global_event_target = battle_royale_strongest_ready_state
+						save_global_event_target_as = battle_royale_strongest_ready_state
+						if = {
+							limit = {
+								battle_royale_strongest_ready_state_to_temp_target_is_shorter = yes
+							}
+							clear_global_event_target = battle_royale_war_target
+							event_target:battle_royale_temp_target = {
+								save_global_event_target_as = battle_royale_war_target
+							}
+							clear_global_event_target = battle_royale_strongest_ready_closest_state
+							save_global_event_target_as = battle_royale_strongest_ready_closest_state
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					country_exists = event_target:battle_royale_war_target
+					event_target:battle_royale_war_target = {
+						capital_scope = {
+							distance_to = {
+								target = event_target:battle_royale_strongest_ready_closest_state
+								value < 4000
+							}
+						}
+					}
+					NOT = {has_war_with = event_target:battle_royale_war_target}
+					NOT = {is_in_faction_with = event_target:battle_royale_war_target}
+				}
+				event_target:battle_royale_war_target = {
+					clr_country_flag = battle_royale_ready_for_land_war
+					clr_country_flag = battle_royale_ready_for_naval_war
+				}
+				declare_war_on = { target = event_target:battle_royale_war_target type = annex_everything }
+				set_country_flag = battle_royale_declared_war
+			}
+		}
+		if = { # last choice is nearby country with fewer troops (and fewer ships), opposed landings are awful
+			limit = {
+				has_country_flag = battle_royale_ready_for_naval_war
+				NOT = {has_country_flag = battle_royale_declared_war}
+				any_other_country = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					OR = {
+						num_divisions < 1
+						strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					OR = {
+						has_navy_size = { size < 1 }
+						naval_strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {naval_strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					any_owned_state = {
+						is_controlled_by = PREV
+						naval_base > 0
+					}
+				}
+			}
+			capital_scope = {
+				clear_global_event_target = battle_royale_strongest_ready_closest_state
+				save_global_event_target_as = battle_royale_strongest_ready_closest_state
+			}
+			random_other_country = {
+				limit = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					OR = {
+						num_divisions < 1
+						strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					OR = {
+						has_navy_size = { size < 1 }
+						naval_strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {naval_strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					any_owned_state = {
+						is_controlled_by = PREV
+						naval_base > 0
+					}
+				}
+				clear_global_event_target = battle_royale_war_target
+				save_global_event_target_as = battle_royale_war_target
+			}
+			every_other_country = {
+				limit = {
+					NOT = {has_war_with = event_target:battle_royale_strongest_ready}
+					NOT = {is_in_faction_with = event_target:battle_royale_strongest_ready}
+					OR = {
+						num_divisions < 1
+						strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					OR = {
+						has_navy_size = { size < 1 }
+						naval_strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }
+						event_target:battle_royale_strongest_ready = {naval_strength_ratio = { tag = PREV ratio > 1.0 } }
+					}
+					any_owned_state = {
+						is_controlled_by = PREV
+						naval_base > 0
+					}
+				}
+				clear_global_event_target = battle_royale_temp_target
+				save_global_event_target_as = battle_royale_temp_target
+				capital_scope = {
+					clear_global_event_target = battle_royale_temp_target_capital
+					save_global_event_target_as = battle_royale_temp_target_capital
+				}
+				event_target:battle_royale_strongest_ready = {
+					every_owned_state = {
+						clear_global_event_target = battle_royale_strongest_ready_state
+						save_global_event_target_as = battle_royale_strongest_ready_state
+						if = {
+							limit = {
+								battle_royale_strongest_ready_state_to_temp_target_is_shorter = yes
+							}
+							clear_global_event_target = battle_royale_war_target
+							event_target:battle_royale_temp_target = {
+								save_global_event_target_as = battle_royale_war_target
+							}
+							clear_global_event_target = battle_royale_strongest_ready_closest_state
+							save_global_event_target_as = battle_royale_strongest_ready_closest_state
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					country_exists = event_target:battle_royale_war_target
+					OR = { # distance limits only if a neighboring country could threaten us
+						event_target:battle_royale_war_target = {
+							capital_scope = {
+								distance_to = {
+									target = event_target:battle_royale_strongest_ready_closest_state
+									value < 4000
+								}
+							}
+						}
+						all_neighbor_country = {
+							is_in_faction_with = event_target:battle_royale_strongest_ready
+						}
+					}
+					NOT = {has_war_with = event_target:battle_royale_war_target}
+					NOT = {is_in_faction_with = event_target:battle_royale_war_target}
+				}
+				event_target:battle_royale_war_target = {
+					clr_country_flag = battle_royale_ready_for_land_war
+					clr_country_flag = battle_royale_ready_for_naval_war
+				}
+				declare_war_on = { target = event_target:battle_royale_war_target type = annex_everything }
+				set_country_flag = battle_royale_declared_war
+			}
+		}
+		clr_country_flag = battle_royale_ready_for_land_war
+		clr_country_flag = battle_royale_ready_for_naval_war
+	}
+	clear_global_event_target = battle_royale_strongest_ready_capital
+	clear_global_event_target = battle_royale_strongest_ready_closest_state
+	clear_global_event_target = battle_royale_war_target
+	clear_global_event_target = battle_royale_temp_target
+	clear_global_event_target = battle_royale_temp_target_capital
+}
+
+battle_royale_declare_wars = {
+	every_country = {
+		clr_country_flag = battle_royale_ready_for_land_war
+		clr_country_flag = battle_royale_ready_for_naval_war
+		clear_global_event_target = battle_royale_war_readiness_check_target
+		save_global_event_target_as = battle_royale_war_readiness_check_target
+		battle_royale_land_war_readiness_check = yes
+		battle_royale_naval_war_readiness_check = yes
+		clear_global_event_target = battle_royale_war_readiness_check_target
+	}
+	every_country = {
+		random_country = {
+			limit = {
+				OR = {
+					has_country_flag = battle_royale_ready_for_land_war
+					has_country_flag = battle_royale_ready_for_naval_war
+				}
+			}
+			clear_global_event_target = battle_royale_strongest_ready
+			save_global_event_target_as = battle_royale_strongest_ready
+			every_country = {
+				limit = {
+					OR = {
+						has_country_flag = battle_royale_ready_for_land_war
+						has_country_flag = battle_royale_ready_for_naval_war
+					}
+				}
+				clear_global_event_target = battle_royale_temp
+				save_global_event_target_as = battle_royale_temp
+				if = {
+					limit = {
+						OR = {
+							strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio > 1.0 }
+							event_target:battle_royale_strongest_ready = {strength_ratio = { tag = PREV ratio < 1.0 } }
+							AND = {
+								NOT = {strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio > 1.0 }}
+								NOT = {strength_ratio = { tag = event_target:battle_royale_strongest_ready ratio < 1.0 }}
+								event_target:battle_royale_strongest_ready = {
+									any_neighbor_country = {
+										strength_ratio = { tag = event_target:battle_royale_temp ratio < 1.0 }
+									}
+								}
+							}
+						}
+					}
+					clear_global_event_target = battle_royale_strongest_ready
+					save_global_event_target_as = battle_royale_strongest_ready
+				}
+				clear_global_event_target = battle_royale_temp
+			}
+			battle_royale_strongest_ready_declare_war = yes
+			clear_global_event_target = battle_royale_strongest_ready
+		}
+	}
+}

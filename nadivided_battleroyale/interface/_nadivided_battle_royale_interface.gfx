@@ -1,0 +1,29 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_report_event_battle_royale_started"
+		texturefile = "gfx/event_pictures/battle_royale_started.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_battle_royale_welcome"
+		texturefile = "gfx/event_pictures/battle_royale_welcome.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_battle_royale_ai_idea"
+		texturefile = "gfx/interface/ideas/battle_royale_ai_idea.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_battle_royale_human_idea"
+		texturefile = "gfx/interface/ideas/battle_royale_human_idea.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_battle_royale_time_idea"
+		texturefile = "gfx/interface/ideas/battle_royale_time_idea.dds"
+	}
+}
+	
+	

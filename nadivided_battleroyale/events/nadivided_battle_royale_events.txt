@@ -1,0 +1,690 @@
+﻿add_namespace = battle_royale
+
+country_event = { # fired on_startup or when loading mod in saved game, counts number of players and leads to introduction event
+	id = battle_royale.1
+	title = battle_royale.1.t
+	desc = battle_royale.1.d
+	hidden = yes
+	fire_only_once = yes
+	is_triggered_only = no
+	trigger = {
+		NOT = {has_global_flag = battle_royale_introduced}
+	}
+	option = {
+		name = battle_royale.1.a
+		set_global_flag = battle_royale_introduced
+		set_global_flag = { flag = battle_royale_player_count value = 0 }
+		set_global_flag = { flag = battle_royale_voting_decreased_today2 value = 1 days = 1}
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+				}
+			}
+			modify_global_flag = { flag = battle_royale_player_count value = 1 }
+		}
+		if = {
+			limit = {
+				has_global_flag = {
+					flag = battle_royale_player_count value > 1
+				}
+			}
+			set_variable = { global.battle_royale_voting_days_left = 15 }
+			set_variable = { global.battle_royale_votes_0m = 0 }
+			set_variable = { global.battle_royale_votes_3m = 0 }
+			set_variable = { global.battle_royale_votes_6m = 0 }
+			set_variable = { global.battle_royale_votes_1y = 0 }
+			set_variable = { global.battle_royale_votes_2y = 0 }
+			set_variable = { global.battle_royale_votes_3y = 0 }
+			country_event = { days = 15 id = battle_royale.13 }
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+				}
+			}
+			news_event = battle_royale.2
+		}
+	}
+}
+
+news_event = { # introduction and leads to settings based on number of players
+	id = battle_royale.2
+	title = battle_royale.2.t
+	desc = battle_royale.2.d
+	picture = GFX_report_event_battle_royale_welcome
+	hidden = no
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = battle_royale.2.a
+		if = {
+			limit = {
+				has_global_flag = {
+					flag = battle_royale_player_count value < 2
+				}
+			}
+			country_event = battle_royale.3
+		}
+		if = {
+			limit = {
+				has_global_flag = {
+					flag = battle_royale_player_count value > 1
+				}
+			}
+			country_event = battle_royale.8
+		}
+	}
+}
+
+country_event = { # singleplayer version, can pick start date
+	id = battle_royale.3
+	title = battle_royale.3.t
+	desc = battle_royale.3.d
+	hidden = no
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = battle_royale.3.a
+		country_event = battle_royale.4
+	}
+	option = {
+		name = battle_royale.3.b
+		country_event = battle_royale.5
+	}
+	option = {
+		name = battle_royale.3.c
+		country_event = battle_royale.6
+	}
+	option = {
+		name = battle_royale.3.e
+		country_event = battle_royale.7
+	}
+}
+
+country_event = { # singleplayer select in less than a year
+	id = battle_royale.4
+	title = battle_royale.4.t
+	desc = battle_royale.4.d
+	hidden = no
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = battle_royale.4.a
+		add_timed_idea = { idea = battle_royale_time_selected_idea days = 1 }
+		hidden_effect = { country_event = { days = 1 id = battle_royale.14 } }
+	}
+	option = {
+		name = battle_royale.4.b
+		add_timed_idea = { idea = battle_royale_time_selected_idea days = 90 }
+		hidden_effect = { country_event = { days = 90 id = battle_royale.14 } }
+	}
+	option = {
+		name = battle_royale.4.c
+		add_timed_idea = { idea = battle_royale_time_selected_idea days = 180 }
+		hidden_effect = { country_event = { days = 180 id = battle_royale.14 } }
+	}
+	option = {
+		name = battle_royale.4.e
+		country_event = battle_royale.3
+	}
+}
+
+country_event = { # singleplayer select in one or more years
+	id = battle_royale.5
+	title = battle_royale.5.t
+	desc = battle_royale.5.d
+	hidden = no
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = battle_royale.5.a
+		add_timed_idea = { idea = battle_royale_time_selected_idea days = 365 }
+		hidden_effect = { country_event = { days = 365 id = battle_royale.14 } }
+	}
+	option = {
+		name = battle_royale.5.b
+		add_timed_idea = { idea = battle_royale_time_selected_idea days = 730 }
+		hidden_effect = { country_event = { days = 730 id = battle_royale.14 } }
+	}
+	option = {
+		name = battle_royale.5.c
+		add_timed_idea = { idea = battle_royale_time_selected_idea days = 1095 }
+		hidden_effect = { country_event = { days = 1095 id = battle_royale.14 } }
+	}
+	option = {
+		name = battle_royale.5.e
+		country_event = battle_royale.3
+	}
+}
+
+country_event = { # singleplayer ask again in less than a year
+	id = battle_royale.6
+	title = battle_royale.6.t
+	desc = battle_royale.6.d
+	hidden = no
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = battle_royale.6.a
+		add_timed_idea = { idea = battle_royale_waiting_idea days = 90 }
+		hidden_effect = { country_event = { days = 90 id = battle_royale.3 } }
+	}
+	option = {
+		name = battle_royale.6.b
+		add_timed_idea = { idea = battle_royale_waiting_idea days = 180 }
+		hidden_effect = { country_event = { days = 180 id = battle_royale.3 } }
+	}
+	option = {
+		name = battle_royale.6.c
+		add_timed_idea = { idea = battle_royale_waiting_idea days = 270 }
+		hidden_effect = { country_event = { days = 270 id = battle_royale.3 } }
+	}
+	option = {
+		name = battle_royale.6.e
+		country_event = battle_royale.3
+	}
+}
+
+country_event = { # singleplayer ask again in one or more years
+	id = battle_royale.7
+	title = battle_royale.7.t
+	desc = battle_royale.7.d
+	hidden = no
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = battle_royale.7.a
+		add_timed_idea = { idea = battle_royale_waiting_idea days = 365 }
+		hidden_effect = { country_event = { days = 365 id = battle_royale.3 } }
+	}
+	option = {
+		name = battle_royale.7.b
+		add_timed_idea = { idea = battle_royale_waiting_idea days = 730 }
+		hidden_effect = { country_event = { days = 730 id = battle_royale.3 } }
+	}
+	option = {
+		name = battle_royale.7.c
+		add_timed_idea = { idea = battle_royale_waiting_idea days = 1095 }
+		hidden_effect = { country_event = { days = 1095 id = battle_royale.3 } }
+	}
+	option = {
+		name = battle_royale.7.e
+		country_event = battle_royale.3
+	}
+}
+
+country_event = { # multiplayer version, must vote for start date
+	id = battle_royale.8
+	title = battle_royale.8.t
+	desc = battle_royale.8.d
+	hidden = no
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = battle_royale.8.a
+		country_event = battle_royale.9
+	}
+	option = {
+		name = battle_royale.8.b
+		country_event = battle_royale.10
+	}
+	option = {
+		name = battle_royale.8.c
+		country_event = battle_royale.11
+	}
+}
+
+country_event = { # multiplayer vote for in less than a year
+	id = battle_royale.9
+	title = battle_royale.9.t
+	desc = battle_royale.9.d
+	hidden = no
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = battle_royale.9.a
+		if = {
+			limit = {
+				check_variable = { global.battle_royale_voting_days_left > 0 }
+			}
+			add_to_variable = { var = global.battle_royale_votes_0m value = 1 }
+			custom_effect_tooltip = battle_royale_vote_0m
+			country_event = battle_royale.11
+		}
+	}
+	option = {
+		name = battle_royale.9.b
+		if = {
+			limit = {
+				check_variable = { global.battle_royale_voting_days_left > 0 }
+			}
+			add_to_variable = { var = global.battle_royale_votes_3m value = 1 }
+			custom_effect_tooltip = battle_royale_vote_3m
+			country_event = battle_royale.11
+		}
+	}
+	option = {
+		name = battle_royale.9.c
+		if = {
+			limit = {
+				check_variable = { global.battle_royale_voting_days_left > 0 }
+			}
+			add_to_variable = { var = global.battle_royale_votes_6m value = 1 }
+			custom_effect_tooltip = battle_royale_vote_6m
+			country_event = battle_royale.11
+		}
+	}
+	option = {
+		name = battle_royale.9.e
+		country_event = battle_royale.8
+	}
+}
+
+country_event = { # multiplayer vote for in one or more years
+	id = battle_royale.10
+	title = battle_royale.10.t
+	desc = battle_royale.10.d
+	hidden = no
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = battle_royale.10.a
+		if = {
+			limit = {
+				check_variable = { global.battle_royale_voting_days_left > 0 }
+			}
+			add_to_variable = { var = global.battle_royale_votes_1y value = 1 }
+			custom_effect_tooltip = battle_royale_vote_1y
+			country_event = battle_royale.11
+		}
+	}
+	option = {
+		name = battle_royale.10.b
+		if = {
+			limit = {
+				check_variable = { global.battle_royale_voting_days_left > 0 }
+			}
+			add_to_variable = { var = global.battle_royale_votes_2y value = 1 }
+			custom_effect_tooltip = battle_royale_vote_2y
+			country_event = battle_royale.11
+		}
+	}
+	option = {
+		name = battle_royale.10.c
+		if = {
+			limit = {
+				check_variable = { global.battle_royale_voting_days_left > 0 }
+			}
+			add_to_variable = { var = global.battle_royale_votes_3y value = 1 }
+			custom_effect_tooltip = battle_royale_vote_3y
+			country_event = battle_royale.11
+		}
+	}
+	option = {
+		name = battle_royale.10.e
+		country_event = battle_royale.8
+	}
+}
+
+country_event = { # multiplayer voting results
+	id = battle_royale.11
+	title = battle_royale.11.t
+	desc = battle_royale.11.d
+	hidden = no
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		trigger = {
+			check_variable = { global.battle_royale_voting_days_left > 0 }
+		}
+		name = battle_royale.11.a
+		country_event = battle_royale.12
+	}
+	option = {
+		trigger = {
+			check_variable = { global.battle_royale_voting_days_left < 1 }
+		}
+		name = battle_royale.11.b
+	}
+}
+
+country_event = { # multiplayer voting results duplicate, self triggering events cause problems
+	id = battle_royale.12
+	title = battle_royale.11.t
+	desc = battle_royale.11.d
+	hidden = no
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		trigger = {
+			check_variable = { global.battle_royale_voting_days_left > 0 }
+		}
+		name = battle_royale.11.a
+		country_event = battle_royale.11
+	}
+	option = {
+		trigger = {
+			check_variable = { global.battle_royale_voting_days_left < 1 }
+		}
+		name = battle_royale.11.b
+	}
+}
+
+country_event = { # multiplayer voting calculations
+	id = battle_royale.13
+	title = battle_royale.13.t
+	desc = battle_royale.13.d
+	hidden = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = battle_royale.13.a
+		set_global_flag = battle_royale_most_votes_0m
+		if = {
+			limit = {
+				check_variable = { global.battle_royale_votes_3m > global.battle_royale_votes_0m }
+			}
+			clr_global_flag = battle_royale_most_votes_0m
+			set_global_flag = battle_royale_most_votes_3m
+		}
+		if = {
+			limit = {
+				check_variable = { global.battle_royale_votes_6m > global.battle_royale_votes_3m }
+				check_variable = { global.battle_royale_votes_6m > global.battle_royale_votes_0m }
+			}
+			clr_global_flag = battle_royale_most_votes_0m
+			clr_global_flag = battle_royale_most_votes_3m
+			set_global_flag = battle_royale_most_votes_6m
+		}
+		if = {
+			limit = {
+				check_variable = { global.battle_royale_votes_1y > global.battle_royale_votes_6m }
+				check_variable = { global.battle_royale_votes_1y > global.battle_royale_votes_3m }
+				check_variable = { global.battle_royale_votes_1y > global.battle_royale_votes_0m }
+			}
+			clr_global_flag = battle_royale_most_votes_0m
+			clr_global_flag = battle_royale_most_votes_3m
+			clr_global_flag = battle_royale_most_votes_6m
+			set_global_flag = battle_royale_most_votes_1y
+		}
+		if = {
+			limit = {
+				check_variable = { global.battle_royale_votes_2y > global.battle_royale_votes_1y }
+				check_variable = { global.battle_royale_votes_2y > global.battle_royale_votes_6m }
+				check_variable = { global.battle_royale_votes_2y > global.battle_royale_votes_3m }
+				check_variable = { global.battle_royale_votes_2y > global.battle_royale_votes_0m }
+			}
+			clr_global_flag = battle_royale_most_votes_0m
+			clr_global_flag = battle_royale_most_votes_3m
+			clr_global_flag = battle_royale_most_votes_6m
+			clr_global_flag = battle_royale_most_votes_1y
+			set_global_flag = battle_royale_most_votes_2y
+		}
+		if = {
+			limit = {
+				check_variable = { global.battle_royale_votes_3y > global.battle_royale_votes_2y }
+				check_variable = { global.battle_royale_votes_3y > global.battle_royale_votes_1y }
+				check_variable = { global.battle_royale_votes_3y > global.battle_royale_votes_6m }
+				check_variable = { global.battle_royale_votes_3y > global.battle_royale_votes_3m }
+				check_variable = { global.battle_royale_votes_3y > global.battle_royale_votes_0m }
+			}
+			clr_global_flag = battle_royale_most_votes_0m
+			clr_global_flag = battle_royale_most_votes_3m
+			clr_global_flag = battle_royale_most_votes_6m
+			clr_global_flag = battle_royale_most_votes_1y
+			clr_global_flag = battle_royale_most_votes_2y
+			set_global_flag = battle_royale_most_votes_3y
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = battle_royale_most_votes_0m
+				}
+				add_timed_idea = { idea = battle_royale_time_selected_idea days = 1 }
+				hidden_effect = { country_event = { days = 1 id = battle_royale.14 } }
+			}
+			if = {
+				limit = {
+					has_global_flag = battle_royale_most_votes_3m
+				}
+				add_timed_idea = { idea = battle_royale_time_selected_idea days = 90 }
+				hidden_effect = { country_event = { days = 90 id = battle_royale.14 } }
+			}
+			if = {
+				limit = {
+					has_global_flag = battle_royale_most_votes_6m
+				}
+				add_timed_idea = { idea = battle_royale_time_selected_idea days = 180 }
+				hidden_effect = { country_event = { days = 180 id = battle_royale.14 } }
+			}
+			if = {
+				limit = {
+					has_global_flag = battle_royale_most_votes_1y
+				}
+				add_timed_idea = { idea = battle_royale_time_selected_idea days = 365 }
+				hidden_effect = { country_event = { days = 365 id = battle_royale.14 } }
+			}
+			if = {
+				limit = {
+					has_global_flag = battle_royale_most_votes_2y
+				}
+				add_timed_idea = { idea = battle_royale_time_selected_idea days = 730 }
+				hidden_effect = { country_event = { days = 730 id = battle_royale.14 } }
+			}
+			if = {
+				limit = {
+					has_global_flag = battle_royale_most_votes_3y
+				}
+				add_timed_idea = { idea = battle_royale_time_selected_idea days = 1095 }
+				hidden_effect = { country_event = { days = 1095 id = battle_royale.14 } }
+			}
+		}
+	}
+}
+
+country_event = { # actual battle royale setup event
+	id = battle_royale.14
+	title = battle_royale.14.t
+	desc = battle_royale.14.d
+	hidden = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = battle_royale.14.a
+		every_country = { # dismantles all existing factions
+			limit = {
+				is_faction_leader = yes
+			}
+			dismantle_faction = yes
+		}
+		every_country = { # white peaces all wars except for ones involving dynamic country tags (from civil wars)
+			limit = {
+				has_war = yes
+			}
+			clear_global_event_target = battle_royale_war_country_one
+			save_global_event_target_as = battle_royale_war_country_one
+			every_enemy_country = {
+				clear_global_event_target = battle_royale_war_country_two
+				save_global_event_target_as = battle_royale_war_country_two
+				if = {
+					limit = {
+						NOT = {
+							OR = {
+								event_target:battle_royale_war_country_one = {
+									original_tag = event_target:battle_royale_war_country_two
+								}
+								event_target:battle_royale_war_country_two = {
+									original_tag = event_target:battle_royale_war_country_one
+								}
+							}
+						}
+						event_target:battle_royale_war_country_one = {
+							has_offensive_war_with = event_target:battle_royale_war_country_two
+						}
+					}
+					event_target:battle_royale_war_country_two = {white_peace = event_target:battle_royale_war_country_one}
+					clear_global_event_target = battle_royale_war_country_two
+				}
+			}
+			clear_global_event_target = battle_royale_war_country_one
+		}
+		every_country = {
+			limit = {
+				OR = {
+					is_puppet = yes
+					is_subject = yes
+				}
+			}
+			OVERLORD = {
+				end_puppet = PREV
+			}
+			set_autonomy = { #no puppets allowed, every country fights for world conquest
+				target = THIS
+				autonomous_state = autonomy_free
+			}
+		}
+		every_country = {
+			set_country_flag = battle_royale_here_from_start
+			add_named_threat = { threat = 100 name = battle_royale_participant }
+		}
+		battle_royale_add_owned_cores = yes # adds cores to all owned states
+		battle_royale_give_player_rules = yes # gives ideas to players to set rules
+		battle_royale_remove_war_intervention_ideas = yes # removes ideas that allow interventions in wars (USA, anti-soviet, etc.)
+		battle_royale_remove_ai_diplomacy = yes
+		set_global_flag = battle_royale_started # activates battle royale strategies, annex only, etc.
+		every_country = {
+			limit = {
+				NOT = {
+					is_ai = yes
+				}
+			}
+			news_event = battle_royale.15
+		}
+	}
+}
+
+news_event = { #visible event to let everyone know battle royale is active
+	id = battle_royale.15
+	title = battle_royale.15.t
+	desc = battle_royale.15.d
+	picture = GFX_report_event_battle_royale_started
+	hidden = no
+	fire_only_once = no
+	is_triggered_only = yes
+	option = {
+		name = battle_royale.15.a
+	}
+}
+
+country_event = { # invisible event triggered every other day to do various checks, war declarations, etc.
+	id = battle_royale.16
+	title = battle_royale.16.t
+	desc = battle_royale.16.d
+	hidden = yes
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		has_global_flag = battle_royale_started
+		NOT = {has_global_flag = battle_royale_checked_today}
+	}
+	option = {
+		name = battle_royale.16.a
+		if = {
+			limit = {
+				NOT = {has_global_flag = battle_royale_checked_today}
+			}
+			set_global_flag = battle_royale_checked_today
+			battle_royale_remove_puppets = yes
+			battle_royale_add_owned_cores = yes
+			battle_royale_give_player_rules = yes
+			battle_royale_remove_war_intervention_ideas = yes
+			battle_royale_remove_ai_from_factions = yes
+			battle_royale_remove_ai_diplomacy = yes
+			battle_royale_declare_wars = yes
+		}
+	}
+}
+
+country_event = { # invisible event triggered every other day to do various checks, war declarations, etc.
+	id = battle_royale.17
+	title = battle_royale.17.t
+	desc = battle_royale.17.d
+	hidden = yes
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		has_global_flag = battle_royale_started
+		has_global_flag = battle_royale_checked_today
+	}
+	option = {
+		name = battle_royale.16.a
+		if = {
+			limit = {
+				has_global_flag = battle_royale_checked_today
+			}
+			clr_global_flag = battle_royale_checked_today
+			battle_royale_remove_puppets = yes
+			battle_royale_add_owned_cores = yes
+			battle_royale_give_player_rules = yes
+			battle_royale_remove_war_intervention_ideas = yes
+			battle_royale_remove_ai_from_factions = yes
+			battle_royale_remove_ai_diplomacy = yes
+			battle_royale_declare_wars = yes
+		}
+	}
+}
+
+country_event = { # decreases day count of voting, annoying to do once daily
+	id = battle_royale.18
+	title = battle_royale.18.t
+	desc = battle_royale.18.d
+	hidden = yes
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		has_global_flag = battle_royale_introduced
+		NOT = {has_global_flag = battle_royale_voting_decreased_today}
+		check_variable = { global.battle_royale_voting_days_left > 0 }
+	}
+	option = {
+		name = battle_royale.18.a
+		if = {
+			limit = {
+				NOT = {has_global_flag = battle_royale_voting_decreased_today}
+			}
+			set_global_flag = { flag = battle_royale_voting_decreased_today value = 1 days = 1}
+			subtract_from_variable = { var = global.battle_royale_voting_days_left value = 1 }
+		}
+	}
+}
+
+country_event = { # decreases day count of voting
+	id = battle_royale.19
+	title = battle_royale.19.t
+	desc = battle_royale.19.d
+	hidden = yes
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		has_global_flag = battle_royale_introduced
+		NOT = {has_global_flag = battle_royale_voting_decreased_today2}
+		check_variable = { global.battle_royale_voting_days_left > 0 }
+	}
+	option = {
+		name = battle_royale.19.a
+		if = {
+			limit = {
+				NOT = {has_global_flag = battle_royale_voting_decreased_today2}
+			}
+			set_global_flag = { flag = battle_royale_voting_decreased_today2 value = 1 days = 1}
+			subtract_from_variable = { var = global.battle_royale_voting_days_left value = 1 }
+		}
+	}
+}
