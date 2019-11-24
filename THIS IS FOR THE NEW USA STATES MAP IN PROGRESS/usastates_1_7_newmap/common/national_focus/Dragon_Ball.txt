@@ -59,7 +59,7 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            add_ideas = ###training with Roshi1###
+            #add_ideas = ###training with Roshi1###
         }
     }
     focus = {
@@ -97,7 +97,7 @@ focus_tree = {
     }
     focus = {
         id = PRR_memories_of_yamcha
-        icon = GFX_
+        icon = GFX_focus_db_yamcha1
         prerequisite = { focus = PRR_meetup_with_krillin}
         x = 9
         y = 4
@@ -114,7 +114,7 @@ focus_tree = {
             }
             create_corps_commander = {
                 name = "Yamcha"
-                picture = ""
+                picture = "gfx/leaders/PPR/Yamcha.dds"
                 traits = {
                     career_officer
                     infantry_officer
@@ -130,7 +130,7 @@ focus_tree = {
     }
     focus = {
         id = PRR_the_new_milkmen_in_town
-        icon = GFX_
+        icon = GFX_focus_db_milk
         prerequisite = { focus = PRR_begin_training_with_Roshi}
         x = 11
         y = 3
@@ -142,7 +142,9 @@ focus_tree = {
         available_if_capitulated = no
 
         completion_reward = {
-            add_stability = 0.05
+            country_event = {
+                id = Puerto_Rico.17
+            }
             random_owned_controlled_state = {
 			    add_extra_state_shared_building_slots = 1
 			    add_building_construction = {
@@ -155,7 +157,7 @@ focus_tree = {
     }
     focus = {
         id = PRR_training_shells
-        icon = GFX_
+        icon = GFX_focus_db_turtle_shell
         prerequisite = { focus = PRR_the_new_milkmen_in_town}
         x = 11
         y = 3
@@ -167,12 +169,12 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            add_ideas = ###weighted training clothes
+           # add_ideas = ###weighted training clothes
         }
     }
     focus = {
         id = PRR_complete_roshis_training
-        icon = GFX_
+        icon = GFX_focus_db_turtle_gi
         prerequisite = { focus = PRR_memories_of_yamcha}
         prerequisite = { focus = PRR_training_shells}
         x = 10
@@ -186,8 +188,8 @@ focus_tree = {
 
         completion_reward = {
             swap_ideas = {
-                add_idea = ###training with roshi 2###
-                remove_idea = ###traning with roshi 1###
+                #add_idea = ###training with roshi 2###
+                #remove_idea = ###traning with roshi 1###
             }
         }
     }
@@ -239,7 +241,7 @@ focus_tree = {
         icon = GFX_
         prerequisite = { focus = PRR_the_twenty_second_world_martial_arts_tournament}
         available = {
-            has_completed_focus = ###
+            #has_completed_focus = ###
         }
         x = 3
         y = 2

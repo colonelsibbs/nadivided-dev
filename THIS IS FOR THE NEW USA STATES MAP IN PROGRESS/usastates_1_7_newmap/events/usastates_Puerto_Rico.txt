@@ -289,4 +289,124 @@ country_event = { #rematch and victory with Tamberen
 }
 country_event = { #1st fight with King Piccolo
 	id = Puerto_Rico.16
+	title = Puerto_Rico.16.t
+	desc = Puerto_Rico.16.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_first_fight_with_king_piccilo
+	}
+}
+country_event = { #the Milkmen
+	id = Puerto_Rico.17
+	title = Puerto_Rico.17.t
+	desc = Puerto_Rico.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_the_new_milkmen_in_town
+	}
+
+	option = {
+		name = Puerto_Rico.17.a
+		ai_chance = { factor = 50}
+		hidden_effect = {
+			SLF = {
+				country_event = {
+					id = Puerto_Rico.18
+				}
+			}
+		}
+	}
+	option = {
+		name = Puerto_Rico.17.a
+		ai_chance = { factor = 25}
+		hidden_effect = {
+			SLA = {
+				country_event = {
+					id = Puerto_Rico.18
+				}
+			}
+		}
+	}
+	option = {
+		name = Puerto_Rico.17.a
+		ai_chance = { factor = 25}
+		hidden_effect = {
+			STX = {
+				country_event = {
+					id = Puerto_Rico.18
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = Puerto_Rico.18
+	title = Puerto_Rico.18.t
+	desc = Puerto_Rico.18.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		always = no
+	}
+
+	option = {
+		limit = {
+			tag = SLF
+		}
+		name = Puerto_Rico.18.a
+		ai_chance = { factor = 100}
+		PRR = {
+			transfer_state = 11
+		}
+	}
+	option = {
+		limit = {
+			tag = SLF
+		}
+		name = Puerto_Rico.18.b
+		ai_chance = { factor = 0}
+	}
+	option = {
+		limit = {
+			tag = SLA
+		}
+		name = Puerto_Rico.18.c
+		ai_chance = { factor = 100}
+		PRR = {
+			transfer_state = 19
+			transfer_state = 18
+		}
+	}
+	option = {
+		limit = {
+			tag = SLA
+		}
+		name = Puerto_Rico.18.e
+		ai_chance = { factor = 0}
+	}
+	option = {
+		limit = {
+			tag = STX
+		}
+		name = Puerto_Rico.18.f
+		ai_chance = { factor = 100}
+		PRR = {
+			transfer_state = 42
+		}
+	}
+	option = {
+		limit = {
+			tag = STX
+		}
+		name = Puerto_Rico.18.g
+		ai_chance = { factor = 0}
+	}
 }

@@ -196,4 +196,20 @@ spriteTypes = {
 		name = "GFX_focus_db_krillin1"
 		texturefile = "gfx/interface/goals/focus_db_krillin1.dds"
 	}
+	SpriteType = {
+		name = "GFX_focus_db_yamcha1"
+		texturefile = "gfx/interface/goals/focus_db_yamcha1.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_db_milk"
+		texturefile = "gfx/interface/goals/focus_db_milk.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_db_turtle_shell"
+		texturefile = "gfx/interface/goals/focus_db_turtle_shell.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_db_turtle_gi"
+		texturefile = "gfx/interface/goals/focus_db_turtle_gi.dds"
+	}
 }
