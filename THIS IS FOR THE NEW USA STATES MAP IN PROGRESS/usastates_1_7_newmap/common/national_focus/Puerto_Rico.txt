@@ -371,7 +371,7 @@ focus_tree = {
 			}
 			create_field_marshal = {
 				name = "Goku"
-				picture = ""
+				picture = "gfx/leaders/PPR/Goku.dds"
 				traits = {
 					brilliant_strategist
 					aggressive_assaulter
@@ -441,9 +441,7 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = anime_focus_tree_tt
-			hidden_effect = {
-				load_focus_tree = Dragon_Ball_focus
-			}
+			load_focus_tree = Dragon_Ball_focus
 		}
 	}
 #

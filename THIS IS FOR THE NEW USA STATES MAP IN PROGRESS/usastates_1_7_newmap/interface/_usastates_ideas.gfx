@@ -278,4 +278,11 @@ spriteTypes = {
 		name = "GFX_idea_WDC_stacked_cabinent"
 		texturefile = "gfx/interface/ideas/stacked_cabinent.dds"
 	}
+
+###Puerto Rico###
+
+	spriteType = {
+		name = "GFX_puerto_rico_electric"
+		texturefile = "gfx/interface/ideas/puerto_rico_electric.dds"
+	}
 }
