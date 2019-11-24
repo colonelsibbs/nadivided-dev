@@ -354,7 +354,7 @@ focus_tree = {
 #
 	focus = {
 		id = PRR_a_rare_encounter
-		icon = GFX_
+		icon = GFX_focus_db_goku1
 		prerequisite = { focus = PRR_reject_reality_and_subsitute_our_own}
 		x = 56
 		y = 1
@@ -414,7 +414,7 @@ focus_tree = {
 #
 	focus = {
 		id = PRR_the_proposal
-		icon = GFX_
+		icon = GFX_focus_db_satan1
 		prerequisite = { focus = PRR_a_large_donation}
 		x = 56
 		y = 3
@@ -429,7 +429,7 @@ focus_tree = {
 			create_country_leader = {
 				name = "Hercule Satan"
 				desc = "POLITICS_HERCULE_SATAN_DESC"
-				picture = ""
+				picture = "gfx/leaders/PPR/Hercule_Satan.dds"
 				expire = "1965.1.1"
 				ideology = all
 				traits = {

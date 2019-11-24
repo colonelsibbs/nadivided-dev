@@ -169,4 +169,31 @@ spriteTypes = {
 		name = "GFX_focus_state_of_union_adress"
 		texturefile = "gfx/interface/goals/focus_state_of_union_adress.dds"
 	}
+
+###Puerto Rico###
+
+	SpriteType = {
+		name = "GFX_focus_db_goku1"
+		texturefile = "gfx/interface/goals/focus_db_goku1.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_db_meet_roshi"
+		texturefile = "gfx/interface/goals/focus_db_meet_roshi.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_db_train_roshi"
+		texturefile = "gfx/interface/goals/focus_db_train_roshi.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_db_turtle"
+		texturefile = "gfx/interface/goals/focus_db_turtle.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_db_satan1"
+		texturefile = "gfx/interface/goals/focus_db_satan1.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_db_krillin1"
+		texturefile = "gfx/interface/goals/focus_db_krillin1.dds"
+	}
 }

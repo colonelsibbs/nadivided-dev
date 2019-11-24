@@ -9,7 +9,7 @@ focus_tree = {
 ##########################################################################################
     focus = {
         id = PRR_a_turtle_in_distress
-        icon = GFX_
+        icon = GFX_focus_db_turtle
         x = 10
         y = 0
         cost = 5
@@ -28,7 +28,7 @@ focus_tree = {
     }
     focus = {
         id = PRR_a_run_in_with_roshi
-        icon = GFX_
+        icon = GFX_focus_db_meet_roshi
         prerequisite = { focus = PRR_a_turtle_in_distress}
         x = 10
         y = 1
@@ -47,7 +47,7 @@ focus_tree = {
     }
     focus = {
         id = PRR_begin_training_with_Roshi
-        icon = GFX_
+        icon = GFX_focus_db_train_roshi
         prerequisite = { focus = PRR_a_run_in_with_roshi}
         x = 10
         y = 2
@@ -64,7 +64,7 @@ focus_tree = {
     }
     focus = {
         id = PRR_meetup_with_krillin
-        icon = GFX_
+        icon = GFX_focus_db_krillin1
         prerequisite = { focus = PRR_begin_training_with_Roshi}
         x = 9
         y = 3
@@ -81,7 +81,7 @@ focus_tree = {
             }
             create_corps_commander = {
                 name = "Krillin"
-                picture = ""
+                picture = "gfx/leaders/PPR/Krillin.dds"
                 traits = {
                     trait_cautious
                     infantry_officer
