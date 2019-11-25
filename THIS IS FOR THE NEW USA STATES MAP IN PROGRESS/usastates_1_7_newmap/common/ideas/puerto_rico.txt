@@ -1,6 +1,139 @@
 ideas = {
 	country = {
-		###great depression mutiple levels###
+		great_depression1 = {
+			picture = great_depression
+			
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				political_power_gain = -0.5
+				mobilization_laws_cost_factor = 1
+				ai_join_ally_desire_factor = -100
+				conscription_factor = -0.5
+				army_org_factor = -0.5
+				offence = -0.2
+				production_factory_max_efficiency_factor = -0.5
+				consumer_goods_factor = 0.25
+				local_resources_factor = -0.2
+			}
+			great_depression2 = {
+				picture = great_depression
+				
+				allowed = {
+					always = yes
+				}
+				modifier = {
+					political_power_gain = -0.4
+					mobilization_laws_cost_factor = 0.8
+					ai_join_ally_desire_factor = -80
+					conscription_factor = -0.4
+					army_org_factor = -0.4
+					offence = -0.15
+					production_factory_max_efficiency_factor = -0.4
+					consumer_goods_factor = 0.20
+					local_resources_factor = -0.15
+				}
+			}
+			great_depression3 = {
+				picture = great_depression
+				
+				allowed = {
+					always = yes
+				}
+				modifier = {
+					political_power_gain = -0.3
+					mobilization_laws_cost_factor = 0.5
+					ai_join_ally_desire_factor = -50
+					conscription_factor = -0.2
+					army_org_factor = -0.3
+					offence = -0.10
+					production_factory_max_efficiency_factor = -0.2
+					consumer_goods_factor = 0.10
+					local_resources_factor = -0.10
+				}
+			}
+			great_depression4 = {
+				picture = great_depression
+				
+				allowed = {
+					always = yes
+				}
+				modifier = {
+					political_power_gain = -0.15
+					mobilization_laws_cost_factor = 0.2
+					ai_join_ally_desire_factor = -20
+					conscription_factor = -0.1
+					army_org_factor = -0.25
+					offence = -0.10
+					production_factory_max_efficiency_factor = -0.1
+					consumer_goods_factor = 0.05
+					local_resources_factor = -0.05
+				}
+			}
+			rehabilitated_economy = {
+				picture = generic_goods_red_bonus
+
+				allowed = {
+					always = yes
+				}
+				modifier = {
+					production_factory_max_efficiency_factor = 0.1
+					consumer_goods_factor = -0.1
+					local_resources_factor = 0.2
+					production_oil_factor = 0.25
+					production_speed_buildings_factor = 0.2
+				}
+			}
+			roshis_training = {
+				picture = GFX_
+
+				allowed = {
+					always = yes
+				}
+				modifier = {
+					army_attack_factor = 0.1
+					army_defence_factor = 0.1
+				}
+			}
+			roshis_training2 = {
+				picture = GFX_
+
+				allowed = {
+					always = yes
+				}
+				modifier = {
+					experience_gain_army = 0.1
+					army_attack_factor = 0.1
+					army_defence_factor = 0.1
+					army_speed_factor = 0.1
+					planning_speed = 0.1
+				}
+			}
+			weighted_training_clothes1 = {
+				picture = GFX_
+
+				allowed = {
+					always = yes
+				}
+				modifier = {
+					amphibious_invasion = 0.15
+					training_time_factor = -0.1
+				}
+			}
+			weighted_training_clothes2 = {
+				picture = GFX_
+
+				allowed = {
+					always = yes
+				}
+				modifier = {
+					amphibious_invasion = 0.15
+					training_time_factor = -0.1
+					experience_loss_factor = -0.5
+				}
+			}
+		}
 	}
 	political_advisor = {
 		
@@ -12,7 +145,42 @@ ideas = {
 
 	}
 	army_chief = {
+		goku = {
+			picture = GFX_
 
+			allowed = {
+				has_completed_focus = PRR_complete_roshis_training
+			}
+			modifier = {
+				army_morale_factor = 0.1
+				decryption_factor = -0.1
+				offence = 0.1
+				army_attack_factor = 0.15
+			}
+		}
+		gohan = {
+			picture = GFX_
+
+			allowed = {
+				#has_completed_focus = 
+			}
+			modifier = {
+				decryption_factor = 0.1
+				defence = 0.1
+				army_defence_factor = 0.15
+			}
+		}
+		vegeta = {
+			picture = GFX_
+
+			allowed = {
+				#has_completed_focus = 
+			}
+			modifier = {
+				offence = 0.15
+				army_speed_factor = 0.15
+			}
+		}
 	}
 	navy_chief = {
 

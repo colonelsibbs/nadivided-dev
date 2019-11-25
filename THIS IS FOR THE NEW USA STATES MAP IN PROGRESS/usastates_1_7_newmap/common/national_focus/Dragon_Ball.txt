@@ -59,7 +59,7 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            #add_ideas = ###training with Roshi1###
+            add_ideas = roshis_training
         }
     }
     focus = {
@@ -169,7 +169,7 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-           # add_ideas = ###weighted training clothes
+           add_ideas = weighted_training_clothes1
         }
     }
     focus = {
@@ -188,8 +188,8 @@ focus_tree = {
 
         completion_reward = {
             swap_ideas = {
-                #add_idea = ###training with roshi 2###
-                #remove_idea = ###traning with roshi 1###
+                add_idea = roshis_training2
+                remove_idea = roshis_training
             }
         }
     }
@@ -204,7 +204,7 @@ focus_tree = {
         }
         x = 3
         y = 0
-        cost = 10
+        cost = 5
         ai_will_do = {
             factor = 10
         }
@@ -223,7 +223,7 @@ focus_tree = {
         prerequisite = { focus = PRR_the_twenty_first_world_martial_arts_tournament}
         x = 3
         y = 1
-        cost = 10
+        cost = 5
         ai_will_do = {
             factor = 10
         }
@@ -245,7 +245,7 @@ focus_tree = {
         }
         x = 3
         y = 2
-        cost = 10
+        cost = 5
         ai_will_do = {
             factor = 10
         }
@@ -280,6 +280,7 @@ focus_tree = {
             country_event = {
                 id = Puerto_Rico.12
             }
+            add_unit_leader_trait = dead
         }
     }
     focus = {
@@ -323,7 +324,6 @@ focus_tree = {
                     trickster
                     ranger
                     scavenger
-
                 }
                 skill = 3
                 attack_skill = 2

@@ -2052,7 +2052,19 @@ leader_traits = {
 ##################################
 # status traits
 ##################################
+	dead = {
+		type = all
+		trait_type = status_trait
 
+		modifier = {
+			skill_bonus_factor = -1
+			cannot_use_abilities = 1
+			attack_skill = -10
+			defense_skill = -10
+			logistics_skill = -10
+			planning_skill = -10
+		}
+	}
 	sick = { 
 		type = all
 		trait_type = status_trait
