@@ -345,7 +345,7 @@ country_event = { #the Milkmen
 		}
 	}
 }
-country_event = {
+country_event = { #event for milkmen country
 	id = Puerto_Rico.18
 	title = Puerto_Rico.18.t
 	desc = Puerto_Rico.18.d
@@ -408,5 +408,40 @@ country_event = {
 		}
 		name = Puerto_Rico.18.g
 		ai_chance = { factor = 0}
+	}
+}
+country_event = { #get the Ultra Divine Water
+	id = Puerto_Rico.19
+	title = Puerto_Rico.19.t
+	desc = Puerto_Rico.19.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_get_the_ultra_divine_water
+	}
+	
+	option = {
+		name = Puerto_Rico.19.a
+		ai_chance = { factor = 100}
+		add_ideas = ultra_divine_water
+	}
+}
+country_event = {
+	id = Puerto_Rico.20
+	title = Puerto_Rico.20.t
+	desc = Puerto_Rico.20.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_stop_king_piccilos_tyranny
+	}
+
+	option = {
+		name = Puerto_Rico.a
+		ai_chance = { factor = 100}
 	}
 }

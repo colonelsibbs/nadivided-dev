@@ -133,13 +133,58 @@ ideas = {
 					experience_loss_factor = -0.5
 				}
 			}
+			ultra_divine_water = {
+				picture = GFX_
+
+				allowed = {
+					always = yes
+				}
+				modifier = {
+					army_attack_factor = 0.1
+					army_defence_factor = 0.1
+					army_speed_factor = 0.1
+				}
+			}
+			adult_goku = {
+				picture = GFX_
+
+				allowed = {
+					always = yes
+				}
+				modifier = {
+					army_attack_factor = 0.05
+					army_defence_factor = 0.05
+					army_speed_factor = 0.05
+				}
+			}
 		}
 	}
 	political_advisor = {
-		
+		ghost_nappa = {
+			picture = GFX_
+
+			allowed = {
+				#has_completed_focus = 
+			}
+			modifier = {
+				industry_air_damage_factor = -0.1
+				political_power_factor = 0.1
+				war_support_factor = 0.05
+			}
+		}
 	}
 	theorist = {
+		master_roshi = {
+			picture = GFX_
 
+			allowed = {
+				has_completed_focus = PRR_begin_training_with_Roshi
+			}
+			modifier = {
+				experience_gain_army = 0.5
+				research_bonus = { land_doctrine = 0.15}
+			}
+		}
 	}
 	high_command = {
 

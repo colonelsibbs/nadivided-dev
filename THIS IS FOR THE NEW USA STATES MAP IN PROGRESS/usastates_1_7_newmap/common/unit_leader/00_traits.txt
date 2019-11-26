@@ -55,6 +55,15 @@ leader_traits = {
 ##################################
 # Common Traits
 ##################################
+	kaioken = {
+		type = all
+		trait_type = personality_trait
+
+		attack_skill = 3
+		defense_skill = 3
+		planning_skill = 1
+		logistics_skill = 1
+	}
 	old_guard = { 
 		type = land
 		trait_type = personality_trait
