@@ -625,6 +625,5 @@ focus_tree = {
                 add_manpower = 50000
             }
         }
-        
     }
 }
