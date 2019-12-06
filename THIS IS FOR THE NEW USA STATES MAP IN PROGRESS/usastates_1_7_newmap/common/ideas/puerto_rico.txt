@@ -171,6 +171,8 @@ ideas = {
 				political_power_factor = 0.1
 				war_support_factor = 0.05
 			}
+			cost = 150
+			removal_cost = 0
 		}
 	}
 	theorist = {
@@ -184,10 +186,81 @@ ideas = {
 				experience_gain_army = 0.5
 				research_bonus = { land_doctrine = 0.15}
 			}
+			cost = 150
+			removal_cost = 0
+		}
+		korin = {
+			picture = GFX_
+
+			allowed = {
+				has_completed_focus = PRR_a_trip_to_korin
+			}
+			modifier = {
+				experience_gain_army = 0.25
+				experience_gain_navy = 0.25
+				experience_gain_air = 0.25
+				research_bonus = { land_doctrine = 0.1}
+			}
+			cost = 150
+			removal_cost = 0
+		}
+		king_kai_theorist = {
+			picture = GFX_
+
+			allowed = {
+				has_completed_focus = PRR_training_with_king_kai
+			}
+			modifier = {
+				experience_gain_army = 0.3
+				experience_gain_navy = 0.3
+				experience_gain_air = 0.3
+				research_bonus = { land_doctrine = 0.12}
+			}
+			cost = 150
+			removal_cost = 0
 		}
 	}
 	high_command = {
+		king_yemma = {
+			picture = GFX_
 
+			allowed = {
+				has_completed_focus = PRR_down_snake_way
+			}
+			modifier = {
+				army_org = 5
+				attrition = -0.1
+			}
+			cost = 150
+			removal_cost = 0
+		}
+		king_kai_high = {
+			picture = GFX_
+
+			allowed = {
+				has_completed_focus = PRR_training_with_king_kai
+			}
+			modifier = {
+				offence = 0.15
+				defence = 0.15
+			}
+			cost = 150
+			removal_cost = 0
+		}
+		supreme_kai = {
+			picture = GFX_
+			allowed = {
+				#has_completed_focus = 
+			}
+			modifier = {
+				offence = 0.1
+				defence = 0.05
+				army_org = 2
+				attrition = -0.05
+			}
+			cost = 150
+			removal_cost = 0
+		}
 	}
 	army_chief = {
 		goku = {
@@ -202,6 +275,8 @@ ideas = {
 				offence = 0.1
 				army_attack_factor = 0.15
 			}
+			cost = 150
+			removal_cost = 0
 		}
 		gohan = {
 			picture = GFX_
@@ -214,6 +289,8 @@ ideas = {
 				defence = 0.1
 				army_defence_factor = 0.15
 			}
+			cost = 150
+			removal_cost = 0
 		}
 		vegeta = {
 			picture = GFX_
@@ -225,6 +302,8 @@ ideas = {
 				offence = 0.15
 				army_speed_factor = 0.15
 			}
+			cost = 150
+			removal_cost = 0
 		}
 	}
 	navy_chief = {
@@ -239,9 +318,6 @@ ideas = {
 			picture = GFX_puerto_rico_electric
 
 			allowed = {
-				NOT = {
-					has_available_idea_with_traits = { idea = electronics_concern limit = 1 }
-				}
 				has_completed_focus = PRR_bring_electricity_to_the_rural_regions
 			}
 			
@@ -253,6 +329,25 @@ ideas = {
 			}
 			
 			traits = { electronics_concern }
+		}
+		drbriefs = {
+			picture = GFX_
+
+			allowed = {
+				has_completed_focus = PRR_a_turtle_in_distress
+			}
+			research_bonus = {
+				industry = 0.1
+				electronics = 0.1
+				nuclear = 0.1
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				encryption_factor = 0.2
+				production_speed_nuclear_reactor_factor = 0.1
+			}
+			cost = 150
+			removal_cost = 0
 		}
 	}
 }

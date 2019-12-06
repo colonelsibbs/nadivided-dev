@@ -88,23 +88,6 @@ country_event = { #Event for Time Machine
 		ai_chance = { factor = 50}
 	}
 }
-country_event = { #turtle even
-	id = Puerto_Rico.5
-	title = Puerto_Rico.5.t
-	desc = Puerto_Rico.5.d
-	picture = GFX_
-
-	is_triggered_only = yes
-
-	trigger = {
-		has_completed_focus = PRR_a_turtle_in_distress
-	}
-
-	option = {
-		name = Puerto_Rico.5.a
-		ai_chance = { factor = 100}
-	}
-}
 country_event = { #encounter with roshi
 	id = Puerto_Rico.6
 	title = Puerto_Rico.6.t
@@ -122,41 +105,7 @@ country_event = { #encounter with roshi
 		ai_chance = { factor = 100}
 	}
 }
-country_event = { #meeting krillin
-	id = Puerto_Rico.7
-	title = Puerto_Rico.7.t
-	desc = Puerto_Rico.7.d
-	picture = GFX_
-
-	is_triggered_only = yes
-
-	trigger = {
-		has_completed_focus = PRR_meetup_with_krillin
-	}
-
-	option = {
-		name = Puerto_Rico.7.a
-		ai_chance = { factor = 100}
-	}
-}
-country_event = { #meeting yamcha
-	id = Puerto_Rico.8
-	title = Puerto_Rico.8.t
-	desc = Puerto_Rico.8.d
-	picture = GFX_
-
-	is_triggered_only = yes
-
-	trigger = {
-		has_completed_focus = PRR_memories_of_yamcha
-	}
-
-	option = {
-		name = Puerto_Rico.8.a
-		ai_chance = { factor = 100}
-	}
-}
-country_event = { #1st martial arts tournament
+ent = { #21st martial arts tournament
 	id = Puerto_Rico.9
 	title = Puerto_Rico.9.t
 	desc = Puerto_Rico.9.d
@@ -236,23 +185,6 @@ country_event = { #death of krillin
 		ai_chance = { factor = 100}
 	}
 }
-country_event = { #fight and loss with Tamberen
-	id = Puerto_Rico.13
-	title = Puerto_Rico.13.t
-	desc = Puerto_Rico.13.d
-	picture = GFX_
-
-	is_triggered_only = yes
-
-	trigger = {
-		has_completed_focus = PRR_go_after_tamberen
-	}
-
-	option = {
-		name = Puerto_Rico.13.a
-		ai_chance = { factor = 100}
-	}
-}
 country_event = { #meetup with Yajarobi
 	id = Puerto_Rico.14
 	title = Puerto_Rico.14.t
@@ -268,35 +200,6 @@ country_event = { #meetup with Yajarobi
 	option = {
 		name = Puerto_Rico.14.a
 		ai_chance = { factor = 100}
-	}
-}
-country_event = { #rematch and victory with Tamberen
-	id = Puerto_Rico.15
-	title = Puerto_Rico.15.t
-	desc = Puerto_Rico.15.d
-	picture = GFX_
-
-	is_triggered_only = yes
-
-	trigger = {
-		has_completed_focus = PRR_rematch_with_tamberen
-	}
-
-	option = {
-		name = Puerto_Rico.15.a
-		ai_chance = { factor = 100}
-	}
-}
-country_event = { #1st fight with King Piccolo
-	id = Puerto_Rico.16
-	title = Puerto_Rico.16.t
-	desc = Puerto_Rico.16.d
-	picture = GFX_
-
-	is_triggered_only = yes
-
-	trigger = {
-		has_completed_focus = PRR_first_fight_with_king_piccilo
 	}
 }
 country_event = { #the Milkmen
@@ -428,7 +331,7 @@ country_event = { #get the Ultra Divine Water
 		add_ideas = ultra_divine_water
 	}
 }
-country_event = {
+country_event = { #second fight with king Piccolo
 	id = Puerto_Rico.20
 	title = Puerto_Rico.20.t
 	desc = Puerto_Rico.20.d
@@ -441,7 +344,24 @@ country_event = {
 	}
 
 	option = {
-		name = Puerto_Rico.a
+		name = Puerto_Rico.20.a
+		ai_chance = { factor = 100}
+	}
+}
+country_event = { #meet Radditz
+	id = Puerto_Rico.21
+	title = Puerto_Rico.21.t
+	desc = Puerto_Rico.21.d
+	picture = GFX_
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = PRR_gokus_brother
+	}
+
+	option = {
+		name = Puerto_Rico.21.a
 		ai_chance = { factor = 100}
 	}
 }

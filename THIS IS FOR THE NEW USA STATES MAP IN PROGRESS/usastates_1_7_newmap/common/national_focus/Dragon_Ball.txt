@@ -20,9 +20,6 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            country_event = {
-                id = Puerto_Rico.5
-            }
             add_political_power = 25
         }
     }
@@ -76,9 +73,6 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            country_event = {
-                id = Puerto_Rico.7
-            }
             create_corps_commander = {
                 name = "Krillin"
                 picture = "gfx/leaders/PPR/Krillin.dds"
@@ -109,9 +103,6 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            country_event = {
-                id = Puerto_Rico.8
-            }
             create_corps_commander = {
                 name = "Yamcha"
                 picture = "gfx/leaders/PPR/Yamcha.dds"
@@ -315,9 +306,7 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            country_event = {
-                id = Puerto_Rico.13
-            }
+            add_war_support = 0.05
         }
     }
     focus = {
@@ -368,9 +357,7 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            country_event = {
-                id = Puerto_Rico.15
-            }
+            add_stability = 0.05
         }
     }
     focus = {
@@ -387,9 +374,7 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            country_event = {
-                id = Puerto_Rico.16
-            }
+            add_political_power = 25
         }
     }
     focus = {
@@ -448,6 +433,7 @@ focus_tree = {
             "Krillin" = {
                 remove_unit_leader_trait = dead
             }
+            add_political_power = 50
         }
     }
 ##########################################################################################
@@ -506,9 +492,7 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            country_event = {
-                id = Puerto_Rico.22
-            }
+            add_war_support = -0.05
             "Goku" = {
                 add_unit_leader_trait = dead
             }
@@ -528,9 +512,6 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            country_event = {
-                id = Puerto_Rico.23
-            }
             create_field_marshal = {
                 name = "Gohan"
                 picture = ""
@@ -551,6 +532,7 @@ focus_tree = {
                 planning_skill = 6
                 logistics_skill = 7
             }
+            add_war_support = 0.05
         }
     }
     focus = {
@@ -567,9 +549,7 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            country_event = {
-                id = Puerto_Rico.24
-            }
+            ###
         }
     }
     focus = {
@@ -586,9 +566,7 @@ focus_tree = {
         available_if_capitulated = yes
 
         completion_reward = {
-            country_event = {
-                id = Puerto_Rico.25
-            }
+            add_war_support = 0.05
             "Goku" = {
                 add_unit_leader_trait = kaioken
             }
@@ -601,7 +579,7 @@ focus_tree = {
         prerequisite = { focus = PRR_gohans_training}
         x = 15
         y = 5
-        cost = 5
+        cost = 10
         ai_will_do = {
             factor = 1
         }
@@ -609,9 +587,7 @@ focus_tree = {
         available_if_capitulated = no
 
         completion_reward = {
-            country_event = {
-                id = Puerto_Rico.26
-            }
+            add_stability = 0.05
             create_wargoal = {
                 type = annex_everything
                 target = SMS
@@ -624,6 +600,32 @@ focus_tree = {
             hidden_effect = {
                 add_manpower = 50000
             }
+            "Goku" = {
+                remove_unit_leader_trait = dead
+            }
+        }
+    }
+##########################################################################################
+############################################Namek Saga####################################
+##########################################################################################
+    focus = {
+        id = PRR_a_trip_to_namek
+        icon = GFX_
+        prerequisite = { focus = PRR_dragon_ball_z_start}
+        available = {
+            has_completed_focus = PRR_fight_with_the_sayans
+        }
+        x = 20
+        y = 1
+        cost = 5
+        ai_will_do = {
+            factor = 1
+        }
+
+        available_if_capitulated = yes
+
+        completion_reward = {
+            add_political_power = 0.05
         }
     }
 }
