@@ -2,26 +2,30 @@
 state={
 	id=183
 	name="STATE_183"
-	
 	resources={
-		tungsten=6
-		steel=12
+		tungsten=6.000
+		steel=12.000
 	}
-	
+
 	history={
-		owner = SOR
+		owner = SRO
 		buildings = {
-			infrastructure = 4
+			infrastructure = 5
 			arms_factory = 1
+			industrial_complex = 1
 			air_base = 4
+
 		}
-		add_core_of = SOR
+		add_core_of = SRO
+		add_claim_by = PCA
+		add_claim_by = SOR
+		add_claim_by = URO
 	}
-	
+
 	provinces={
-		2520 2524 2606 
+		104 353 570 619 630 638 2490 2520 2524 2699 2933 2946 
 	}
 	manpower=100000
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=town
 }

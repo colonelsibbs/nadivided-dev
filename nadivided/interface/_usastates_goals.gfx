@@ -448,5 +448,62 @@ spriteTypes = {
 		name = "GFX_focus_NE_road_marking"
 		texturefile = "gfx/interface/goals/focus_NE_road_marking.dds"
 	}
-	
+
+	#######################################
+	###									###
+	###			   Mexico				###
+	###									###
+	#######################################
+	SpriteType = {
+		name = "GFX_focus_trotsky_communism"
+		texturefile = "gfx/interface/goals/focus_trotsky_communism.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_mexico_south"
+		texturefile = "gfx/interface/goals/focus_mexico_south.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_mexico_yucatan"
+		texturefile = "gfx/interface/goals/focus_mexico_yucatan.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_mexico_central"
+		texturefile = "gfx/interface/goals/focus_mexico_central.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_mexico_north"
+		texturefile = "gfx/interface/goals/focus_mexico_north.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_mexico_push_north"
+		texturefile = "gfx/interface/goals/focus_mexico_push_north.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_mexico_hat"
+		texturefile = "gfx/interface/goals/focus_mexico_hat.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_strike_central_america"
+		texturefile = "gfx/interface/goals/focus_strike_central_america.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_north_america_aggresive"
+		texturefile = "gfx/interface/goals/focus_north_america_aggresive.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_mexico_star"
+		texturefile = "gfx/interface/goals/focus_mexico_star.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_destroy_military_factories"
+		texturefile = "gfx/interface/goals/focus_destroy_military_factories.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_hat_hanging"
+		texturefile = "gfx/interface/goals/focus_hat_hanging.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_human_sacrifice"
+		texturefile = "gfx/interface/goals/focus_human_sacrifice.dds"
+	}
 }

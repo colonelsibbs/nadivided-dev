@@ -2,21 +2,25 @@
 state={
 	id=182
 	name="STATE_182"
-	
 	resources={
-		steel=6
+		steel=6.000
 	}
-	
+
 	history={
-		owner = SOR
+		owner = URO
 		buildings = {
 			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 1
 		}
-		add_core_of = SOR
+		add_core_of = URO
+		add_claim_by = PCA
+		add_claim_by = SOR
+		add_claim_by = SRO
 	}
-	
+
 	provinces={
-		2479 2535 
+		72 412 615 629 636 2479 2535 2584 2653 2661 2726 
 	}
 	manpower=100000
 	buildings_max_level_factor=1.000

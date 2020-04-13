@@ -1,0 +1,26 @@
+
+state={
+	id=589
+	name="STATE_589"
+
+	history={
+		owner = MTA
+		add_core_of = MTA
+		buildings = {
+			infrastructure = 6
+			arms_factory = 2
+			industrial_complex = 1
+			dockyard = 0
+			air_base = 1
+
+		}
+		add_core_of = RIO
+	}
+
+	provinces={
+		668 4578 4580 4581 4583 4584 
+	}
+	manpower=174356
+	buildings_max_level_factor=1.000
+	state_category=city
+}

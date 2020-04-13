@@ -2,24 +2,23 @@
 state={
 	id=195
 	name="STATE_195"
-	
-	resources={
-		oil=2
-		aluminium=24
+	provinces={
+		278 826 831 836 837 843 848 854 859 860 871 880 881 891 901 
 	}
-	
-	history={
-		owner = SMT
+	history = {
+		owner = HON
+		add_core_of = HON
 		buildings = {
 			infrastructure = 4
+			dockyard = 1
+			industrial_complex = 2
+			air_base = 1
+			859 = {
+				naval_base = 2
+			}
 		}
-		add_core_of = SMT
 	}
-	
-	provinces={
-		2678 2679 
-	}
-	manpower=50250
+	manpower=122174
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=town
 }

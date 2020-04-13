@@ -14,11 +14,11 @@ state={
 
 		}
 		add_core_of = PBC
-
+		add_claim_by = PCA
 	}
 
 	provinces={
-		3102 3151 3172 3925 3926 3927 
+		1281 3102 3151 3172 3925 3926 3927 
 	}
 	manpower=12500
 	buildings_max_level_factor=1.000

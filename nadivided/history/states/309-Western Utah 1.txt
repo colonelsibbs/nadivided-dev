@@ -2,19 +2,22 @@
 state={
 	id=309
 	name="STATE_309"
-	
-	history={
-		owner = SUT
-		buildings = {
-			infrastructure = 4
-		}
-		add_core_of = SUT
-	}
-	
+
 	provinces={
-		1881 2005 
+		145 
 	}
-	manpower=52750
+	history = {
+		owner = PAN
+		add_core_of = PAN
+		buildings = {
+			infrastructure = 5
+			dockyard = 1
+			145 = {
+				naval_base = 10
+			}
+		}
+	}
+	manpower=36288
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=pastoral
 }

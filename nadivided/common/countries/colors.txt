@@ -42,9 +42,29 @@ SMD = {
 	color = rgb { 60 68 71 }
 	color_ui = rgb { 60 68 71 }
 }
-SOR = {
+SOR = { #Oregon
 	color = rgb { 6 86 8  }
 	color_ui = rgb { 6 86 8  }
+}
+SRO = { #Socialist Republic of Oregon
+	color = rgb { 255 68 75 }
+	color_ui = rgb { 255 68 75 }
+}
+JEF = { #Jefferson
+	color = rgb { 36 125 69 }
+	color_ui = rgb { 36 125 69 }
+}
+POO = { #Portland Commune
+	color = rgb { 0 255 221 }
+	color_ui = rgb { 0 255 221 }
+}
+URO = { #Unitary Republic of Oregon
+	color = rgb { 150 65 28 }
+	color_ui = rgb { 150 65 28 }
+}
+PCA = { #Provisional Cascadia
+	color = rgb { 0 168 33 }
+	color_ui = rgb { 0 168 33 }
 }
 SWA = {
 	color = rgb { 14 58 56 }
@@ -214,14 +234,6 @@ SMN = {
 	color = rgb { 11 125 153 }
 	color_ui = rgb { 11 125 153 }
 }
-JEF = {
-	color = rgb { 36 125 69 }
-	color_ui = rgb { 36 125 69 }
-}
-WFL = {
-	color = rgb { 55 92 86 }
-	color_ui = rgb { 55 92 86 }
-}
 ########################
 # US Natives
 ########################
@@ -362,4 +374,185 @@ D15 = {
 	color = rgb { 194 140 86 }
 	color_ui = rgb { 252 182 112 }
 }
+#################################
+###Meico
+#################################
+MSO = {
+	color = rgb { 0 152 101 }
+	color_ui = rgb { 0 152 101 }
+}
+MCH = {
+	color = rgb { 68 194 245 }
+	color_ui = rgb { 68 194 245}
+}
+MCO = {
+	color = rgb { 154 1 84 }
+	color_ui = rgb { 154 1 84 }
+}
+MNL = {
+	color = rgb { 158 130 188 }
+	color_ui = rgb { 158 130 188 }
+}
+MTA = {
+	color = rgb { 130 205 53 }
+	color_ui = rgb { 130 205 53 }
+}
+MSI = {
+	color = rgb { 234 0 48 }
+	color_ui = rgb { 234 0 48 }
+}
+MDU = {
+	color = rgb { 156 169 213 }
+	color_ui = rgb { 156 169 213 }
+}
+MZA = {
+	color = rgb { 154 102 0 }
+	color_ui = rgb { 154 102 0 }
+}
+MSL = {
+	color = rgb { 218 6 83 }
+	color_ui = rgb { 218 6 83 }
+}
+MNA = {
+	color = rgb { 246 156 184 }
+	color_ui = rgb { 246 156 184 }
+}
+MJA = {
+	color = rgb { 230 107 66 }
+	color_ui = rgb { 230 107 66 }
+}
+MAG = {
+	color = rgb { 184 188 49 }
+	color_ui = rgb { 184 188 49 }
+}
+MGU = {
+	color = rgb { 175 140 86 }
+	color_ui = { 175 140 86 }
+}
+MQU = {
+	color = rgb { 255 229 164 }
+	color_ui = rgb { 255 229 164 }
+}
+MHI = {
+	color = rgb { 249 107 129 }
+	color_ui = rgb { 249 107 129 }
+}
+MVE = {
+	color = rgb { 232 104 29 }
+	color_ui = rgb { 232 104 29 }
+}
+MCM = {
+	color = rgb { 201 154 188 }
+	color_ui = rgb { 201 154 188 }
+}
+MMI = {
+	color = rgb { 6 102 176 }
+	color_ui = rgb { 6 102 176 }
+}
+MEM = {
+	color = rgb { 12 28 79 }
+	color_ui = rgb { 12 28 79 }
+}
+MCT = {
+	color = rgb { 105 182 110 }
+	color_ui = rgb { 105 182 110 }
+}
+MMO = {
+	color = rgb { 56 255 255 }
+	color_ui = rgb { 56 255 255 }
+}
+MTL = {
+	color = rgb { 250 16 65 }
+	color_ui = rgb { 250 16 65 }
+}
+MPU = {
+	color = rgb { 148 139 106 }
+	color_ui = rgb { 148 139 106 }
+}
+MGR = {
+	color = rgb { 52 185 182 }
+	color_ui = rgb { 52 185 182 }
+}
+MOX = {
+	color = rgb { 167 205 154 }
+	color_ui = rgb { 167 205 154 }
+}
+MTB = {
+	color = rgb { 224 163 204 }
+	color_ui = rgb { 224 163 204 }
+}
+MCI = {
+	color = rgb { 228 1 130 }
+	color_ui = rgb { 220 1 130 }
+}
+MCA = {
+	color = rgb { 93 142 25 }
+	color_ui = rgb { 93 142 25 }
+}
+MYU = {
+	color = rgb { 55 55 145 }
+	color_ui = rgb { 55 55 145 }
+}
+MQR = {
+	color = rgb { 255 0 255 }
+	color_ui = rgb { 255 0 255 }
+}
+MDC = {
+	color = rgb { 104 104 104 }
+	color_ui = rgb { 76 76 76 }
+}
+MEX = {
+	color = rgb { 104 152 83 }
+	color_ui = rgb { 135 198 108 }
+}
+##########################
+# Releasable Nations
+##########################
+WFL = {
+	color = rgb { 55 92 86 }
+	color_ui = rgb { 55 92 86 }
+}
+LVG = {
+	color = rgb { 53 55 173 }
+	color_ui = rgb { 53 55 173 }
+}
+POC = {
+	color = rgb { 80 31 173 }
+	color_ui = rgb { 80 31 173 }
+}
+RIO = {
+	color = rgb { 42 59 76 }
+	color_ui = rgb { 42 59 76 }
+}
 
+##########################
+#Central America
+##########################
+GUA = {
+	color = rgb { 72 49 112 }
+	color_ui = rgb { 72 49 112 }
+}
+HON = {
+	color = rgb { 128 145 65 }
+	color_ui = rgb { 128 145 65 }
+}
+ELS = {
+	color = rgb { 152 130 191 }
+	color_ui = rgb { 198 169 248 }
+}
+NIC = {
+	color = rgb { 146 179 191 }
+	color_ui = rgb { 146 179 191 }
+}
+COS = {
+	color = rgb { 152 128 43 }
+	color_ui = rgb { 152 128 43 }
+}
+PAN = {
+	color = rgb { 152 130 191 }
+	color_ui = rgb { 198 169 248 }
+}
+BLZ = {
+	color = rgb { 0 204 204 }
+	color_ui = rgb { 0 204 204 }
+}

@@ -6,10 +6,11 @@ state={
 	history={
 		owner = SNM
 		buildings = {
-			infrastructure = 4
+			infrastructure = 3
 		}
 		add_core_of = SNM
 		add_core_of = NAV
+		add_claim_by = RIO
 	}
 	
 	provinces={

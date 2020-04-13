@@ -76,7 +76,18 @@ UTE = "countries/Ute.txt"
 WDC = "countries/District of Columbia.txt"
 NYC = "countries/New York City.txt"
 JEF = "countries/Jefferson.txt"
+SRO = "countries/Socialist Republic of Oregon.txt"
+POO = "countries/Portland Commune.txt"
+URO = "countries/Unitary Republic of Oregon.txt"
+PCA = "countries/Provisional Cascadia.txt"
 WFL = "countries/West Florida.txt"
+POC = "countries/Pocatello.txt"
+
+LVG = "countries/Las Vegas.txt"
+CHI = "countries/Chicago.txt"
+MIA = "countries/Miami.txt"
+DET = "countries/Detroit.txt"
+LAA = "countries/Los Angeles.txt"
 
 ######################################
 # Canadian Provinces/Territories
@@ -104,8 +115,52 @@ LAB = "countries/Labrador.txt"
 # Mexican States
 ######################################
 BAJ = "countries/Baja California.txt"
+MAG = "countries/Aquascalientes.txt"
+MCA = "countries/Campeche.txt"
+MCH = "countries/Chihuahua.txt"
+MCI = "countries/Chiapas.txt"
+MCM = "countries/Colima.txt"
+MCO = "countries/Coahuila.txt"
+MCT = "countries/Mexico City.txt"
+MDC = "countries/Drug Cartels.txt"
+MDU = "countries/Durango.txt"
+MEM = "countries/Toluca.txt"
+MEX = "countries/Mexico.txt"
+MGR = "countries/Guerrero.txt"
+MGU = "countries/Guanajuanto.txt"
+MHI = "countries/Hidalgo.txt"
+MJA = "countries/Jalisco.txt"
+MMI = "countries/Michoacan.txt"
+MMO = "countries/Morelos.txt"
+MNA = "countries/Nayarit.txt"
+MNL = "countries/Nuevo Leon.txt"
+MOX = "countries/Oaxaca.txt"
+MPU = "countries/Puebla.txt"
+MQR = "countries/Quintana Roo.txt"
+MQU = "countries/Queretaro.txt"
+MSI = "countries/Sinaloa.txt"
+MSL = "countries/San Luis Potosi.txt"
+MSO = "countries/Sonora.txt"
+MTA = "countries/Tamaulipas.txt"
+MTB = "countries/Tabasco.txt"
+MTL = "countries/Tlaxcala.txt"
+MVE = "countries/Veracruz.txt"
+MYU = "countries/Yucatan.txt"
+MZA = "countries/Zacatecas.txt"
+
+######################################
+# Mexico Other 
+######################################
+RIO = "countries/Rio Grande.txt"
 
 ######################################
 # Others
 ######################################
 GRE = "countries/Greenland.txt"
+GUA = "countries/Guatemla.txt"
+HON = "countries/Honduras.txt"
+ELS = "countries/El Salvador.txt"
+NIC = "countries/Nicaragua.txt"
+COS = "countries/Costa Rica.txt"
+PAN = "countries/Panama.txt"
+BLZ = "countries/Belize.txt"

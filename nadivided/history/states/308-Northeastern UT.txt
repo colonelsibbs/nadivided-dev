@@ -1,21 +1,23 @@
+
 state={
 	id=308
 	name="STATE_308"
-	
 	resources={
-		oil=2
+		oil=2.000
 	}
-	
+
 	history={
 		owner = SUT
 		buildings = {
 			infrastructure = 4
+
 		}
 		add_core_of = SUT
+
 	}
-	
+
 	provinces={
-		3687 
+		2347 2388 3687 
 	}
 	manpower=52750
 	buildings_max_level_factor=1.000
