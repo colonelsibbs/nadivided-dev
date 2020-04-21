@@ -1,0 +1,542 @@
+﻿add_namespace = random
+
+country_event = { #option event
+	id = random.1
+	title = random.1.t
+	desc = random.1.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = random.1.a
+		hidden_effect = {
+			every_country = {
+				country_event = { id = random.2 }
+			}
+		}
+	}
+	option = {
+		name = random.1.b
+	}
+}
+
+country_event = { # hiden event to generate 7 random tech for country. Should contain only <1936 tech
+	id = random.2
+	hidden = yes
+	is_triggered_only = yes
+	#title = random.2.t
+	#desc = random.2.d
+	#picture = GFX_report_event_generic_sign_treaty1
+	immediate = {
+		random_list = { # this part should be copied, as much you add them will be max of tech
+			#1
+			#example 
+			#10 = { set_technology = { # = 1 } }
+			#5  = { if = { limit = { has_tech = # }  set_technology = { # = 1 } } else = { set_technology = { # = 1 } } }
+
+			#infantry
+			11 = { set_technology = { infantry_weapons1 = 1 } }
+			5  = { set_technology = { motorised_infantry = 1 } }
+			11 = { set_technology = { support_weapons = 1 } }
+			7  = { set_technology = { paratroopers = 1 } }
+			7  = { if = { limit = { any_state = { is_coastal = yes } } set_technology = { marines = 1 } } } 
+			7  = { set_technology = { tech_mountaineers = 1 } }
+			
+			#support
+			6 = { set_technology = { tech_engineers = 1 } }
+			6 = { set_technology = { tech_recon = 1 } }
+			6 = { set_technology = { tech_military_police = 1 } }
+			6 = { set_technology = { tech_maintenance_company = 1 } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_field_hospital = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_logistics_company = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry has_tech = radio }  set_technology = { tech_signal_company = 1 } } else = { set_technology = { motorised_infantry = 1 } } }
+			
+			#artillery
+			7  = { set_technology = { gw_artillery = 1 } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_artillery = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antitank = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antiair = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			
+			#tanks
+			8  = { set_technology = { gwtank = 1 } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_light_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_heavy_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			6  = { if = { limit = { has_tech = basic_light_tank }  set_technology = { improved_light_tank = 1 } } else = { set_technology = { basic_light_tank = 1 } } }
+			
+			#airplaness
+			7  = { set_technology = { fighter1 = 1 } }
+			7  = { set_technology = { CAS1 = 1 } }
+			7  = { set_technology = { naval_bomber1 = 1 } }
+			5 = { set_technology = { early_bomber = 1 } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { heavy_fighter1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { tactical_bomber1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { set_technology = { strategic_bomber1 = 1 } }
+			
+			#ships   
+			7 = { set_technology = { basic_destroyer = 1 } }
+			4  = { set_technology = { early_light_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_light_cruiser has_tech = basic_heavy_cruiser } }  set_technology = { basic_light_cruiser = 1 } } else = { set_technology = { early_light_cruiser = 1 } } }
+			4  = { set_technology = { early_heavy_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_heavy_cruiser has_tech = basic_light_cruiser } }  set_technology = { basic_heavy_cruiser = 1 } } else = { set_technology = { early_heavy_cruiser = 1 } } }
+			4  = { set_technology = { early_battlecruiser = 1 } }
+			4  = { set_technology = { early_battleship = 1 } }
+			3  = { if = { limit = { has_tech = early_battleship }  set_technology = { basic_battleship = 1 } } else = { set_technology = { early_battleship = 1 } } }
+			3  = { if = { limit = { has_tech = basic_battleship }  set_technology = { heavy_battleship = 1 } } else = { set_technology = { basic_battleship = 1 } } }
+			3  = { set_technology = { early_carrier = 1 } }
+			3  = { if = { limit = { has_tech = early_carrier }  set_technology = { basic_carrier = 1 } } else = { set_technology = { early_carrier = 1 } } }
+			5  = { set_technology = { early_submarine = 1 } }
+			5  = { if = { limit = { has_tech = early_submarine }  set_technology = { basic_submarine = 1 } } else = { set_technology = { early_submarine = 1 } } }
+			
+			#electicity
+			7  = { set_technology = { electronic_mechanical_engineering = 1 } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { radio = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			5  = { if = { limit = { has_tech = radio }  set_technology = { radio_detection = 1 } } else = { set_technology = { radio = 1 } } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { mechanical_computing = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			
+			#industry
+			6 = { set_technology = { basic_machine_tools = 1 } }
+			6 = { set_technology = { synth_oil_experiments = 1 } }
+			5  = { if = { limit = { has_tech = construction1 }  set_technology = { excavation1 = 1 } } else = { set_technology = { construction1 = 1 } } }
+			6 = { set_technology = { construction1 = 1 } }
+			#empty part 
+			30 = {}
+		}
+		random_list = { # this part should be copied, as much you add them will be max of tech
+			#2
+			#example 
+			#10 = { set_technology = { # = 1 } }
+			#5  = { if = { limit = { has_tech = # }  set_technology = { # = 1 } } else = { set_technology = { # = 1 } } }
+
+			#infantry
+			11 = { set_technology = { infantry_weapons1 = 1 } }
+			5  = { set_technology = { motorised_infantry = 1 } }
+			11 = { set_technology = { support_weapons = 1 } }
+			7  = { set_technology = { paratroopers = 1 } }
+			7  = { if = { limit = { any_state = { is_coastal = yes } } set_technology = { marines = 1 } } } 
+			7  = { set_technology = { tech_mountaineers = 1 } }
+			
+			#support
+			6 = { set_technology = { tech_engineers = 1 } }
+			6 = { set_technology = { tech_recon = 1 } }
+			6 = { set_technology = { tech_military_police = 1 } }
+			6 = { set_technology = { tech_maintenance_company = 1 } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_field_hospital = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_logistics_company = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry has_tech = radio }  set_technology = { tech_signal_company = 1 } } else = { set_technology = { motorised_infantry = 1 } } }
+			
+			#artillery
+			7  = { set_technology = { gw_artillery = 1 } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_artillery = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antitank = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antiair = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			
+			#tanks
+			8  = { set_technology = { gwtank = 1 } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_light_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_heavy_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			6  = { if = { limit = { has_tech = basic_light_tank }  set_technology = { improved_light_tank = 1 } } else = { set_technology = { basic_light_tank = 1 } } }
+			
+			#airplaness
+			7  = { set_technology = { fighter1 = 1 } }
+			7  = { set_technology = { CAS1 = 1 } }
+			7  = { set_technology = { naval_bomber1 = 1 } }
+			5 = { set_technology = { early_bomber = 1 } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { heavy_fighter1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { tactical_bomber1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { set_technology = { strategic_bomber1 = 1 } }
+			
+			#ships   
+			7  = { set_technology = { basic_destroyer = 1 } }
+			4  = { set_technology = { early_light_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_light_cruiser has_tech = basic_heavy_cruiser } }  set_technology = { basic_light_cruiser = 1 } } else = { set_technology = { early_light_cruiser = 1 } } }
+			4  = { set_technology = { early_heavy_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_heavy_cruiser has_tech = basic_light_cruiser } }  set_technology = { basic_heavy_cruiser = 1 } } else = { set_technology = { early_heavy_cruiser = 1 } } }
+			4  = { set_technology = { early_battlecruiser = 1 } }
+			4  = { set_technology = { early_battleship = 1 } }
+			3  = { if = { limit = { has_tech = early_battleship }  set_technology = { basic_battleship = 1 } } else = { set_technology = { early_battleship = 1 } } }
+			3  = { if = { limit = { has_tech = basic_battleship }  set_technology = { heavy_battleship = 1 } } else = { set_technology = { basic_battleship = 1 } } }
+			3  = { set_technology = { early_carrier = 1 } }
+			3  = { if = { limit = { has_tech = early_carrier }  set_technology = { basic_carrier = 1 } } else = { set_technology = { early_carrier = 1 } } }
+			5  = { set_technology = { early_submarine = 1 } }
+			5  = { if = { limit = { has_tech = early_submarine }  set_technology = { basic_submarine = 1 } } else = { set_technology = { early_submarine = 1 } } }
+			
+			#electicity
+			7  = { set_technology = { electronic_mechanical_engineering = 1 } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { radio = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			5  = { if = { limit = { has_tech = radio }  set_technology = { radio_detection = 1 } } else = { set_technology = { radio = 1 } } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { mechanical_computing = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			
+			#industry
+			6 = { set_technology = { basic_machine_tools = 1 } }
+			6 = { set_technology = { synth_oil_experiments = 1 } }
+			5  = { if = { limit = { has_tech = construction1 }  set_technology = { excavation1 = 1 } } else = { set_technology = { construction1 = 1 } } }
+			6 = { set_technology = { construction1 = 1 } }
+			#empty part 
+			30 = {}
+		}
+		random_list = { # this part should be copied, as much you add them will be max of tech
+			#3
+			#example 
+			#10 = { set_technology = { # = 1 } }
+			#5  = { if = { limit = { has_tech = # }  set_technology = { # = 1 } } else = { set_technology = { # = 1 } } }
+
+			#infantry
+			11 = { set_technology = { infantry_weapons1 = 1 } }
+			5  = { set_technology = { motorised_infantry = 1 } }
+			11 = { set_technology = { support_weapons = 1 } }
+			7  = { set_technology = { paratroopers = 1 } }
+			7  = { if = { limit = { any_state = { is_coastal = yes } } set_technology = { marines = 1 } } } 
+			7  = { set_technology = { tech_mountaineers = 1 } }
+			
+			#support
+			6 = { set_technology = { tech_engineers = 1 } }
+			6 = { set_technology = { tech_recon = 1 } }
+			6 = { set_technology = { tech_military_police = 1 } }
+			6 = { set_technology = { tech_maintenance_company = 1 } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_field_hospital = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_logistics_company = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry has_tech = radio }  set_technology = { tech_signal_company = 1 } } else = { set_technology = { motorised_infantry = 1 } } }
+			
+			#artillery
+			7  = { set_technology = { gw_artillery = 1 } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_artillery = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antitank = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antiair = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			
+			#tanks
+			8  = { set_technology = { gwtank = 1 } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_light_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_heavy_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			6  = { if = { limit = { has_tech = basic_light_tank }  set_technology = { improved_light_tank = 1 } } else = { set_technology = { basic_light_tank = 1 } } }
+			
+			#airplaness
+			7  = { set_technology = { fighter1 = 1 } }
+			7  = { set_technology = { CAS1 = 1 } }
+			7  = { set_technology = { naval_bomber1 = 1 } }
+			5 = { set_technology = { early_bomber = 1 } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { heavy_fighter1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { tactical_bomber1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { set_technology = { strategic_bomber1 = 1 } }
+			
+			#ships   
+			7  = { set_technology = { basic_destroyer = 1 } }
+			4  = { set_technology = { early_light_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_light_cruiser has_tech = basic_heavy_cruiser } }  set_technology = { basic_light_cruiser = 1 } } else = { set_technology = { early_light_cruiser = 1 } } }
+			4  = { set_technology = { early_heavy_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_heavy_cruiser has_tech = basic_light_cruiser } }  set_technology = { basic_heavy_cruiser = 1 } } else = { set_technology = { early_heavy_cruiser = 1 } } }
+			4  = { set_technology = { early_battlecruiser = 1 } }
+			4  = { set_technology = { early_battleship = 1 } }
+			3  = { if = { limit = { has_tech = early_battleship }  set_technology = { basic_battleship = 1 } } else = { set_technology = { early_battleship = 1 } } }
+			3  = { if = { limit = { has_tech = basic_battleship }  set_technology = { heavy_battleship = 1 } } else = { set_technology = { basic_battleship = 1 } } }
+			3  = { set_technology = { early_carrier = 1 } }
+			3  = { if = { limit = { has_tech = early_carrier }  set_technology = { basic_carrier = 1 } } else = { set_technology = { early_carrier = 1 } } }
+			5  = { set_technology = { early_submarine = 1 } }
+			5  = { if = { limit = { has_tech = early_submarine }  set_technology = { basic_submarine = 1 } } else = { set_technology = { early_submarine = 1 } } }
+			
+			#electicity
+			7  = { set_technology = { electronic_mechanical_engineering = 1 } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { radio = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			5  = { if = { limit = { has_tech = radio }  set_technology = { radio_detection = 1 } } else = { set_technology = { radio = 1 } } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { mechanical_computing = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			
+			#industry
+			6 = { set_technology = { basic_machine_tools = 1 } }
+			6 = { set_technology = { synth_oil_experiments = 1 } }
+			5  = { if = { limit = { has_tech = construction1 }  set_technology = { excavation1 = 1 } } else = { set_technology = { construction1 = 1 } } }
+			6 = { set_technology = { construction1 = 1 } }
+			#empty part 
+			30 = {}
+		}
+		random_list = { # this part should be copied, as much you add them will be max of tech
+			#4
+			#example 
+			#10 = { set_technology = { # = 1 } }
+			#5  = { if = { limit = { has_tech = # }  set_technology = { # = 1 } } else = { set_technology = { # = 1 } } }
+
+			#infantry
+			11 = { set_technology = { infantry_weapons1 = 1 } }
+			5  = { set_technology = { motorised_infantry = 1 } }
+			11 = { set_technology = { support_weapons = 1 } }
+			7  = { set_technology = { paratroopers = 1 } }
+			7  = { if = { limit = { any_state = { is_coastal = yes } } set_technology = { marines = 1 } } } 
+			7  = { set_technology = { tech_mountaineers = 1 } }
+			
+			#support
+			6 = { set_technology = { tech_engineers = 1 } }
+			6 = { set_technology = { tech_recon = 1 } }
+			6 = { set_technology = { tech_military_police = 1 } }
+			6 = { set_technology = { tech_maintenance_company = 1 } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_field_hospital = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_logistics_company = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry has_tech = radio }  set_technology = { tech_signal_company = 1 } } else = { set_technology = { motorised_infantry = 1 } } }
+			
+			#artillery
+			7  = { set_technology = { gw_artillery = 1 } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_artillery = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antitank = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antiair = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			
+			#tanks
+			8  = { set_technology = { gwtank = 1 } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_light_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_heavy_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			6  = { if = { limit = { has_tech = basic_light_tank }  set_technology = { improved_light_tank = 1 } } else = { set_technology = { basic_light_tank = 1 } } }
+			
+			#airplaness
+			7  = { set_technology = { fighter1 = 1 } }
+			7  = { set_technology = { CAS1 = 1 } }
+			7  = { set_technology = { naval_bomber1 = 1 } }
+			5 = { set_technology = { early_bomber = 1 } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { heavy_fighter1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { tactical_bomber1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { set_technology = { strategic_bomber1 = 1 } }
+			
+			#ships   
+			7  = { set_technology = { basic_destroyer = 1 } }
+			4  = { set_technology = { early_light_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_light_cruiser has_tech = basic_heavy_cruiser } }  set_technology = { basic_light_cruiser = 1 } } else = { set_technology = { early_light_cruiser = 1 } } }
+			4  = { set_technology = { early_heavy_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_heavy_cruiser has_tech = basic_light_cruiser } }  set_technology = { basic_heavy_cruiser = 1 } } else = { set_technology = { early_heavy_cruiser = 1 } } }
+			4  = { set_technology = { early_battlecruiser = 1 } }
+			4  = { set_technology = { early_battleship = 1 } }
+			3  = { if = { limit = { has_tech = early_battleship }  set_technology = { basic_battleship = 1 } } else = { set_technology = { early_battleship = 1 } } }
+			3  = { if = { limit = { has_tech = basic_battleship }  set_technology = { heavy_battleship = 1 } } else = { set_technology = { basic_battleship = 1 } } }
+			3  = { set_technology = { early_carrier = 1 } }
+			3  = { if = { limit = { has_tech = early_carrier }  set_technology = { basic_carrier = 1 } } else = { set_technology = { early_carrier = 1 } } }
+			5  = { set_technology = { early_submarine = 1 } }
+			5  = { if = { limit = { has_tech = early_submarine }  set_technology = { basic_submarine = 1 } } else = { set_technology = { early_submarine = 1 } } }
+			
+			#electicity
+			7  = { set_technology = { electronic_mechanical_engineering = 1 } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { radio = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			5  = { if = { limit = { has_tech = radio }  set_technology = { radio_detection = 1 } } else = { set_technology = { radio = 1 } } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { mechanical_computing = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			
+			#industry
+			6 = { set_technology = { basic_machine_tools = 1 } }
+			6 = { set_technology = { synth_oil_experiments = 1 } }
+			5  = { if = { limit = { has_tech = construction1 }  set_technology = { excavation1 = 1 } } else = { set_technology = { construction1 = 1 } } }
+			6 = { set_technology = { construction1 = 1 } }
+			#empty part 
+			30 = {}
+		}
+		random_list = { # this part should be copied, as much you add them will be max of tech
+			#5
+			#example 
+			#10 = { set_technology = { # = 1 } }
+			#5  = { if = { limit = { has_tech = # }  set_technology = { # = 1 } } else = { set_technology = { # = 1 } } }
+
+			#infantry
+			11 = { set_technology = { infantry_weapons1 = 1 } }
+			5  = { set_technology = { motorised_infantry = 1 } }
+			11 = { set_technology = { support_weapons = 1 } }
+			7  = { set_technology = { paratroopers = 1 } }
+			7  = { if = { limit = { any_state = { is_coastal = yes } } set_technology = { marines = 1 } } } 
+			7  = { set_technology = { tech_mountaineers = 1 } }
+			
+			#support
+			6 = { set_technology = { tech_engineers = 1 } }
+			6 = { set_technology = { tech_recon = 1 } }
+			6 = { set_technology = { tech_military_police = 1 } }
+			6 = { set_technology = { tech_maintenance_company = 1 } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_field_hospital = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_logistics_company = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry has_tech = radio }  set_technology = { tech_signal_company = 1 } } else = { set_technology = { motorised_infantry = 1 } } }
+			
+			#artillery
+			7  = { set_technology = { gw_artillery = 1 } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_artillery = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antitank = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antiair = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			
+			#tanks
+			8  = { set_technology = { gwtank = 1 } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_light_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_heavy_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			6  = { if = { limit = { has_tech = basic_light_tank }  set_technology = { improved_light_tank = 1 } } else = { set_technology = { basic_light_tank = 1 } } }
+			
+			#airplaness
+			7  = { set_technology = { fighter1 = 1 } }
+			7  = { set_technology = { CAS1 = 1 } }
+			7  = { set_technology = { naval_bomber1 = 1 } }
+			5 = { set_technology = { early_bomber = 1 } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { heavy_fighter1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { tactical_bomber1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { set_technology = { strategic_bomber1 = 1 } }
+			
+			#ships   
+			7  = { set_technology = { basic_destroyer = 1 } }
+			4  = { set_technology = { early_light_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_light_cruiser has_tech = basic_heavy_cruiser } }  set_technology = { basic_light_cruiser = 1 } } else = { set_technology = { early_light_cruiser = 1 } } }
+			4  = { set_technology = { early_heavy_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_heavy_cruiser has_tech = basic_light_cruiser } }  set_technology = { basic_heavy_cruiser = 1 } } else = { set_technology = { early_heavy_cruiser = 1 } } }
+			4  = { set_technology = { early_battlecruiser = 1 } }
+			4  = { set_technology = { early_battleship = 1 } }
+			3  = { if = { limit = { has_tech = early_battleship }  set_technology = { basic_battleship = 1 } } else = { set_technology = { early_battleship = 1 } } }
+			3  = { if = { limit = { has_tech = basic_battleship }  set_technology = { heavy_battleship = 1 } } else = { set_technology = { basic_battleship = 1 } } }
+			3  = { set_technology = { early_carrier = 1 } }
+			3  = { if = { limit = { has_tech = early_carrier }  set_technology = { basic_carrier = 1 } } else = { set_technology = { early_carrier = 1 } } }
+			5  = { set_technology = { early_submarine = 1 } }
+			5  = { if = { limit = { has_tech = early_submarine }  set_technology = { basic_submarine = 1 } } else = { set_technology = { early_submarine = 1 } } }
+			
+			#electicity
+			7  = { set_technology = { electronic_mechanical_engineering = 1 } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { radio = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			5  = { if = { limit = { has_tech = radio }  set_technology = { radio_detection = 1 } } else = { set_technology = { radio = 1 } } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { mechanical_computing = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			
+			#industry
+			6 = { set_technology = { basic_machine_tools = 1 } }
+			6 = { set_technology = { synth_oil_experiments = 1 } }
+			5  = { if = { limit = { has_tech = construction1 }  set_technology = { excavation1 = 1 } } else = { set_technology = { construction1 = 1 } } }
+			6 = { set_technology = { construction1 = 1 } }
+			#empty part 
+			30 = {}
+		}
+		random_list = { # this part should be copied, as much you add them will be max of tech
+			#6
+			#example 
+			#10 = { set_technology = { # = 1 } }
+			#5  = { if = { limit = { has_tech = # }  set_technology = { # = 1 } } else = { set_technology = { # = 1 } } }
+
+			#infantry
+			11 = { set_technology = { infantry_weapons1 = 1 } }
+			5  = { set_technology = { motorised_infantry = 1 } }
+			11 = { set_technology = { support_weapons = 1 } }
+			7  = { set_technology = { paratroopers = 1 } }
+			7  = { if = { limit = { any_state = { is_coastal = yes } } set_technology = { marines = 1 } } } 
+			7  = { set_technology = { tech_mountaineers = 1 } }
+			
+			#support
+			6 = { set_technology = { tech_engineers = 1 } }
+			6 = { set_technology = { tech_recon = 1 } }
+			6 = { set_technology = { tech_military_police = 1 } }
+			6 = { set_technology = { tech_maintenance_company = 1 } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_field_hospital = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_logistics_company = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry has_tech = radio }  set_technology = { tech_signal_company = 1 } } else = { set_technology = { motorised_infantry = 1 } } }
+			
+			#artillery
+			7  = { set_technology = { gw_artillery = 1 } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_artillery = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antitank = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antiair = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			
+			#tanks
+			8  = { set_technology = { gwtank = 1 } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_light_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_heavy_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			6  = { if = { limit = { has_tech = basic_light_tank }  set_technology = { improved_light_tank = 1 } } else = { set_technology = { basic_light_tank = 1 } } }
+			
+			#airplaness
+			7  = { set_technology = { fighter1 = 1 } }
+			7  = { set_technology = { CAS1 = 1 } }
+			7  = { set_technology = { naval_bomber1 = 1 } }
+			5 = { set_technology = { early_bomber = 1 } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { heavy_fighter1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { tactical_bomber1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { set_technology = { strategic_bomber1 = 1 } }
+			
+			#ships   
+			7  = { set_technology = { basic_destroyer = 1 } }
+			4  = { set_technology = { early_light_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_light_cruiser has_tech = basic_heavy_cruiser } }  set_technology = { basic_light_cruiser = 1 } } else = { set_technology = { early_light_cruiser = 1 } } }
+			4  = { set_technology = { early_heavy_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_heavy_cruiser has_tech = basic_light_cruiser } }  set_technology = { basic_heavy_cruiser = 1 } } else = { set_technology = { early_heavy_cruiser = 1 } } }
+			4  = { set_technology = { early_battlecruiser = 1 } }
+			4  = { set_technology = { early_battleship = 1 } }
+			3  = { if = { limit = { has_tech = early_battleship }  set_technology = { basic_battleship = 1 } } else = { set_technology = { early_battleship = 1 } } }
+			3  = { if = { limit = { has_tech = basic_battleship }  set_technology = { heavy_battleship = 1 } } else = { set_technology = { basic_battleship = 1 } } }
+			3  = { set_technology = { early_carrier = 1 } }
+			3  = { if = { limit = { has_tech = early_carrier }  set_technology = { basic_carrier = 1 } } else = { set_technology = { early_carrier = 1 } } }
+			5  = { set_technology = { early_submarine = 1 } }
+			5  = { if = { limit = { has_tech = early_submarine }  set_technology = { basic_submarine = 1 } } else = { set_technology = { early_submarine = 1 } } }
+			
+			#electicity
+			7  = { set_technology = { electronic_mechanical_engineering = 1 } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { radio = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			5  = { if = { limit = { has_tech = radio }  set_technology = { radio_detection = 1 } } else = { set_technology = { radio = 1 } } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { mechanical_computing = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			
+			#industry
+			6 = { set_technology = { basic_machine_tools = 1 } }
+			6 = { set_technology = { synth_oil_experiments = 1 } }
+			5  = { if = { limit = { has_tech = construction1 }  set_technology = { excavation1 = 1 } } else = { set_technology = { construction1 = 1 } } }
+			6 = { set_technology = { construction1 = 1 } }
+			#empty part 
+			30 = {}
+		}
+		random_list = { # this part should be copied, as much you add them will be max of tech
+			#7
+			#example 
+			#10 = { set_technology = { # = 1 } }
+			#5  = { if = { limit = { has_tech = # }  set_technology = { # = 1 } } else = { set_technology = { # = 1 } } }
+
+			#infantry
+			11 = { set_technology = { infantry_weapons1 = 1 } }
+			5  = { set_technology = { motorised_infantry = 1 } }
+			11 = { set_technology = { support_weapons = 1 } }
+			7  = { set_technology = { paratroopers = 1 } }
+			7  = { if = { limit = { any_state = { is_coastal = yes } } set_technology = { marines = 1 } } } 
+			7  = { set_technology = { tech_mountaineers = 1 } }
+			
+			#support
+			6 = { set_technology = { tech_engineers = 1 } }
+			6 = { set_technology = { tech_recon = 1 } }
+			6 = { set_technology = { tech_military_police = 1 } }
+			6 = { set_technology = { tech_maintenance_company = 1 } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_field_hospital = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry }  set_technology = { tech_logistics_company = 1 } }  else = { set_technology = { motorised_infantry = 1 } } }
+			4  = { if = { limit = { has_tech = motorised_infantry has_tech = radio }  set_technology = { tech_signal_company = 1 } } else = { set_technology = { motorised_infantry = 1 } } }
+			
+			#artillery
+			7  = { set_technology = { gw_artillery = 1 } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_artillery = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antitank = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			8  = { if = { limit = { has_tech = gw_artillery }  set_technology = { interwar_antiair = 1 } } else = { set_technology = { gw_artillery = 1 } } }
+			
+			#tanks
+			8  = { set_technology = { gwtank = 1 } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_light_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			8  = { if = { limit = { has_tech = gwtank }  set_technology = { basic_heavy_tank = 1 } } else = { set_technology = { gwtank = 1 } } }
+			6  = { if = { limit = { has_tech = basic_light_tank }  set_technology = { improved_light_tank = 1 } } else = { set_technology = { basic_light_tank = 1 } } }
+			
+			#airplaness
+			7  = { set_technology = { fighter1 = 1 } }
+			7  = { set_technology = { CAS1 = 1 } }
+			7  = { set_technology = { naval_bomber1 = 1 } }
+			5 = { set_technology = { early_bomber = 1 } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { heavy_fighter1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { if = { limit = { has_tech = early_bomber }  set_technology = { tactical_bomber1 = 1 } } else = { set_technology = { early_bomber = 1 } } }
+			7  = { set_technology = { strategic_bomber1 = 1 } }
+			
+			#ships   
+			7  = { set_technology = { basic_destroyer = 1 } }
+			4  = { set_technology = { early_light_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_light_cruiser has_tech = basic_heavy_cruiser } }  set_technology = { basic_light_cruiser = 1 } } else = { set_technology = { early_light_cruiser = 1 } } }
+			4  = { set_technology = { early_heavy_cruiser = 1 } }
+			4  = { if = { limit = { OR = { has_tech = early_heavy_cruiser has_tech = basic_light_cruiser } }  set_technology = { basic_heavy_cruiser = 1 } } else = { set_technology = { early_heavy_cruiser = 1 } } }
+			4  = { set_technology = { early_battlecruiser = 1 } }
+			4  = { set_technology = { early_battleship = 1 } }
+			3  = { if = { limit = { has_tech = early_battleship }  set_technology = { basic_battleship = 1 } } else = { set_technology = { early_battleship = 1 } } }
+			3  = { if = { limit = { has_tech = basic_battleship }  set_technology = { heavy_battleship = 1 } } else = { set_technology = { basic_battleship = 1 } } }
+			3  = { set_technology = { early_carrier = 1 } }
+			3  = { if = { limit = { has_tech = early_carrier }  set_technology = { basic_carrier = 1 } } else = { set_technology = { early_carrier = 1 } } }
+			5  = { set_technology = { early_submarine = 1 } }
+			5  = { if = { limit = { has_tech = early_submarine }  set_technology = { basic_submarine = 1 } } else = { set_technology = { early_submarine = 1 } } }
+			
+			#electicity
+			7  = { set_technology = { electronic_mechanical_engineering = 1 } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { radio = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			5  = { if = { limit = { has_tech = radio }  set_technology = { radio_detection = 1 } } else = { set_technology = { radio = 1 } } }
+			5  = { if = { limit = { has_tech = electronic_mechanical_engineering }  set_technology = { mechanical_computing = 1 } } else = { set_technology = { electronic_mechanical_engineering = 1 } } }
+			
+			#industry
+			6 = { set_technology = { basic_machine_tools = 1 } }
+			6 = { set_technology = { synth_oil_experiments = 1 } }
+			5  = { if = { limit = { has_tech = construction1 }  set_technology = { excavation1 = 1 } } else = { set_technology = { construction1 = 1 } } }
+			6 = { set_technology = { construction1 = 1 } }
+			#empty part 
+			30 = {}
+		}
+	}
+}
