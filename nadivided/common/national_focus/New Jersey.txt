@@ -325,7 +325,8 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Establishing Diplomatic Ties
+	#Focus for Reinstate the Governer
+	#Formerly  Establishing Diplomatic Ties
 	focus = {
 		id = NJ_establishingdiplomaticties
 		icon = GFX_goal_generic_intelligence_exchange
@@ -348,7 +349,8 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Our Place in the States
+	#Focus for Election's Week
+	#Formerly Our Place in the States
 	focus = {
 		id = NJ_ourplaceinthestates
 		icon = GFX_focus_usa_recruit_the_free_corps
@@ -404,7 +406,9 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Catholic Zealotry
+	#Focus for The State's Gaurd
+	#Formerly Catholic Zealotry
+	#Changing Tree to be more Realistic
 	focus = {
 		id = NJ_catholiczealotry
 		icon = GFX_focus_hun_elect_a_king
