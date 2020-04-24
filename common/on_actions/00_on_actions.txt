@@ -1,11 +1,11 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			SNY = {country_event = {id = rmap.1}}
-			random_country  = { 
-				limit = { is_ai = no }
-				country_event = { id = random.1 }
-			}
+			SNY = {country_event = {id = rcpmap.1}} #should work 
+			#random_country  = { 
+			#	limit = { is_ai = no }
+			#	country_event = { id = random.1 }
+			#}
 		}
 	}
 	on_state_control_changed = {

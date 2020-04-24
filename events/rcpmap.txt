@@ -1,0 +1,203 @@
+﻿add_namespace = rcpmap
+
+country_event = { 
+	id = rcpmap.2
+	fire_only_once = no
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		name = rcpmap.2.a
+		
+		every_owned_state = {
+			limit = {
+				has_state_flag = rcpmap_owned
+			} 
+			every_neighbor_state = {
+				limit = {
+					NOT = {
+						has_state_flag = rcpmap_owned
+					} 
+					NOT = {
+						is_core_of = ROOT
+					}
+					NOT = {
+						has_state_category = wasteland
+					}
+				} 
+				set_state_flag = rcpmap_owned 
+				ROOT = {transfer_state = PREV} 
+				add_core_of = PREV
+			}
+		}
+		random_owned_state = {	
+			limit = {
+				has_state_flag = rcpmap_owned
+			} 
+			ROOT = {
+				set_capital = PREV
+			}
+		}
+	}
+#
+}
+
+
+
+country_event = {
+	id = rcpmap.1
+	fire_only_once = yes
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		name = rcpmap.1.a
+		every_state = { remove_core_of = OWNER }
+		
+		random_country = {
+			limit = {
+				NOT = {
+					has_country_flag = rcpmap_ctr
+				}
+			}
+			set_country_flag = rcpmap_ctr
+			random_state = {
+				limit = {
+					NOT = {
+						has_state_flag = rcpmap_reserved
+					}
+					NOT = {
+						has_state_category = wasteland
+					}
+				}
+				set_state_flag = rcpmap_reserved
+				set_state_flag = rcpmap_owned
+				
+				PREV = {
+					transfer_state = PREV
+					#set_capital = PREV 
+					#goto_state = PREV
+				}
+				add_core_of = PREV 
+				add_manpower = 200000 
+				set_building_level={
+					type = industrial_complex 
+					level = 2
+				} 
+				set_building_level={
+					type = arms_factory 
+					level = 1
+				} 
+				#set_state_flag = capital_@PREV
+			}
+		}
+		
+		every_country = {
+			limit = { 
+				NOT = { 
+					has_country_flag = rcpmap_ctr 
+				} 
+			}
+			random_state = {
+				limit = {
+					NOT = {
+						has_state_flag = rcpmap_reserved
+					}
+					NOT = {
+						has_state_category = wasteland
+					}
+				} 
+				set_state_flag = rcpmap_owned 
+				PREV = {
+					transfer_state = PREV 
+					#set_capital = PREV 
+					goto_state = PREV
+				} 
+				add_core_of = PREV 
+				add_manpower = 250000 
+				set_building_level={
+					type = industrial_complex 
+					level = 2
+				} 
+				set_building_level={
+					type = arms_factory 
+					level = 1
+				} 
+				#set_state_flag = capital_@PREV
+			}
+			country_event = {id = rcpmap.2} 
+		}
+		
+		every_country = {
+			country_event = {id = rcpmap.2} 
+	 
+	 	 	random_list = { 
+				25={
+					add_popularity = {
+						ideology = fascism popularity = 0.25
+					} 
+					set_politics = {
+						ruling_party = fascism 
+					} 
+				}
+				25={
+					add_popularity = {
+						ideology = communism popularity = 0.25
+					} 
+					set_politics = { 
+						ruling_party = communism 
+					} 
+				}
+				25={
+					add_popularity = {
+						ideology = democratic 
+						popularity = 0.25
+					} 
+					set_politics = { 
+						ruling_party = democratic
+						elections_allowed = yes						
+					} 
+				25={add_popularity = {ideology = neutrality popularity = 0.25} set_politics = { ruling_party = neutrality }}
+			}
+	 
+			#Necessary as the game doesn't update tag for some reason
+			set_cosmetic_tag = D99
+			drop_cosmetic_tag = yes
+		}
+		
+		every_state = {
+			if = { 
+				limit = {
+					NOT = {
+						has_state_flag = rcpmap_reserved
+					}
+					NOT = {
+						has_state_category = wasteland
+					}
+				} 
+				set_state_flag = rmap_owned 
+				random_country = {
+					limit = {
+						any_owned_state = {
+							#OR = {
+								is_coastal = yes 
+								#is_island_state = yes 
+							#} 				
+							has_state_flag = rcpmap_owned
+						}
+					} 
+					transfer_state = PREV
+				}
+			}
+			add_manpower = 200000 
+			set_building_level={
+				type = industrial_complex 
+				level = 2
+			} 
+			set_building_level={
+				type = arms_factory 
+				level = 1
+			} 
+		}
+	# end immediate stuff
+	}
+# end event
+}
