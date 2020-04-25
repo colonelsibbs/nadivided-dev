@@ -195,7 +195,97 @@ country_event = {
 			set_building_level={
 				type = arms_factory 
 				level = 1
-			} 
+			}
+			
+			random_list = { 2 = {} 1 = {set_building_level={type = industrial_complex level = 1}}}
+			random_list = { 2 = {} 1 = {set_building_level={type = arms_factory level = 1}}}
+			random_list = { 2 = {} 1 = {set_building_level={type = dockyard level = 1}}}
+			random_list = { 5 = {} 1 = {set_building_level={type = air_base level = 1}}}
+			  
+			random_list = {
+				13={}
+				2={
+					random_list={
+
+						1={add_resource={type = oil amount = 120}}
+						2={add_resource={type = oil amount = 80}}
+						4={add_resource={type = oil amount = 60}}
+						6={add_resource={type = oil amount = 30}}
+						9={add_resource={type = oil amount = 10}}
+					}
+				}
+				3={
+
+					random_list={
+						1={add_resource={type = chromium amount = 120}}
+						2={add_resource={type = chromium amount = 80}}
+						4={add_resource={type = chromium amount = 60}}
+						5={add_resource={type = chromium amount = 30}}
+						6={add_resource={type = chromium amount = 10}}
+					}
+				}
+				4={
+
+					random_list={
+						1={add_resource={type = rubber amount = 120}}
+						2={add_resource={type = rubber amount = 80}}
+						4={add_resource={type = rubber amount = 60}}
+						6={add_resource={type = rubber amount = 30}}
+						8={add_resource={type = rubber amount = 10}}
+					}
+				}
+				5={
+
+					random_list={
+						1={add_resource={type = tungsten amount = 120 }}
+						2={add_resource={type = tungsten amount = 80 }}
+						4={add_resource={type = tungsten amount = 60 }}
+						5={add_resource={type = tungsten amount = 30 }}
+						6={add_resource={type = tungsten amount = 10 }}
+					}
+				}
+				6={
+
+					random_list={
+						1={add_resource={type = aluminium amount = 120 }}
+						2={add_resource={type = aluminium amount = 80 }}
+						3={add_resource={type = aluminium amount = 60 }}
+						4={add_resource={type = aluminium amount = 30 }}
+						5={add_resource={type = aluminium amount = 10 }}
+					}}
+				7={
+
+					random_list={
+						1={add_resource={type = steel amount = 120 }}
+						2={add_resource={type = steel amount = 80 }}
+						3={add_resource={type = steel amount = 60 }}
+						4={add_resource={type = steel amount = 30 }}
+						5={add_resource={type = steel amount = 10 }}
+					}
+				}
+			}
+			
+			random_list={
+				15={}
+				11={set_building_level ={type = infrastructure level = 4}}
+				6={set_building_level ={type = infrastructure level = 5}}
+				3={set_building_level ={type = infrastructure level = 6}}
+				2={set_building_level ={type = infrastructure level = 7}}
+				1={set_building_level ={type = infrastructure level = 8}}
+			}
+			
+			random_list = { 
+				2={set_state_category = wasteland}
+				3={set_state_category = pastoral}
+				6={set_state_category = rural}
+				8={set_state_category = town}
+				7={set_state_category = large_town}
+				5={set_state_category = city}
+				4={set_state_category = large_city}
+				2={set_state_category = metropolis}
+				1={set_state_category = megalopolis}
+			}
+			OWNER = {add_equipment_to_stockpile = {type = infantry_equipment_0 amount = 750}}
 		}
 	# end immediate stuff
 	}
